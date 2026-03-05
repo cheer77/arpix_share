@@ -3,6 +3,7 @@ import { resolve } from 'path';
 import handlebars from 'vite-plugin-handlebars';
 
 export default defineConfig({
+  base: '/arpix_share/',
   root: './',
   plugins: [
     handlebars({
