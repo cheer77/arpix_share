@@ -1,0 +1,111 @@
+// ========================================
+// Arpix Share — Main Style Entry Point
+// ========================================
+
+@font-face {
+  font-family: 'Trivia Grotesk X2';
+  src: url('../assets/fonts/trivia-grotesk-x2.otf') format('opentype');
+  font-weight: 400; // Regular, but we'll use it for headings
+  font-style: normal;
+  font-display: swap;
+}
+
+// --- Base Styles ---
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-normal;
+  color: $color-text;
+  background-color: $color-bg;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color $transition-base;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  @include btn-reset;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+}
+
+::selection {
+  background-color: $color-accent;
+  color: $color-white;
+}
+
+// --- Container ---
+.container {
+  @include container;
+}
+
+.section {
+  padding-top: $spacing-2xl;
+  padding-bottom: $spacing-2xl;
+
+  @include tablet {
+    padding-top: $spacing-3xl;
+    padding-bottom: $spacing-3xl;
+  }
+
+  @include desktop {
+    padding-top: $spacing-4xl;
+    padding-bottom: $spacing-4xl;
+  }
+}
+
+// --- Utility Button Classes ---
+.btn-primary {
+  @include btn-primary;
+}
+
+.btn-outline {
+  @include btn-outline;
+}
+
+.btn-outline-dark {
+  @include btn-outline-dark;
+}

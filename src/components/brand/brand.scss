@@ -1,0 +1,77 @@
+// ========================================
+// Brand — Styles (BEM)
+// ========================================
+
+.brand {
+  &__inner {
+    margin-bottom: $spacing-xl;
+
+    @include desktop {
+      margin-bottom: $spacing-2xl;
+    }
+  }
+
+  &__title {
+    @include heading-lg;
+    margin-bottom: $spacing-lg;
+
+    @include desktop {
+      margin-bottom: $spacing-xl;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+
+    @include tablet {
+      grid-template-columns: 1fr 1fr;
+      gap: $spacing-xl;
+    }
+  }
+
+  &__text {
+    @include body-text;
+    text-align: justify;
+  }
+
+  // --- Full-width banner ---
+  &__banner {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0;
+
+    @include tablet {
+      border-radius: $radius-lg;
+      margin-left: $container-padding-tablet;
+      margin-right: $container-padding-tablet;
+      width: calc(100% - #{$container-padding-tablet * 2});
+    }
+
+    @include desktop-lg {
+      margin-left: $container-padding;
+      margin-right: $container-padding;
+      width: calc(100% - #{$container-padding * 2});
+    }
+  }
+
+  &__banner-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+
+    @include tablet {
+      height: 400px;
+      border-radius: $radius-lg;
+    }
+
+    @include desktop {
+      height: 500px;
+    }
+
+    @include desktop-xl {
+      height: 600px;
+    }
+  }
+}

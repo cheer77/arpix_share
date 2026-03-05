@@ -1,0 +1,83 @@
+// ========================================
+// Products Slider — Styles (BEM)
+// ========================================
+
+.products-slider {
+  padding-top: 0;
+  padding-bottom: $spacing-lg;
+  overflow: hidden;
+
+  @include desktop {
+    padding-bottom: $spacing-2xl;
+  }
+
+  &__inner {
+    overflow: visible;
+  }
+
+  &__track {
+    display: flex;
+    gap: $spacing-sm;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: $spacing-xs;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include desktop {
+      gap: $spacing-md;
+    }
+  }
+
+  &__item {
+    flex: 0 0 200px;
+    scroll-snap-align: start;
+
+    @include tablet {
+      flex: 0 0 220px;
+    }
+
+    @include desktop {
+      flex: 0 0 260px;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+    cursor: pointer;
+    @include hover-lift;
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: $radius-md;
+    background-color: $color-bg;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 $spacing-xs;
+  }
+
+  &__name {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $color-text;
+  }
+
+  &__price {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    color: $color-accent;
+  }
+}

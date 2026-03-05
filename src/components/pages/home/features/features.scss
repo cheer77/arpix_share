@@ -1,0 +1,117 @@
+// ========================================
+// Features Component — Pixel-perfect Figma
+// ========================================
+
+.features {
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: 40px;
+    font-weight: $font-weight-regular;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+  }
+
+  &__subtitle {
+    font-family: $font-primary;
+    font-size: 20px;
+    font-weight: $font-weight-regular;
+    color: $color-text-secondary;
+  }
+
+  &__interactive {
+    position: relative;
+    max-width: 1302px;
+    margin: 0 auto;
+    height: 620px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__center-image {
+    width: 500px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &__point {
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+
+    &-text {
+      font-family: $font-primary;
+      font-size: 16px;
+      font-weight: $font-weight-semibold;
+      color: $color-text;
+      max-width: 280px;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 19px;
+      height: 19px;
+      position: relative;
+    }
+
+    // Left side points
+    &--1 {
+      top: 15%;
+      right: 58%;
+      align-items: flex-end;
+      text-align: right;
+    }
+    &--2 {
+      top: 38%;
+      right: 62%;
+      align-items: flex-end;
+      text-align: right;
+    }
+    &--3 {
+      top: 58%;
+      right: 68%;
+      align-items: flex-end;
+      text-align: right;
+    }
+
+    // Right side points
+    &--4 {
+      top: 15%;
+      left: 58%;
+      align-items: flex-start;
+      text-align: left;
+    }
+    &--5 {
+      top: 38%;
+      left: 62%;
+      align-items: flex-start;
+      text-align: left;
+    }
+    &--6 {
+      top: 58%;
+      left: 68%;
+      align-items: flex-start;
+      text-align: left;
+    }
+  }
+}

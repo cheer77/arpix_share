@@ -1,0 +1,71 @@
+// ========================================
+// Benefits Component — Pixel-perfect Figma
+// ========================================
+
+.benefits {
+  padding-top: 80px;
+  padding-bottom: 0;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    @media (max-width: 980px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px 20px;
+    }
+
+    @media (max-width: 768px) {
+      gap: 24px 16px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 19px;
+    min-width: 0;
+
+    @media (max-width: 768px) {
+      gap: 12px;
+    }
+  }
+
+  &__item-img-wrap {
+    width: 100%;
+    aspect-ratio: 309 / 248;
+    height: auto;
+    border-radius: $radius-15;
+    overflow: hidden;
+
+    @media (max-width: 768px) {
+      border-radius: $radius-md;
+    }
+  }
+
+  &__item-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__item-title {
+    font-family: $font-primary;
+    font-size: 20px;
+    font-weight: $font-weight-semibold;
+    line-height: normal;
+    color: $color-text;
+    max-width: 306px;
+
+    @media (max-width: 980px) {
+      font-size: 18px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+  }
+}
+

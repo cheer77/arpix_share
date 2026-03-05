@@ -1,0 +1,101 @@
+// ========================================
+// Club Component — Pixel-perfect Figma
+// ========================================
+
+.club {
+  padding: 80px 0;
+
+  &__inner {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  // Left panel — dark teal with circle cutout
+  &__content {
+    width: 648px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-white;
+    // Circular cutout on the right edge with radius 69px (138px / 2)
+    mask-image: radial-gradient(circle at right center, transparent 69px, black 70px);
+    -webkit-mask-image: radial-gradient(circle at right center, transparent 69px, black 70px);
+    color: $color-text;
+    position: relative;
+    padding: 90px 22px;
+    min-height: 742px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 604px;
+    width: 100%;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: 40px;
+    font-weight: $font-weight-regular;
+    line-height: normal;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    margin-bottom: 40px;
+    color: $color-text;
+  }
+
+  &__subtitle {
+    font-family: $font-primary;
+    font-size: 20px;
+    font-weight: $font-weight-regular;
+    color: $color-text;
+    margin-bottom: 42px;
+    line-height: normal;
+  }
+
+  &__list {
+    font-family: $font-primary;
+    font-size: 16px;
+    line-height: 1.8;
+    color: $color-text;
+    margin-bottom: 88px;
+  }
+
+  &__cta {
+    align-self: center;
+  }
+
+  // Right panel — banner image
+  &__banner {
+    flex: 1;
+    position: relative;
+    border-radius: $radius-25;
+    overflow: hidden;
+    min-height: 742px;
+  }
+
+  &__bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__banner-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: $font-accent;
+    font-style: italic;
+    font-size: 121px;
+    color: $color-white;
+    line-height: normal;
+    text-align: center;
+    width: 397px;
+    letter-spacing: -6px;
+  }
+}

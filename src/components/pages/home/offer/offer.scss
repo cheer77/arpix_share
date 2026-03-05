@@ -1,0 +1,54 @@
+// ========================================
+// Offer Component — Pixel-perfect Figma
+// ========================================
+
+.offer {
+  padding: 80px 0;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 1420px;
+    margin: 0 auto;
+    padding: 78px 239px;
+    background: linear-gradient(180deg, #020605 42.74%, #143C3D 58.8%, #4D8582 97.22%);
+    border-radius: $radius-25;
+  }
+
+  &__content {
+    margin-bottom: 60px;
+  }
+
+  &__logos {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 36px;
+  }
+
+  &__logo-full {
+    height: 87px;
+    width: auto;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: 40px;
+    font-weight: $font-weight-regular;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    margin-bottom: 36px;
+    line-height: normal;
+    color: $color-white;
+  }
+
+  &__subtitle {
+    font-family: $font-primary;
+    font-size: 20px;
+    font-weight: $font-weight-regular;
+    color: $color-white;
+    line-height: normal;
+  }
+}

@@ -1,0 +1,74 @@
+// ========================================
+// Community (Клуб «Стерво») — Styles (BEM)
+// ========================================
+
+.community {
+  background-color: $color-bg-light;
+  overflow: hidden;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xl;
+
+    @include desktop {
+      flex-direction: row;
+      align-items: center;
+      gap: $spacing-2xl;
+    }
+  }
+
+  // --- Content ---
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+
+    @include desktop {
+      gap: $spacing-lg;
+    }
+  }
+
+  &__label {
+    @include label-text;
+  }
+
+  &__title {
+    @include heading-lg;
+  }
+
+  &__description {
+    @include body-text;
+    max-width: 500px;
+  }
+
+  &__cta {
+    @include btn-primary;
+    align-self: flex-start;
+    margin-top: $spacing-xs;
+  }
+
+  // --- Media ---
+  &__media {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    @include desktop {
+      justify-content: flex-end;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 450px;
+    border-radius: $radius-xl;
+    object-fit: cover;
+    aspect-ratio: 3 / 4;
+
+    @include desktop {
+      max-width: 500px;
+    }
+  }
+}

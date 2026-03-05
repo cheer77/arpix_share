@@ -1,0 +1,22 @@
+// ========================================
+// Container & Layout helpers
+// ========================================
+
+.container {
+  @include container;
+}
+
+.section {
+  padding-top: $spacing-2xl;
+  padding-bottom: $spacing-2xl;
+
+  @include tablet {
+    padding-top: $spacing-3xl;
+    padding-bottom: $spacing-3xl;
+  }
+
+  @include desktop {
+    padding-top: $spacing-4xl;
+    padding-bottom: $spacing-4xl;
+  }
+}

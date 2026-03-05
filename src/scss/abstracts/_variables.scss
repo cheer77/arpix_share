@@ -1,0 +1,99 @@
+// ========================================
+// Arpix Share — Design Tokens
+// ========================================
+
+// --- Colors ---
+$color-white: #ffffff;
+$color-black: #1a1a1a;
+$color-bg: #E1DED9;
+$color-bg-light: #fafafa;
+$color-text: #111822; // Updated from Figma
+$color-text-secondary: #6b6b6b;
+$color-accent: #143c3d; // dark-teal / green accent
+$color-accent-light: #3a7d6b;
+$color-border: #e0e0e0;
+$color-dark: #1e2a26; // dark footer / promo
+$color-cta: #1e293b; // dark navy for buttons
+$color-cta-hover: #334155;
+$color-btn-shadow: #2d4748;
+
+// --- Typography ---
+$font-primary: 'Manrope', sans-serif;
+$font-heading: 'Trivia Grotesk X2', 'Syne', 'Inter', sans-serif;
+$font-accent: 'Bad Script', cursive;
+
+$font-size-xs: 0.75rem;   // 12px
+$font-size-sm: 0.875rem;  // 14px
+$font-size-base: 1rem;    // 16px
+$font-size-md: 1.125rem;  // 18px
+$font-size-lg: 1.25rem;   // 20px
+$font-size-xl: 1.5rem;    // 24px
+$font-size-2xl: 2rem;     // 32px
+$font-size-3xl: 2.5rem;   // 40px
+$font-size-4xl: 3rem;     // 48px
+$font-size-5xl: 3.5rem;   // 56px
+$font-size-hero: 5rem;    // 80px
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-black: 900;
+
+$line-height-tight: 1.1;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.7;
+
+$letter-spacing-tight: -0.02em;
+$letter-spacing-normal: 0;
+$letter-spacing-wide: 0.05em;
+$letter-spacing-wider: 0.1em;
+$letter-spacing-widest: 0.2em;
+
+// --- Spacing ---
+$spacing-xs: 0.5rem;   // 8px
+$spacing-sm: 1rem;     // 16px
+$spacing-md: 1.5rem;   // 24px
+$spacing-lg: 2rem;     // 32px
+$spacing-xl: 3rem;     // 48px
+$spacing-2xl: 4rem;    // 64px
+$spacing-3xl: 6rem;    // 96px
+$spacing-4xl: 8rem;    // 128px
+
+// --- Layout ---
+$container-max: 1440px;
+$container-padding: 72px; // Updated from Figma (header margins)
+$container-padding-tablet: 40px;
+$container-padding-mobile: 20px;
+
+// --- Border Radius ---
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 16px;
+$radius-xl: 24px;
+$radius-12: 12px;
+$radius-15: 15px;
+$radius-25: 25px;
+$radius-full: 9999px;
+$radius-80: 80px;
+$radius-200: 200px;
+
+// --- Transitions ---
+$transition-fast: 0.15s ease;
+$transition-base: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// --- Shadows ---
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+
+// --- Breakpoints ---
+$breakpoint-mobile: 375px;
+$breakpoint-mobile-lg: 576px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-desktop-lg: 1280px;
+$breakpoint-desktop-xl: 1440px;
+$breakpoint-desktop-xxl: 1920px;

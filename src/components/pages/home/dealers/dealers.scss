@@ -1,0 +1,88 @@
+// ========================================
+// Dealers Component — Pixel-perfect Figma
+// ========================================
+
+.dealers {
+  padding: 0;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  &__img-wrap {
+    width: 415px;
+    height: 545px;
+    flex-shrink: 0;
+    border-radius: $radius-25;
+    overflow: hidden;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 55px;
+    background: linear-gradient(180deg, #020605 42.74%, #143C3D 58.8%, #4D8582 97.22%);
+    border-radius: $radius-25;
+    height: 545px;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: 32px;
+    font-weight: $font-weight-regular;
+    text-transform: uppercase;
+    line-height: normal;
+    margin-bottom: 36px;
+    max-width: 421px;
+    color: $color-white;
+  }
+
+  &__subtitle {
+    font-family: $font-primary;
+    font-size: 18px;
+    font-weight: $font-weight-regular;
+    color: $color-white;
+    margin-bottom: 24px;
+    line-height: normal;
+  }
+
+  &__tags {
+    display: grid;
+    grid-template-columns: repeat(2, 173px);
+    gap: 12px;
+    margin-bottom: 48px;
+    justify-content: center;
+  }
+
+  &__tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 77px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: $radius-sm;
+    font-family: $font-primary;
+    font-size: 14px;
+    font-weight: $font-weight-regular;
+    text-align: center;
+    padding: 8px 16px;
+    color: $color-white;
+    background-color: transparent;
+  }
+}

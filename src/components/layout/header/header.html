@@ -1,0 +1,109 @@
+  <!-- ==================== HEADER ==================== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <!-- Logo (Left) -->
+      <a href="/" class="header__logo" aria-label="Arpix Share — Головна">
+        <img src="/src/assets/icons/logo.svg" alt="ARPIKS" width="124" height="32" />
+      </a>
+
+      <!-- Functional Group (Right) -->
+      <div class="header__group">
+        <!-- Catalog (Standalone in Intermediate/Desktop) -->
+        <a href="/catalog" class="header__nav-link header__nav-link--catalog">
+          <span class="header__catalog-icon">
+            <span></span><span></span><span></span><span></span>
+          </span>
+          Каталог
+        </a>
+
+        <!-- Intermediate/Mobile Toggle -->
+        <button class="header__mobile-toggle" aria-label="Відкрити меню" aria-expanded="false" aria-controls="header-nav">
+          <div class="header__toggle-burger">
+            <span></span><span></span><span></span>
+          </div>
+          <span class="header__toggle-label">Меню</span>
+        </button>
+
+        <!-- Navigation Dropdown/Drawer -->
+        <nav class="header__nav" id="header-nav" aria-label="Головна навігація">
+          <div class="header__nav-inner">
+            <!-- Mobile-only Nav Header -->
+            <div class="header__nav-header">
+              <button class="header__nav-close" aria-label="Закрити меню"></button>
+              <a href="/" class="header__nav-logo">
+                <img src="/src/assets/icons/logo.svg" alt="ARPIKS" width="100" height="26" />
+              </a>
+              <button class="header__nav-search" aria-label="Пошук">
+                <i class="ph ph-magnifying-glass"></i>
+              </button>
+            </div>
+
+            <div class="header__nav-content">
+              <!-- Catalog Card (Mobile only) -->
+              <a href="/catalog" class="header__nav-catalog-card">
+                <span class="header__catalog-icon">
+                  <span></span><span></span><span></span><span></span>
+                </span>
+                Каталог
+              </a>
+
+              <ul class="header__nav-list">
+                <li class="header__nav-item"><a href="/about" class="header__nav-link">Про Arpix</a></li>
+                <li class="header__nav-item"><a href="/blog" class="header__nav-link">Життя бренду</a></li>
+                <li class="header__nav-item"><a href="/club" class="header__nav-link">Клуб «Стерво»</a></li>
+                <li class="header__nav-item"><a href="/dealers" class="header__nav-link">Диллерам</a></li>
+                <li class="header__nav-item"><a href="/contacts" class="header__nav-link">Контакти</a></li>
+              </ul>
+
+              <a href="#viber" class="header__nav-cta">Написати у Viber</a>
+            </div>
+
+            <!-- Mobile-only footer actions inside nav -->
+            <div class="header__nav-footer">
+              <div class="header__nav-lang" id="mobile-lang-dropdown">
+                 <button class="header__nav-lang-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-lang-list">
+                   <span>Укр</span>
+                   <svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1L5 5L9 1" stroke="#111822" stroke-width="1.5"/></svg>
+                 </button>
+                 <ul class="header__nav-lang-list" id="mobile-lang-list">
+                   <li><button class="header__nav-lang-option active" data-lang="ua">Українська</button></li>
+                   <li><button class="header__nav-lang-option" data-lang="ru">Русский</button></li>
+                   <li><button class="header__nav-lang-option" data-lang="en">English</button></li>
+                   <li><button class="header__nav-lang-option" data-lang="de">Deutsch</button></li>
+                 </ul>
+              </div>
+              <a href="/login" class="header__nav-login">
+                <i class="ph ph-user"></i>
+                Увійти в кабінет
+              </a>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Actions Panel -->
+        <div class="header__actions">
+          <div class="header__lang-dropdown" id="lang-dropdown">
+            <button class="header__lang-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="lang-list">
+              <span>Укр</span>
+              <svg width="8" height="6" viewBox="0 0 8 6" fill="none"><polygon points="0,0 8,0 4,6" fill="#111822"/></svg>
+            </button>
+            <ul class="header__lang-list" id="lang-list">
+              <li class="header__lang-item"><button class="header__lang-option active" data-lang="ua">Українська</button></li>
+              <li class="header__lang-item"><button class="header__lang-option" data-lang="ru">Русский</button></li>
+              <li class="header__lang-item"><button class="header__lang-option" data-lang="en">English</button></li>
+              <li class="header__lang-item"><button class="header__lang-option" data-lang="de">Deutsch</button></li>
+            </ul>
+          </div>
+          <button class="header__action-btn" aria-label="Пошук"><i class="ph ph-magnifying-glass"></i></button>
+          <button class="header__action-btn" aria-label="Кабінет"><i class="ph ph-user"></i></button>
+          <a href="/basket" class="header__cart" aria-label="Кошик">
+            <i class="ph ph-bag"></i>
+            <span class="header__cart-count">2</span>
+          </a>
+        </div>
+
+        <!-- Desktop CTA -->
+        <a href="#viber" class="header__cta">Написати у Viber</a>
+      </div>
+    </div>
+  </header>

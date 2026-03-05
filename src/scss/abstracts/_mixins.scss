@@ -1,0 +1,250 @@
+// ========================================
+// Arpix Share — Mixins
+// ========================================
+@use 'variables' as *;
+
+// --- Breakpoints (Mixed approach for easier adaptation) ---
+@mixin mobile-only {
+  @media (max-width: #{$breakpoint-tablet - 1}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+@mixin desktop-lg {
+  @media (min-width: $breakpoint-desktop-lg) {
+    @content;
+  }
+}
+
+@mixin desktop-xl {
+  @media (min-width: $breakpoint-desktop-xl) {
+    @content;
+  }
+}
+
+@mixin desktop-xxl {
+  @media (min-width: $breakpoint-desktop-xxl) {
+    @content;
+  }
+}
+
+// --- Container ---
+@mixin container {
+  width: 100%;
+  max-width: $container-max;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $container-padding-mobile;
+  padding-right: $container-padding-mobile;
+
+  @include tablet {
+    padding-left: $container-padding-tablet;
+    padding-right: $container-padding-tablet;
+  }
+
+  @include desktop-lg {
+    padding-left: $container-padding;
+    padding-right: $container-padding;
+  }
+}
+
+// --- Typography ---
+@mixin heading-xl {
+  font-family: $font-heading;
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-black;
+  line-height: $line-height-tight;
+  letter-spacing: $letter-spacing-tight;
+  text-transform: uppercase;
+
+  @include tablet {
+    font-size: $font-size-4xl;
+  }
+
+  @include desktop {
+    font-size: $font-size-5xl;
+  }
+
+  @include desktop-xl {
+    font-size: $font-size-hero;
+  }
+}
+
+@mixin heading-lg {
+  font-family: $font-heading;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-black;
+  line-height: $line-height-tight;
+  letter-spacing: $letter-spacing-tight;
+  text-transform: uppercase;
+
+  @include tablet {
+    font-size: $font-size-3xl;
+  }
+
+  @include desktop {
+    font-size: $font-size-4xl;
+  }
+}
+
+@mixin heading-md {
+  font-family: $font-heading;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+
+  @include tablet {
+    font-size: $font-size-2xl;
+  }
+
+  @include desktop {
+    font-size: $font-size-3xl;
+  }
+}
+
+@mixin body-text {
+  font-family: $font-primary;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-relaxed;
+  color: $color-text-secondary;
+
+  @include desktop {
+    font-size: $font-size-base;
+  }
+}
+
+@mixin label-text {
+  font-family: $font-primary;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  letter-spacing: $letter-spacing-wider;
+  text-transform: uppercase;
+  color: $color-text-secondary;
+
+  @include desktop {
+    font-size: $font-size-sm;
+  }
+}
+
+// --- Buttons ---
+@mixin btn-reset {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  outline: none;
+}
+
+@mixin btn-primary {
+  @include btn-reset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-xs;
+  padding: 6px 32px;
+  height: 54px;
+  background-color: $color-accent;
+  color: $color-white;
+  font-size: 14px;
+  font-weight: $font-weight-medium;
+  border-radius: $radius-80;
+  border: 1px solid $color-white;
+  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.64), 0px 0px 0px 1px $color-btn-shadow;
+  transition: all $transition-base;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: lighten($color-accent, 5%);
+  }
+
+  @include desktop {
+    padding: 6px 32px;
+  }
+}
+
+@mixin btn-outline-dark {
+  @include btn-reset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-xs;
+  padding: 6px 32px;
+  height: 54px;
+  background-color: transparent;
+  color: $color-text;
+  font-size: 14px;
+  font-weight: $font-weight-medium;
+  border: 1px solid $color-text;
+  border-radius: $radius-80;
+  transition: all $transition-base;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: $color-text;
+    color: $color-white;
+  }
+}
+
+@mixin btn-outline {
+  @include btn-reset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-xs;
+  padding: 14px 32px;
+  background-color: transparent;
+  color: $color-text;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  border: 1px solid $color-border;
+  border-radius: $radius-full;
+  transition: all $transition-base;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: $color-text;
+    color: $color-white;
+    border-color: $color-text;
+  }
+}
+
+// --- Utility ---
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@mixin aspect-ratio($width, $height) {
+  aspect-ratio: #{$width} / #{$height};
+  object-fit: cover;
+}
+
+@mixin hover-lift {
+  transition: transform $transition-base, box-shadow $transition-base;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+  }
+}

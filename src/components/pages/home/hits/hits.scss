@@ -1,0 +1,140 @@
+// ========================================
+// Hits Component — Pixel-perfect Figma
+// ========================================
+
+.hits {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+
+  &__title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__subtitle {
+    font-family: $font-accent;
+    font-size: 32px;
+    font-style: italic;
+    color: $color-accent;
+  }
+
+  &__dot {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: 40px;
+    font-weight: $font-weight-regular;
+    text-transform: uppercase;
+    line-height: normal;
+  }
+
+  &__cta {
+    flex-shrink: 0;
+  }
+
+  &__grid {
+    display: flex;
+    gap: 8px;
+  }
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  width: 318px;
+  flex-shrink: 0;
+
+  &__image-wrapper {
+    background-color: $color-white;
+    border-radius: $radius-12;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 305px;
+    padding: 24px;
+    overflow: hidden;
+  }
+
+  &__image {
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding-top: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
+    height: 140px;
+  }
+
+  &__text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__title {
+    font-family: $font-primary;
+    font-size: 14px;
+    font-weight: $font-weight-bold;
+    line-height: 1.7;
+    color: $color-text;
+  }
+
+  &__desc {
+    font-family: $font-primary;
+    font-size: 14px;
+    font-weight: $font-weight-regular;
+    color: $color-text;
+    line-height: normal;
+  }
+
+  &__size {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 4px 8px;
+    border-bottom: 0.5px solid $color-text;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  &__price-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 2px;
+    height: 42px;
+  }
+
+  &__price {
+    font-family: $font-primary;
+    font-size: 20px;
+    font-weight: $font-weight-semibold;
+    color: $color-text;
+    line-height: normal;
+  }
+
+  &__currency {
+    font-family: $font-primary;
+    font-size: 14px;
+    font-weight: $font-weight-semibold;
+    color: $color-text;
+    line-height: normal;
+  }
+}

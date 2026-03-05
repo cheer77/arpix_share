@@ -1,0 +1,190 @@
+// ========================================
+// Footer Component — Pixel-perfect Figma
+// ========================================
+
+.footer {
+  background-color: transparent;
+  color: $color-text;
+  padding: 60px 0 0;
+
+  &__inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 72px;
+  }
+
+  &__top {
+    display: flex;
+    gap: 0;
+    margin-bottom: 60px;
+  }
+
+  &__col {
+    flex: 1;
+    min-width: 0;
+
+    &--contacts {
+      flex: 1;
+    }
+  }
+
+  &__col-title {
+    font-family: $font-primary;
+    font-size: 14px;
+    font-weight: $font-weight-bold;
+    margin-bottom: 20px;
+    color: $color-text;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    li a {
+      font-family: $font-primary;
+      font-size: 14px;
+      color: $color-text;
+      font-weight: $font-weight-regular;
+      transition: color $transition-fast;
+
+      &:hover {
+        color: $color-accent;
+      }
+    }
+  }
+
+  &__contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__phone {
+    font-family: $font-primary;
+    font-size: 20px;
+    font-weight: $font-weight-semibold;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: $color-text;
+
+    img {
+      width: 8px;
+      height: 6px;
+    }
+  }
+
+  &__email {
+    font-family: $font-primary;
+    font-size: 14px;
+    font-weight: $font-weight-medium;
+    color: $color-text;
+  }
+
+  &__address {
+    font-family: $font-primary;
+    font-size: 14px;
+    font-weight: $font-weight-medium;
+    color: $color-text;
+    line-height: 1.6;
+  }
+
+  &__time {
+    font-family: $font-primary;
+    font-size: 12px;
+    font-weight: $font-weight-regular;
+    color: $color-text;
+    line-height: 1.6;
+  }
+
+  &__socials {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+
+    img {
+      height: 21px;
+      width: auto;
+    }
+
+    span {
+      font-family: $font-primary;
+      font-size: 12px;
+      color: $color-text;
+      cursor: pointer;
+      transition: color $transition-fast;
+
+      &:hover {
+        color: $color-accent;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 49px;
+    border-top: 1px solid rgba($color-white, 0.1);
+    flex-wrap: nowrap;
+  }
+
+  &__logo-wrap {
+    flex-shrink: 0;
+  }
+
+  &__logos {
+    display: flex;
+    gap: 2px;
+    img {
+      height: 49px;
+      fill: $color-text;
+    }
+  }
+
+  &__logo-full {
+    height: 49px;
+    width: auto;
+  }
+
+  &__policy {
+    display: flex;
+    gap: 32px;
+    a {
+      font-family: $font-primary;
+      font-size: 12px;
+      color: #adadad;
+
+      &:hover {
+        color: $color-text;
+      }
+    }
+  }
+
+  &__payments {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    opacity: 0.4;
+    img {
+      height: 19px;
+      width: auto;
+    }
+  }
+
+  &__payment-label {
+    font-family: $font-primary;
+    font-size: 12px;
+    color: rgba($color-white, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__copyright {
+    font-family: $font-primary;
+    font-size: 12px;
+    color: #adadad;
+    white-space: nowrap;
+  }
+}

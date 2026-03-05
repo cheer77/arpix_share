@@ -1,0 +1,159 @@
+// ========================================
+// Hero Component — Pixel-perfect Figma
+// ========================================
+
+.hero {
+  padding-top: 10px;
+  padding-bottom: 0;
+  position: relative;
+  width: 100%;
+  max-width: 1440px; // Main global container
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+
+  &__inner {
+    position: relative;
+    width: 100%;
+    max-width: 1420px;
+    height: 722px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: $color-white;
+    display: flex;
+    align-items: center;
+    padding: 0 72px;
+
+    @include mobile-only {
+      height: 596px;
+      padding: 0 16px;
+      align-items: flex-start;
+      padding-top: 172px;
+    }
+  }
+
+  &__background {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  &__bg-img {
+    position: absolute;
+    top: -92px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2178px;
+    height: 1225.13px;
+    object-fit: cover;
+    z-index: 1;
+    max-width: none;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 60px;
+    max-width: 734px;
+    width: 100%;
+    height: auto;
+
+    @include mobile-only {
+      gap: 60px;
+    }
+  }
+
+  &__text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+
+    @include mobile-only {
+      gap: 24px;
+    }
+  }
+
+  &__tagline {
+    font-family: $font-heading; // Trivia Grotesk X2 or equivalent
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    color: $color-text;
+    text-transform: uppercase;
+
+    @include mobile-only {
+      font-size: 18px;
+    }
+  }
+
+  &__title {
+    font-family: $font-heading; // Syne
+    font-size: 48px;
+    font-weight: 400; // Regular
+    line-height: normal;
+    letter-spacing: -2px;
+    color: $color-text;
+    text-transform: uppercase;
+    margin: 0;
+
+    @include mobile-only {
+      font-size: 32px;
+    }
+  }
+
+  &__subtitle {
+    font-family: $font-primary; // Manrope
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px; // 133% or 32px
+    color: $color-text;
+
+    @include mobile-only {
+      font-size: 18px;
+    }
+  }
+
+  &__cta {
+    margin-top: 0; // Handled by gap: 32px
+
+    @include mobile-only {
+      width: 100%;
+    }
+  }
+
+  &__product {
+    position: absolute;
+    right: 72px; 
+    bottom: 0;
+    z-index: 2;
+    max-width: 510px;
+    width: 100%;
+
+    @media (max-width: 1440px) {
+      right: 40px;
+    }
+
+    @media (max-width: 1100px) {
+      max-width: 400px;
+    }
+
+    @media (max-width: 980px) {
+      display: none;
+    }
+
+    @include mobile-only {
+      display: none;
+    }
+  }
+
+  &__product-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+}
