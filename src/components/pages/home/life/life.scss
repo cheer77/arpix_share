@@ -32,44 +32,112 @@
     color: $color-text;
   }
 
-  &__grid {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 60px;
+  &__slider {
     width: 100%;
-    justify-content: center;
-    align-items: flex-end;
+    margin-bottom: 60px;
+    padding: 30px 0 60px; // Space for scale/shadows top/bottom, and pagination bottom
+    position: relative;
+    overflow: hidden;
+
+    @media (max-width: $breakpoint-tablet) {
+      margin-bottom: 32px;
+      padding-bottom: 50px;
+    }
+
+    // Instagram-style Pagination (Swiper dynamicBullets out of the box or custom CSS)
+    .swiper-pagination {
+      position: absolute;
+      left: 0;
+      width: 100% !important; // Override Swiper dynamic width: 0px inline style
+      bottom: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4px; // tighter gap for Insta feel
+      z-index: 10;
+      
+      @media (max-width: $breakpoint-tablet) {
+        bottom: 8px;
+      }
+    }
+
+    .swiper-pagination-bullet {
+      width: 6px;
+      height: 6px;
+      background-color: $color-text-secondary;
+      opacity: 0.3;
+      margin: 0 !important;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      transform: scale(0.66); // Default smaller dot
+    }
+
+    .swiper-pagination-bullet-active {
+      opacity: 1;
+      background-color: $color-accent; // Or brand color, typically primary/accent
+      transform: scale(1); // Full size
+    }
+
+    // Swiper adds classes for dynamic trailing dots, 
+    // we can style them roughly if dynamicBullets is enabled in JS
+    .swiper-pagination-bullet-active-main {
+       transform: scale(1); 
+    }
+    .swiper-pagination-bullet-active-prev,
+    .swiper-pagination-bullet-active-next {
+       transform: scale(0.85);
+       opacity: 0.6;
+    }
+    .swiper-pagination-bullet-active-prev-prev,
+    .swiper-pagination-bullet-active-next-next {
+       transform: scale(0.66);
+       opacity: 0.3;
+    }
+  }
+
+  &__slide {
+    width: 322px; // Fixed width for slides
+    height: 572px;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    opacity: 0.5; // Dim inactive slides
+    transform: scale(0.85); // Shrink inactive slides
+
+    @media (max-width: $breakpoint-tablet) {
+      width: 240px;
+      height: 426px; // Maintain roughly same aspect ratio
+    }
+    
+    @media (max-width: 500px) {
+      width: 200px;
+      height: 355px; 
+    }
+
+    // Swiper active slide class
+    &.swiper-slide-active {
+      opacity: 1;
+      transform: scale(1); // Scale up the active center slide
+      z-index: 2;
+    }
   }
 
   &__story {
+    display: block; // Since it's an <a> tag now
     position: relative;
+    width: 100%;
+    height: 100%;
     border-radius: $radius-25;
     overflow: hidden;
-    flex-shrink: 0;
+    box-shadow: $shadow-lg;
+    cursor: pointer;
+    text-decoration: none;
 
-    &--1 {
-      width: 322px;
-      height: 572px;
+    &:focus-visible {
+      outline: 2px solid $color-accent;
+      outline-offset: 2px;
     }
 
-    &--2 {
-      width: 261px;
-      height: 347px;
-    }
-
-    &--3 {
-      width: 166px;
-      height: 222px;
-    }
-
-    &--4 {
-      width: 166px;
-      height: 222px;
-    }
-
-    &--5 {
-      width: 209px;
-      height: 290px;
+    @media (max-width: $breakpoint-tablet) {
+      border-radius: 12px;
     }
   }
 
