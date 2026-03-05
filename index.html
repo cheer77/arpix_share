@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Arpix Share — український бренд нового покоління. Nail матеріали + догляд." />
+  <title>Arpix Share</title>
+
+  <!-- Google Fonts: Manrope, Bad Script & Syne -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Manrope:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css" />
+
+  <!-- Main Entry -->
+  <script type="module" crossorigin src="/arpix_share/assets/index-DHYXBedZ.js"></script>
+  <link rel="stylesheet" crossorigin href="/arpix_share/assets/index-DgzKIY4Z.css">
+</head>
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="header" id="header">
+      <div class="header__inner">
+        <!-- Logo (Left) -->
+        <a href="/" class="header__logo" aria-label="Arpix Share — Головна">
+          <img src="/arpix_share/assets/logo-DEQF-zj_.svg" alt="ARPIKS" width="124" height="32" />
+        </a>
+  
+        <!-- Functional Group (Right) -->
+        <div class="header__group">
+          <!-- Catalog (Standalone in Intermediate/Desktop) -->
+          <a href="/catalog" class="header__nav-link header__nav-link--catalog">
+            <span class="header__catalog-icon">
+              <span></span><span></span><span></span><span></span>
+            </span>
+            Каталог
+          </a>
+  
+          <!-- Intermediate/Mobile Toggle -->
+          <button class="header__mobile-toggle" aria-label="Відкрити меню" aria-expanded="false" aria-controls="header-nav">
+            <div class="header__toggle-burger">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="header__toggle-label">Меню</span>
+          </button>
+  
+          <!-- Navigation Dropdown/Drawer -->
+          <nav class="header__nav" id="header-nav" aria-label="Головна навігація">
+            <div class="header__nav-inner">
+              <!-- Mobile-only Nav Header -->
+              <div class="header__nav-header">
+                <button class="header__nav-close" aria-label="Закрити меню"></button>
+                <a href="/" class="header__nav-logo">
+                  <img src="/arpix_share/assets/logo-DEQF-zj_.svg" alt="ARPIKS" width="100" height="26" />
+                </a>
+                <button class="header__nav-search" aria-label="Пошук">
+                  <i class="ph ph-magnifying-glass"></i>
+                </button>
+              </div>
+  
+              <div class="header__nav-content">
+                <!-- Catalog Card (Mobile only) -->
+                <a href="/catalog" class="header__nav-catalog-card">
+                  <span class="header__catalog-icon">
+                    <span></span><span></span><span></span><span></span>
+                  </span>
+                  Каталог
+                </a>
+  
+                <ul class="header__nav-list">
+                  <li class="header__nav-item"><a href="/about" class="header__nav-link">Про Arpix</a></li>
+                  <li class="header__nav-item"><a href="/blog" class="header__nav-link">Життя бренду</a></li>
+                  <li class="header__nav-item"><a href="/club" class="header__nav-link">Клуб «Стерво»</a></li>
+                  <li class="header__nav-item"><a href="/dealers" class="header__nav-link">Диллерам</a></li>
+                  <li class="header__nav-item"><a href="/contacts" class="header__nav-link">Контакти</a></li>
+                </ul>
+  
+                <a href="#viber" class="header__nav-cta">Написати у Viber</a>
+              </div>
+  
+              <!-- Mobile-only footer actions inside nav -->
+              <div class="header__nav-footer">
+                <div class="header__nav-lang" id="mobile-lang-dropdown">
+                   <button class="header__nav-lang-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-lang-list">
+                     <span>Укр</span>
+                     <svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1L5 5L9 1" stroke="#111822" stroke-width="1.5"/></svg>
+                   </button>
+                   <ul class="header__nav-lang-list" id="mobile-lang-list">
+                     <li><button class="header__nav-lang-option active" data-lang="ua">Українська</button></li>
+                     <li><button class="header__nav-lang-option" data-lang="ru">Русский</button></li>
+                     <li><button class="header__nav-lang-option" data-lang="en">English</button></li>
+                     <li><button class="header__nav-lang-option" data-lang="de">Deutsch</button></li>
+                   </ul>
+                </div>
+                <a href="/login" class="header__nav-login">
+                  <i class="ph ph-user"></i>
+                  Увійти в кабінет
+                </a>
+              </div>
+            </div>
+          </nav>
+  
+          <!-- Actions Panel -->
+          <div class="header__actions">
+            <div class="header__lang-dropdown" id="lang-dropdown">
+              <button class="header__lang-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="lang-list">
+                <span>Укр</span>
+                <svg width="8" height="6" viewBox="0 0 8 6" fill="none"><polygon points="0,0 8,0 4,6" fill="#111822"/></svg>
+              </button>
+              <ul class="header__lang-list" id="lang-list">
+                <li class="header__lang-item"><button class="header__lang-option active" data-lang="ua">Українська</button></li>
+                <li class="header__lang-item"><button class="header__lang-option" data-lang="ru">Русский</button></li>
+                <li class="header__lang-item"><button class="header__lang-option" data-lang="en">English</button></li>
+                <li class="header__lang-item"><button class="header__lang-option" data-lang="de">Deutsch</button></li>
+              </ul>
+            </div>
+            <button class="header__action-btn" aria-label="Пошук"><i class="ph ph-magnifying-glass"></i></button>
+            <button class="header__action-btn" aria-label="Кабінет"><i class="ph ph-user"></i></button>
+            <a href="/basket" class="header__cart" aria-label="Кошик">
+              <i class="ph ph-bag"></i>
+              <span class="header__cart-count">2</span>
+            </a>
+          </div>
+  
+          <!-- Desktop CTA -->
+          <a href="#viber" class="header__cta">Написати у Viber</a>
+        </div>
+      </div>
+    </header>
+
+  <main class="main" id="main">
+
+        <!-- ==================== HERO ==================== -->
+        <section class="hero section">
+          <div class="hero__inner container">
+            <div class="hero__background">
+              <img src="/arpix_share/assets/hero-bg-BCLtIsdL.png" alt="ARPIKS Background" class="hero__bg-img" />
+            </div>
+            <div class="hero__content">
+              <div class="hero__text-group">
+                <p class="hero__tagline">Бренд нового покоління. Nail матеріали + догляд</p>
+                <h1 class="hero__title">КРАСА ДЛЯ РОЗУМНИХ</h1>
+                <p class="hero__subtitle">Формули, які работают. Якість, яка не змінюється</p>
+              </div>
+              <a href="/catalog" class="hero__cta btn-primary">Перейти до каталогу</a>
+            </div>
+            <div class="hero__product">
+              <img src="/arpix_share/assets/hero-product-BHodJHKt.png" alt="Hero Product" class="hero__product-img"/>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== BENEFITS ==================== -->
+        <section class="benefits section">
+          <div class="benefits__inner container">
+            <ul class="benefits__list">
+              <li class="benefits__item">
+                <div class="benefits__item-img-wrap">
+                  <img class="benefits__item-img" src="/arpix_share/assets/benefit-1-Dat5wTRz.png" alt="Benefit 1" />
+                </div>
+                <span class="benefits__item-title">Результати демонструють реальні звичайні люди</span>
+              </li>
+              <li class="benefits__item">
+                <div class="benefits__item-img-wrap">
+                  <img class="benefits__item-img" src="/arpix_share/assets/benefit-2-BY4fMEFN.png" alt="Benefit 2" />
+                </div>
+                <span class="benefits__item-title">Не запускаємо в продаж до ідеального результату</span>
+              </li>
+              <li class="benefits__item">
+                <div class="benefits__item-img-wrap">
+                  <img class="benefits__item-img" src="/arpix_share/assets/benefit-3-CF10XbMJ.png" alt="Benefit 3" />
+                </div>
+                <span class="benefits__item-title">Тестуємо на рідних і друзяx</span>
+              </li>
+              <li class="benefits__item">
+                <div class="benefits__item-img-wrap">
+                  <img class="benefits__item-img" src="/arpix_share/assets/benefit-4-WktOOP0n.png" alt="Benefit 4" />
+                </div>
+                <span class="benefits__item-title">Догляд і nail-матеріали як одна система</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ==================== ABOUT ==================== -->
+        <section class="about section">
+          <div class="about__inner container">
+            <div class="about__header">
+              <h2 class="about__title">ARPIKS — УКРАЇНСЬКИЙ БРЕНД НОВОГО ПОКОЛІННЯ</h2>
+              <a href="/about" class="about__link btn-outline-dark">
+                Детальніше про бренд 
+                <svg width="15" height="8" viewBox="0 0 15 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14.3536 4.35355C14.5488 4.15829 14.5488 3.84171 14.3536 3.64645L11.1716 0.464466C10.9763 0.269204 10.6597 0.269204 10.4645 0.464466C10.2692 0.659728 10.2692 0.976311 10.4645 1.17157L13.2929 4L10.4645 6.82843C10.2692 7.02369 10.2692 7.34027 10.4645 7.53553C10.6597 7.7308 10.9763 7.7308 11.1716 7.53553L14.3536 4.35355ZM0 4.5H14V3.5H0V4.5Z" fill="currentColor"/>
+                </svg>
+              </a>
+            </div>
+            <div class="about__text-columns">
+              <p class="about__text-left">
+                Бренд– народжений у непростий час. Звик долати труднощі та допомагати. Ми створюємо, а не копіюємо. Матеріали для нейл-сфери та доглядова косметики професійного рівня.<br/>Ефективні і працюючі склади.
+              </p>
+              <p class="about__text-right">
+                Наша ціна зараз нижча — це стартова ціна входу на ринок. Ми завжди чесні. Якість – завжди висока. 
+              </p>
+            </div>
+            <div class="about__banner-wrapper">
+              <img src="/arpix_share/assets/about-banner-B-Fziw4s.png" alt="ARPIKS About Banner" class="about__banner-img" />
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== HITS ==================== -->
+        <section class="hits section">
+          <div class="hits__inner container">
+            <div class="hits__header">
+              <div class="hits__title-wrapper">
+                <span class="hits__subtitle">Хіти</span>
+                <img src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2013%2013'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20id='Ellipse%203'%20cx='6.5'%20cy='6.5'%20r='6.5'%20fill='var(--fill-0,%20%23143C3D)'/%3e%3c/svg%3e" alt="" class="hits__dot" />
+                <h2 class="hits__title">Те, що обирають</h2>
+              </div>
+              <a href="/catalog" class="hits__cta btn-primary">Перейти до каталогу</a>
+            </div>
+            <div class="hits__grid">
+              <article class="product-card">
+                <div class="product-card__image-wrapper">
+                  <img src="/arpix_share/assets/product-1-B3zGjaYv.png" alt="База LUMOS" class="product-card__image" />
+                </div>
+                <div class="product-card__info">
+                  <div class="product-card__text-group">
+                    <h3 class="product-card__title">База LUMOS</h3>
+                    <p class="product-card__desc">LUMOS база світиться у темряві , молочна айворі № 2</p>
+                  </div>
+                  <div class="product-card__size">60 ml 
+                    <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="product-card__price-wrapper">
+                  <span class="product-card__price">310</span>
+                  <span class="product-card__currency">грн</span>
+                </div>
+              </article>
+              <article class="product-card">
+                <div class="product-card__image-wrapper">
+                  <img src="/arpix_share/assets/product-2-uVNvOWzN.png" alt="База LUMOS" class="product-card__image" />
+                </div>
+                <div class="product-card__info">
+                  <div class="product-card__text-group">
+                    <h3 class="product-card__title">База LUMOS</h3>
+                    <p class="product-card__desc">LUMOS база світиться у темряві , молочна айворі № 2</p>
+                  </div>
+                  <div class="product-card__size">60 ml <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"/></svg></div>
+                </div>
+                <div class="product-card__price-wrapper">
+                  <span class="product-card__price">310</span>
+                  <span class="product-card__currency">грн</span>
+                </div>
+              </article>
+              <article class="product-card">
+                <div class="product-card__image-wrapper">
+                  <img src="/arpix_share/assets/product-3-CHR4W9BH.png" alt="База LUMOS" class="product-card__image" />
+                </div>
+                <div class="product-card__info">
+                  <div class="product-card__text-group">
+                    <h3 class="product-card__title">База LUMOS</h3>
+                    <p class="product-card__desc">LUMOS база світиться у темряві , молочна айворі № 2</p>
+                  </div>
+                  <div class="product-card__size">60 ml <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"/></svg></div>
+                </div>
+                <div class="product-card__price-wrapper">
+                  <span class="product-card__price">310</span>
+                  <span class="product-card__currency">грн</span>
+                </div>
+              </article>
+              <article class="product-card">
+                <div class="product-card__image-wrapper">
+                  <img src="/arpix_share/assets/product-4-VchSns43.png" alt="База LUMOS" class="product-card__image" />
+                </div>
+                <div class="product-card__info">
+                  <div class="product-card__text-group">
+                    <h3 class="product-card__title">База LUMOS</h3>
+                    <p class="product-card__desc">LUMOS база світиться у темряві , молочна айворі № 2</p>
+                  </div>
+                  <div class="product-card__size">60 ml <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"/></svg></div>
+                </div>
+                <div class="product-card__price-wrapper">
+                  <span class="product-card__price">310</span>
+                  <span class="product-card__currency">грн</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== LIFE ==================== -->
+        <section class="life">
+          <div class="life__inner container">
+            <h2 class="life__title">ЖитТЯ ARPIKS</h2>
+            <p class="life__desc">Тут не про ідеальні кадри.<br/>Тут про реальну роботу.<br/>Ми не ідеальні. Ми відповідальні.</p>
+            
+            <div class="life__grid">
+              <div class="life__story life__story--1">
+                <img src="/arpix_share/assets/life-img1-Cx43h6Qj.png" alt="" class="life__img" />
+                <img src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2093%2093'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Frame%20427322394'%3e%3crect%20x='0.5'%20y='0.5'%20width='92'%20height='92'%20rx='46'%20fill='var(--fill-0,%20white)'%20fill-opacity='0.4'/%3e%3crect%20x='0.5'%20y='0.5'%20width='92'%20height='92'%20rx='46'%20stroke='var(--stroke-0,%20white)'/%3e%3cpath%20id='Polygon%202'%20d='M58.5%2048.232C59.8333%2047.4622%2059.8333%2045.5377%2058.5%2044.7679L42%2035.2417C40.6667%2034.4719%2039%2035.4341%2039%2036.9737V56.0263C39%2057.5659%2040.6667%2058.5281%2042%2057.7583L58.5%2048.232Z'%20fill='var(--fill-0,%20white)'/%3e%3c/g%3e%3c/svg%3e" alt="Play" class="life__play-btn" />
+              </div>
+              <div class="life__story life__story--2">
+                <img src="/arpix_share/assets/life-img2-35ve4ru7.png" alt="" class="life__img" />
+                <img src="/arpix_share/assets/life-img3-BqWjzMMV.png" alt="" class="life__img life__img--secondary" />
+              </div>
+              <div class="life__story life__story--3">
+                <img src="/arpix_share/assets/life-img6-WhPMX3k4.png" alt="" class="life__img" />
+              </div>
+              <div class="life__story life__story--4">
+                <img src="/arpix_share/assets/life-img2-35ve4ru7.png" alt="" class="life__img" />
+                <img src="/arpix_share/assets/life-img4-CO64VQvl.png" alt="" class="life__img life__img--secondary" />
+              </div>
+              <div class="life__story life__story--5">
+                <img src="/arpix_share/assets/life-img2-35ve4ru7.png" alt="" class="life__img" />
+                <img src="/arpix_share/assets/life-img5-B_SwRifo.png" alt="" class="life__img life__img--secondary" />
+              </div>
+            </div>
+    
+            <a href="/life" class="life__link btn-outline-dark">
+              Детальніше про життя бренду 
+              <svg width="15" height="8" viewBox="0 0 15 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.3536 4.35355C14.5488 4.15829 14.5488 3.84171 14.3536 3.64645L11.1716 0.464466C10.9763 0.269204 10.6597 0.269204 10.4645 0.464466C10.2692 0.659728 10.2692 0.976311 10.4645 1.17157L13.2929 4L10.4645 6.82843C10.2692 7.02369 10.2692 7.34027 10.4645 7.53553C10.6597 7.7308 10.9763 7.7308 11.1716 7.53553L14.3536 4.35355ZM0 4.5H14V3.5H0V4.5Z" fill="currentColor"/>
+              </svg>
+            </a>
+          </div>
+        </section>
+
+        <!-- ==================== FEATURES ==================== -->
+        <section class="features section">
+          <div class="features__inner container">
+            <div class="features__header">
+              <h2 class="features__title">Ми не женемося за трендами.<br/>Ми їх створюємо.</h2>
+              <p class="features__subtitle">ARPIKS — коли вміст важливіший за упаковку</p>
+            </div>
+            <div class="features__interactive">
+              <div class="features__center-image">
+                <img src="/arpix_share/assets/features-product-Cfz4ArJY.png" alt="ARPIKS Product" />
+              </div>
+              
+              <div class="features__point features__point--1">
+                <span class="features__point-text">Натуральні інгрідієнти</span>
+              </div>
+              <div class="features__point features__point--2">
+                <span class="features__point-text">Ефективні активні компоненти</span>
+              </div>
+              <div class="features__point features__point--3">
+                <span class="features__point-text">Протестовані товари доведені до ідеалу</span>
+              </div>
+              <div class="features__point features__point--4">
+                <span class="features__point-text">Перевірені досвідом формули</span>
+              </div>
+              <div class="features__point features__point--5">
+                <span class="features__point-text">Унікальні склади у кожному засобі</span>
+              </div>
+              <div class="features__point features__point--6">
+                <span class="features__point-text">Відсутність критичної хімії у складі</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== DEALERS ==================== -->
+        <section class="dealers">
+          <div class="dealers__inner">
+            <div class="dealers__img-wrap dealers__img-wrap--left">
+              <img src="/arpix_share/assets/dealer-left-DpN_SWmv.png" alt="" class="dealers__img" />
+            </div>
+            <div class="dealers__content">
+              <h2 class="dealers__title">Станьте дилером ARPIKS</h2>
+              <p class="dealers__subtitle">Продукція за якою повертаються</p>
+              <div class="dealers__tags">
+                <div class="dealers__tag">стартові пакети</div>
+                <div class="dealers__tag">тестери</div>
+                <div class="dealers__tag">вища маржа</div>
+                <div class="dealers__tag">контент і підтримка</div>
+              </div>
+              <a href="/dealer-info" class="dealers__cta btn-primary">Отримати умови співпраці</a>
+            </div>
+            <div class="dealers__img-wrap dealers__img-wrap--right">
+              <img src="/arpix_share/assets/dealer-right-CmByQDkJ.png" alt="" class="dealers__img" />
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== CLUB ==================== -->
+        <section class="club section">
+          <div class="club__inner container">
+            <div class="club__content">
+              <div class="club__info">
+                <h2 class="club__title">Закрита спільнота розумних і гарних</h2>
+                <p class="club__subtitle">Дозволь собі бути не ідеальною</p>
+                <p class="club__list">Доступ. Бонуси.<br/>Закриті можливості.<br/>Спілкування.<br/>Зустрічі.<br/>Користь.</p>
+              </div>
+              <a href="/club-join" class="club__cta btn-primary">Вступити до клубу</a>
+            </div>
+            <div class="club__banner">
+              <img src="/arpix_share/assets/club-bg-CHdmZzo4.png" alt="" class="club__bg" />
+              <h2 class="club__banner-title">Клуб “Стерво”</h2>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== OFFER ==================== -->
+        <section class="offer section">
+          <div class="offer__inner container">
+            <div class="offer__content">
+              <div class="offer__logos">
+                <img src="/arpix_share/assets/logo-DEQF-zj_.svg" alt="ARPIKS" class="offer__logo-full"/>
+              </div>
+              <h2 class="offer__title">спробуйте - Далі все зрозуміло</h2>
+              <p class="offer__subtitle">Розумна краса, яка працює</p>
+            </div>
+            <a href="/catalog" class="offer__cta btn-primary">Перейти до каталогу</a>
+          </div>
+        </section>
+
+  </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+      <div class="footer__inner container">
+        <div class="footer__top">
+          <div class="footer__col">
+            <h4 class="footer__col-title">Покупцям</h4>
+            <ul class="footer__list">
+              <li><a href="/club">Клуб “Стерво”</a></li>
+              <li><a href="/dealers">Офіційні представники</a></li>
+              <li><a href="/promo">Акції</a></li>
+              <li><a href="/delivery">Доставка і Оплата</a></li>
+              <li><a href="/returns">Повернення</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Каталог</h4>
+            <ul class="footer__list">
+              <li><a href="/bases">Бази</a></li>
+              <li><a href="/tops">Топи</a></li>
+              <li><a href="/gels">Гелі</a></li>
+              <li><a href="/gel-polish">Гель-лаки</a></li>
+              <li><a href="/decor">Декор</a></li>
+              <li><a href="/tools">Інструменти</a></li>
+              <li><a href="/helpers">Допоміжні матеріали</a></li>
+              <li><a href="/dip">Дип.система</a></li>
+              <li><a href="/care">Догляд</a></li>
+              <li><a href="/sets">Набори</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Партнерам</h4>
+            <ul class="footer__list">
+              <li><a href="/terms">Умови співпраці</a></li>
+              <li><a href="/dealer-info">Станьте дилером ARPIKS</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4 class="footer__col-title">Arpiks</h4>
+            <ul class="footer__list">
+              <li><a href="/life">Життя ARPIKS</a></li>
+              <li><a href="/about">Про бренд</a></li>
+              <li><a href="/blog">Блог</a></li>
+              <li><a href="/contacts">Контакти</a></li>
+            </ul>
+          </div>
+          <div class="footer__col footer__col--contacts">
+            <h4 class="footer__col-title">Контакти</h4>
+            <div class="footer__contact-info">
+              <a href="tel:+380951020995" class="footer__phone">+38 095 102 09 95</a>
+              <a href="mailto:info@nailapex.ua" class="footer__email">info@nailapex.ua</a>
+              <p class="footer__address">Київ, вул. Евгенія Маланюка, 55/2, приміщення 3</p>
+              <div class="footer__time">Пн-Пт: 10-17<br/>Сб-Нд: вихідні</div>
+              <div class="footer__socials">
+                <span>Telegram</span>
+                <span>WhatsApp</span>
+                <span>YouTube</span>
+                <span>Instagram</span>
+                <span>Facebook</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="footer__logo-wrap">
+            <div class="footer__logos">
+               <img src="/arpix_share/assets/logo-DEQF-zj_.svg" alt="ARPIKS" class="footer__logo-full"/>
+            </div>
+          </div>
+          <div class="footer__policy">
+            <a href="/privacy">Політика конфіденційності</a>
+            <a href="/offer-terms">Договір оферти</a>
+          </div>
+          <div class="footer__payments">
+            <span class="footer__payment-label">Visa</span>
+            <span class="footer__payment-label">Apple Pay</span>
+            <span class="footer__payment-label">Mastercard</span>
+          </div>
+          <div class="footer__copyright">
+            © ARPIKS, Україна
+          </div>
+        </div>
+      </div>
+    </footer>
+
+</body>
+</html>
