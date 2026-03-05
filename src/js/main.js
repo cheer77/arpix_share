@@ -22,12 +22,10 @@ import '../components/layout/footer/footer.scss';
 import { initHeader } from './components/header.js';
 import { initScrollAnimations } from './animations/scroll-animations.js';
 import { initProductCards } from './components/product-card.js';
-import { initProductsSlider } from './components/products-slider.js';
 
 // --- Init ---
 document.addEventListener('DOMContentLoaded', () => {
   if (typeof initHeader === 'function') initHeader();
   if (typeof initScrollAnimations === 'function') initScrollAnimations();
   if (typeof initProductCards === 'function') initProductCards();
-  if (typeof initProductsSlider === 'function') initProductsSlider();
 });
