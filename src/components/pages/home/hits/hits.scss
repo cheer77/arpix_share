@@ -8,6 +8,12 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 60px;
+
+    @media (max-width: $breakpoint-tablet) {
+      margin-bottom: 32px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
   }
 
   &__title-wrapper {
@@ -21,12 +27,21 @@
     font-size: 32px;
     font-style: italic;
     color: $color-accent;
+    
+    @media (max-width: $breakpoint-tablet) {
+      font-size: 24px;
+    }
   }
 
   &__dot {
     width: 13px;
     height: 13px;
     flex-shrink: 0;
+    
+    @media (max-width: $breakpoint-tablet) {
+      width: 8px;
+      height: 8px;
+    }
   }
 
   &__title {
@@ -35,33 +50,89 @@
     font-weight: $font-weight-regular;
     text-transform: uppercase;
     line-height: normal;
+
+    @media (max-width: $breakpoint-tablet) {
+      font-size: 24px;
+    }
   }
 
   &__cta {
     flex-shrink: 0;
+    
+    @media (max-width: $breakpoint-tablet) {
+      display: none; // Based on general mobile patterns where CTA might move or just be hidden if space is tight. We can adjust this if the Figma shows it explicitly, but usually desktop headers wrap or hide the CTA.
+      // Wait, let's keep it but make it full width if it wraps on mobile
+      display: inline-flex;
+      order: 3;
+      width: 100%;
+      margin-top: 16px;
+    }
   }
 
   &__grid {
-    display: flex;
-    gap: 8px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center;
+    gap: 24px; // Spacing on desktop
+
+    @media (max-width: $breakpoint-tablet) {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+    }
   }
 }
 
 .product-card {
   display: flex;
   flex-direction: column;
-  width: 318px;
+  width: 100%;
+  max-width: 318px;
   flex-shrink: 0;
+  background-color: $color-white;
+  border-radius: $radius-12;
+  transition: box-shadow $transition-base, transform $transition-base;
+  padding-bottom: 24px;
+
+  @media (max-width: $breakpoint-tablet) {
+    max-width: 280px;
+    padding-bottom: 16px;
+  }
 
   &__image-wrapper {
-    background-color: $color-white;
-    border-radius: $radius-12;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 305px;
     padding: 24px;
     overflow: hidden;
+    border-radius: $radius-12 $radius-12 0 0;
+
+    @media (max-width: $breakpoint-tablet) {
+      height: 200px;
+      padding: 16px;
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 3px 6px;
+    font-family: $font-primary;
+    font-size: 10px;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    line-height: normal;
+    background-color: $color-white;
+    border: 0.5px solid $color-text;
+    border-radius: $radius-sm;
+    color: $color-text;
+    z-index: 2;
   }
 
   &__image {
@@ -79,6 +150,14 @@
     padding-left: 24px;
     padding-right: 24px;
     height: 140px;
+
+    @media (max-width: $breakpoint-tablet) {
+      padding-left: 12px;
+      padding-right: 12px;
+      gap: 12px;
+      height: auto;
+      margin-bottom: 20px;
+    }
   }
 
   &__text-group {
@@ -93,6 +172,10 @@
     font-weight: $font-weight-bold;
     line-height: 1.7;
     color: $color-text;
+    
+    @media (max-width: $breakpoint-tablet) {
+      line-height: 1.5;
+    }
   }
 
   &__desc {
@@ -103,23 +186,108 @@
     line-height: normal;
   }
 
-  &__size {
+  &__dropdown {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__dropdown-trigger {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     padding: 4px 8px;
+    border: none;
     border-bottom: 0.5px solid $color-text;
+    background: transparent;
+    font-family: $font-primary;
     font-size: 14px;
     line-height: 1.7;
+    color: $color-text;
+    cursor: pointer;
+    transition: all $transition-fast;
+
+    svg {
+      transition: transform $transition-fast;
+    }
+
+    &[aria-expanded="true"] svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__dropdown-list {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $color-white;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    box-shadow: $shadow-sm;
+    min-width: 80px;
+    padding: 4px 0;
+    margin: 0;
+    list-style: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: all $transition-fast;
+    z-index: 10;
+    
+    // Quick visibility toggle handled by JS class or attribute
+    .product-card__dropdown.is-open & {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    li {
+      padding: 6px 12px;
+      font-family: $font-primary;
+      font-size: 14px;
+      color: $color-text;
+      cursor: pointer;
+      text-align: center;
+      transition: background-color $transition-fast;
+
+      &:hover {
+        background-color: $color-bg;
+      }
+
+      &[aria-selected="true"] {
+        font-weight: $font-weight-bold;
+        background-color: $color-bg-light;
+      }
+    }
   }
 
   &__price-wrapper {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 42px;
+    padding: 0 16px;
+
+    @media (max-width: $breakpoint-tablet) {
+      padding: 0 8px;
+    }
+  }
+
+  &__price-group {
+    display: flex;
     align-items: flex-end;
     justify-content: center;
-    gap: 2px;
-    height: 42px;
+    gap: 6px;
+    flex-grow: 1;
+  }
+
+  &__price-old {
+    font-family: $font-primary;
+    font-size: 14px;
+    color: #949494; // fallback grey
+    text-decoration: line-through;
+    margin-bottom: 2px;
   }
 
   &__price {
@@ -128,6 +296,10 @@
     font-weight: $font-weight-semibold;
     color: $color-text;
     line-height: normal;
+    
+    @media (max-width: $breakpoint-tablet) {
+      font-size: 18px;
+    }
   }
 
   &__currency {
@@ -136,5 +308,83 @@
     font-weight: $font-weight-semibold;
     color: $color-text;
     line-height: normal;
+    margin-bottom: 1px;
+  }
+
+  &__action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid $color-text;
+    background: transparent;
+    color: $color-text;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    
+    i, svg {
+      font-size: 18px;
+    }
+    
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(4px);
+
+    @media (max-width: 980px) {
+      opacity: 1;
+      pointer-events: auto;
+      transform: none;
+    }
+    
+    &--cart {
+      position: relative;
+      background-color: $color-text;
+      color: $color-white;
+      
+      @media (max-width: 980px) {
+        background-color: $color-text; // ensure visible on mobile
+      }
+      
+      .product-card__cart-count {
+        display: none;
+        font-family: $font-primary;
+        font-size: 12px;
+        font-weight: $font-weight-bold;
+        color: $color-white;
+      }
+      
+      &.is-added {
+        background-color: $color-accent;
+        border-color: $color-accent;
+        
+        i, svg {
+          display: none;
+        }
+        
+        .product-card__cart-count {
+          display: block;
+        }
+      }
+    }
+
+    &:hover:not(.is-added) {
+      background-color: $color-accent;
+      color: $color-white;
+      border-color: $color-accent;
+    }
+  }
+
+  &:hover {
+    box-shadow: $shadow-lg;
+    transform: translateY(-4px);
+
+    .product-card__action {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
   }
 }
