@@ -27,11 +27,23 @@
     position: relative;
     padding: 90px 22px;
     min-height: 742px;
+
+    @media (max-width: $breakpoint-tablet) {
+      width: 100%;
+      min-height: auto;
+      padding: 60px 20px 40px;
+      // Change mask to be on top-center for mobile layout
+      mask-image: radial-gradient(circle at top center, transparent 45px, black 46px);
+      -webkit-mask-image: radial-gradient(circle at top center, transparent 45px, black 46px);
+      border-radius: 0 0 $radius-25 $radius-25;
+    }
   }
 
   &__info {
     display: flex;
     flex-direction: column;
+    align-items: center; // Center horizontally
+    text-align: center;  // Center text
     gap: 0;
     max-width: 604px;
     width: 100%;
@@ -44,8 +56,14 @@
     line-height: normal;
     text-transform: uppercase;
     letter-spacing: -2px;
-    margin-bottom: 40px;
+    margin-bottom: 24px; // tighter spacing based on screenshot
     color: $color-text;
+
+    @media (max-width: $breakpoint-tablet) {
+      font-size: 28px;
+      margin-bottom: 24px;
+      letter-spacing: -1px;
+    }
   }
 
   &__subtitle {
@@ -53,8 +71,12 @@
     font-size: 20px;
     font-weight: $font-weight-regular;
     color: $color-text;
-    margin-bottom: 42px;
+    margin-bottom: 32px; // tighter spacing based on screenshot
     line-height: normal;
+
+    @media (max-width: $breakpoint-tablet) {
+      font-size: 16px;
+    }
   }
 
   &__list {
@@ -62,11 +84,21 @@
     font-size: 16px;
     line-height: 1.8;
     color: $color-text;
-    margin-bottom: 88px;
+    margin-bottom: 48px; // tighter spacing based on screenshot
+
+    @media (max-width: $breakpoint-tablet) {
+      margin-bottom: 48px;
+      font-size: 14px;
+    }
   }
 
   &__cta {
     align-self: center;
+
+    @media (max-width: $breakpoint-tablet) {
+      width: 100%;
+      max-width: 380px;
+    }
   }
 
   // Right panel — banner image
@@ -76,6 +108,19 @@
     border-radius: $radius-25;
     overflow: hidden;
     min-height: 742px;
+
+    @media (max-width: $breakpoint-tablet) {
+      order: -1; // Place image on top
+      min-height: 400px;
+      height: 400px;
+      width: 100%;
+      border-radius: $radius-25 $radius-25 0 0;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      min-height: 320px;
+      height: 320px;
+    }
   }
 
   &__bg {
@@ -97,5 +142,20 @@
     text-align: center;
     width: 397px;
     letter-spacing: -6px;
+
+    @media (max-width: $breakpoint-desktop) {
+      font-size: 96px;
+      width: 100%;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      font-size: 72px;
+      letter-spacing: -4px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 56px;
+      letter-spacing: -2px;
+    }
   }
 }

@@ -199,6 +199,29 @@
   }
 }
 
+@mixin btn-dark {
+  @include btn-reset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-xs;
+  padding: 6px 32px;
+  min-height: 54px;
+  background-color: $color-black;
+  color: $color-white;
+  font-size: 14px;
+  font-weight: $font-weight-medium;
+  border: 1px solid $color-black;
+  border-radius: $radius-80;
+  transition: all $transition-base;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: transparent;
+    color: $color-black;
+  }
+}
+
 @mixin btn-outline {
   @include btn-reset;
   display: inline-flex;
