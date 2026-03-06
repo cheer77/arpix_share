@@ -15,8 +15,8 @@
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css" />
 
   <!-- Main Entry -->
-  <script type="module" crossorigin src="/arpix_share/assets/index-DHYXBedZ.js"></script>
-  <link rel="stylesheet" crossorigin href="/arpix_share/assets/index-DgzKIY4Z.css">
+  <script type="module" crossorigin src="/arpix_share/assets/index-DsQ7P_DD.js"></script>
+  <link rel="stylesheet" crossorigin href="/arpix_share/assets/index-DY6yInjh.css">
 </head>
 <body>
 
@@ -222,8 +222,10 @@
               <a href="/catalog" class="hits__cta btn-primary">Перейти до каталогу</a>
             </div>
             <div class="hits__grid">
+              <!-- CARD 1 -->
               <article class="product-card">
                 <div class="product-card__image-wrapper">
+                  <span class="product-card__badge product-card__badge--bestseller">BESTSELLER</span>
                   <img src="/arpix_share/assets/product-1-B3zGjaYv.png" alt="База LUMOS" class="product-card__image" />
                 </div>
                 <div class="product-card__info">
@@ -231,19 +233,39 @@
                     <h3 class="product-card__title">База LUMOS</h3>
                     <p class="product-card__desc">LUMOS база світиться у темряві , молочна айворі № 2</p>
                   </div>
-                  <div class="product-card__size">60 ml 
-                    <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"/>
-                    </svg>
+                  <div class="product-card__dropdown">
+                    <button class="product-card__dropdown-trigger" aria-haspopup="listbox" aria-expanded="false">
+                      <span>60 ml</span>
+                      <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"/>
+                      </svg>
+                    </button>
+                    <ul class="product-card__dropdown-list" role="listbox">
+                      <li role="option" aria-selected="true" data-value="60">60 ml</li>
+                      <li role="option" aria-selected="false" data-value="30">30 ml</li>
+                      <li role="option" aria-selected="false" data-value="15">15 ml</li>
+                    </ul>
                   </div>
                 </div>
                 <div class="product-card__price-wrapper">
-                  <span class="product-card__price">310</span>
-                  <span class="product-card__currency">грн</span>
+                  <button class="product-card__action product-card__action--heart" aria-label="Додати в улюблене">
+                    <i class="ph ph-heart"></i>
+                  </button>
+                  <div class="product-card__price-group">
+                    <span class="product-card__price">310</span>
+                    <span class="product-card__currency">грн</span>
+                  </div>
+                  <button class="product-card__action product-card__action--cart" aria-label="Додати в кошик">
+                    <i class="ph ph-bag"></i>
+                    <span class="product-card__cart-count">+1</span>
+                  </button>
                 </div>
               </article>
+    
+              <!-- CARD 2 -->
               <article class="product-card">
                 <div class="product-card__image-wrapper">
+                  <span class="product-card__badge product-card__badge--sale">SALE</span>
                   <img src="/arpix_share/assets/product-2-uVNvOWzN.png" alt="База LUMOS" class="product-card__image" />
                 </div>
                 <div class="product-card__info">
@@ -251,15 +273,40 @@
                     <h3 class="product-card__title">База LUMOS</h3>
                     <p class="product-card__desc">LUMOS база світиться у темряві , молочна айворі № 2</p>
                   </div>
-                  <div class="product-card__size">60 ml <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"/></svg></div>
+                  <div class="product-card__dropdown">
+                    <button class="product-card__dropdown-trigger" aria-haspopup="listbox" aria-expanded="false">
+                      <span>60 ml</span>
+                      <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"/>
+                      </svg>
+                    </button>
+                    <ul class="product-card__dropdown-list" role="listbox">
+                      <li role="option" aria-selected="true" data-value="60">60 ml</li>
+                      <li role="option" aria-selected="false" data-value="30">30 ml</li>
+                      <li role="option" aria-selected="false" data-value="15">15 ml</li>
+                    </ul>
+                  </div>
                 </div>
                 <div class="product-card__price-wrapper">
-                  <span class="product-card__price">310</span>
-                  <span class="product-card__currency">грн</span>
+                  <button class="product-card__action product-card__action--heart" aria-label="Додати в улюблене">
+                    <i class="ph ph-heart"></i>
+                  </button>
+                  <div class="product-card__price-group">
+                    <span class="product-card__price-old">480</span>
+                    <span class="product-card__price">310</span>
+                    <span class="product-card__currency">грн</span>
+                  </div>
+                  <button class="product-card__action product-card__action--cart" aria-label="Додати в кошик">
+                    <i class="ph ph-bag"></i>
+                    <span class="product-card__cart-count">+1</span>
+                  </button>
                 </div>
               </article>
+    
+              <!-- CARD 3 -->
               <article class="product-card">
                 <div class="product-card__image-wrapper">
+                  <span class="product-card__badge product-card__badge--bestseller">BESTSELLER</span>
                   <img src="/arpix_share/assets/product-3-CHR4W9BH.png" alt="База LUMOS" class="product-card__image" />
                 </div>
                 <div class="product-card__info">
@@ -267,15 +314,39 @@
                     <h3 class="product-card__title">База LUMOS</h3>
                     <p class="product-card__desc">LUMOS база світиться у темряві , молочна айворі № 2</p>
                   </div>
-                  <div class="product-card__size">60 ml <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"/></svg></div>
+                  <div class="product-card__dropdown">
+                    <button class="product-card__dropdown-trigger" aria-haspopup="listbox" aria-expanded="false">
+                      <span>60 ml</span>
+                      <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"/>
+                      </svg>
+                    </button>
+                    <ul class="product-card__dropdown-list" role="listbox">
+                      <li role="option" aria-selected="true" data-value="60">60 ml</li>
+                      <li role="option" aria-selected="false" data-value="30">30 ml</li>
+                      <li role="option" aria-selected="false" data-value="15">15 ml</li>
+                    </ul>
+                  </div>
                 </div>
                 <div class="product-card__price-wrapper">
-                  <span class="product-card__price">310</span>
-                  <span class="product-card__currency">грн</span>
+                  <button class="product-card__action product-card__action--heart" aria-label="Додати в улюблене">
+                    <i class="ph ph-heart"></i>
+                  </button>
+                  <div class="product-card__price-group">
+                    <span class="product-card__price">310</span>
+                    <span class="product-card__currency">грн</span>
+                  </div>
+                  <button class="product-card__action product-card__action--cart" aria-label="Додати в кошик">
+                    <i class="ph ph-bag"></i>
+                    <span class="product-card__cart-count">+1</span>
+                  </button>
                 </div>
               </article>
+    
+              <!-- CARD 4 -->
               <article class="product-card">
                 <div class="product-card__image-wrapper">
+                  <span class="product-card__badge product-card__badge--bestseller">BESTSELLER</span>
                   <img src="/arpix_share/assets/product-4-VchSns43.png" alt="База LUMOS" class="product-card__image" />
                 </div>
                 <div class="product-card__info">
@@ -283,11 +354,32 @@
                     <h3 class="product-card__title">База LUMOS</h3>
                     <p class="product-card__desc">LUMOS база світиться у темряві , молочна айворі № 2</p>
                   </div>
-                  <div class="product-card__size">60 ml <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"/></svg></div>
+                  <div class="product-card__dropdown">
+                    <button class="product-card__dropdown-trigger" aria-haspopup="listbox" aria-expanded="false">
+                      <span>60 ml</span>
+                      <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"/>
+                      </svg>
+                    </button>
+                    <ul class="product-card__dropdown-list" role="listbox">
+                      <li role="option" aria-selected="true" data-value="60">60 ml</li>
+                      <li role="option" aria-selected="false" data-value="30">30 ml</li>
+                      <li role="option" aria-selected="false" data-value="15">15 ml</li>
+                    </ul>
+                  </div>
                 </div>
                 <div class="product-card__price-wrapper">
-                  <span class="product-card__price">310</span>
-                  <span class="product-card__currency">грн</span>
+                  <button class="product-card__action product-card__action--heart" aria-label="Додати в улюблене">
+                    <i class="ph ph-heart"></i>
+                  </button>
+                  <div class="product-card__price-group">
+                    <span class="product-card__price">310</span>
+                    <span class="product-card__currency">грн</span>
+                  </div>
+                  <button class="product-card__action product-card__action--cart" aria-label="Додати в кошик">
+                    <i class="ph ph-bag"></i>
+                    <span class="product-card__cart-count">+1</span>
+                  </button>
                 </div>
               </article>
             </div>
@@ -300,26 +392,87 @@
             <h2 class="life__title">ЖитТЯ ARPIKS</h2>
             <p class="life__desc">Тут не про ідеальні кадри.<br/>Тут про реальну роботу.<br/>Ми не ідеальні. Ми відповідальні.</p>
             
-            <div class="life__grid">
-              <div class="life__story life__story--1">
-                <img src="/arpix_share/assets/life-img1-Cx43h6Qj.png" alt="" class="life__img" />
-                <img src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2093%2093'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Frame%20427322394'%3e%3crect%20x='0.5'%20y='0.5'%20width='92'%20height='92'%20rx='46'%20fill='var(--fill-0,%20white)'%20fill-opacity='0.4'/%3e%3crect%20x='0.5'%20y='0.5'%20width='92'%20height='92'%20rx='46'%20stroke='var(--stroke-0,%20white)'/%3e%3cpath%20id='Polygon%202'%20d='M58.5%2048.232C59.8333%2047.4622%2059.8333%2045.5377%2058.5%2044.7679L42%2035.2417C40.6667%2034.4719%2039%2035.4341%2039%2036.9737V56.0263C39%2057.5659%2040.6667%2058.5281%2042%2057.7583L58.5%2048.232Z'%20fill='var(--fill-0,%20white)'/%3e%3c/g%3e%3c/svg%3e" alt="Play" class="life__play-btn" />
+            <div class="life__slider swiper">
+              <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide life__slide">
+                  <a href="#" target="_blank" class="life__story" aria-label="Відкрити Instagram video">
+                    <img src="/arpix_share/assets/life-img2-35ve4ru7.png" alt="" class="life__img" />
+                  </a>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="swiper-slide life__slide">
+                  <a href="#" target="_blank" class="life__story" aria-label="Відкрити Instagram video">
+                    <img src="/arpix_share/assets/life-img6-WhPMX3k4.png" alt="" class="life__img" />
+                  </a>
+                </div>
+    
+                <!-- Slide 3 (Main with Play) -->
+                <div class="swiper-slide life__slide">
+                  <a href="#" target="_blank" class="life__story" aria-label="Відкрити Instagram video">
+                    <img src="/arpix_share/assets/life-img1-Cx43h6Qj.png" alt="" class="life__img" />
+                    <img src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2093%2093'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Frame%20427322394'%3e%3crect%20x='0.5'%20y='0.5'%20width='92'%20height='92'%20rx='46'%20fill='var(--fill-0,%20white)'%20fill-opacity='0.4'/%3e%3crect%20x='0.5'%20y='0.5'%20width='92'%20height='92'%20rx='46'%20stroke='var(--stroke-0,%20white)'/%3e%3cpath%20id='Polygon%202'%20d='M58.5%2048.232C59.8333%2047.4622%2059.8333%2045.5377%2058.5%2044.7679L42%2035.2417C40.6667%2034.4719%2039%2035.4341%2039%2036.9737V56.0263C39%2057.5659%2040.6667%2058.5281%2042%2057.7583L58.5%2048.232Z'%20fill='var(--fill-0,%20white)'/%3e%3c/g%3e%3c/svg%3e" alt="Play" class="life__play-btn" />
+                  </a>
+                </div>
+    
+                <!-- Slide 4 -->
+                <div class="swiper-slide life__slide">
+                  <a href="#" target="_blank" class="life__story" aria-label="Відкрити Instagram video">
+                    <img src="/arpix_share/assets/life-img2-35ve4ru7.png" alt="" class="life__img" />
+                    <img src="/arpix_share/assets/life-img4-CO64VQvl.png" alt="" class="life__img life__img--secondary" />
+                  </a>
+                </div>
+    
+                <!-- Slide 5 -->
+                <div class="swiper-slide life__slide">
+                  <a href="#" target="_blank" class="life__story" aria-label="Відкрити Instagram video">
+                    <img src="/arpix_share/assets/life-img2-35ve4ru7.png" alt="" class="life__img" />
+                    <img src="/arpix_share/assets/life-img5-B_SwRifo.png" alt="" class="life__img life__img--secondary" />
+                  </a>
+                </div>
+    
+                <!-- Slide 6 (Duplicate 1) -->
+                <div class="swiper-slide life__slide">
+                  <a href="#" target="_blank" class="life__story" aria-label="Відкрити Instagram video">
+                    <img src="/arpix_share/assets/life-img2-35ve4ru7.png" alt="" class="life__img" />
+                  </a>
+                </div>
+                
+                <!-- Slide 7 (Duplicate 2) -->
+                <div class="swiper-slide life__slide">
+                  <a href="#" target="_blank" class="life__story" aria-label="Відкрити Instagram video">
+                    <img src="/arpix_share/assets/life-img6-WhPMX3k4.png" alt="" class="life__img" />
+                  </a>
+                </div>
+    
+                <!-- Slide 8 (Duplicate 3) -->
+                <div class="swiper-slide life__slide">
+                  <a href="#" target="_blank" class="life__story" aria-label="Відкрити Instagram video">
+                    <img src="/arpix_share/assets/life-img1-Cx43h6Qj.png" alt="" class="life__img" />
+                    <img src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2093%2093'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Frame%20427322394'%3e%3crect%20x='0.5'%20y='0.5'%20width='92'%20height='92'%20rx='46'%20fill='var(--fill-0,%20white)'%20fill-opacity='0.4'/%3e%3crect%20x='0.5'%20y='0.5'%20width='92'%20height='92'%20rx='46'%20stroke='var(--stroke-0,%20white)'/%3e%3cpath%20id='Polygon%202'%20d='M58.5%2048.232C59.8333%2047.4622%2059.8333%2045.5377%2058.5%2044.7679L42%2035.2417C40.6667%2034.4719%2039%2035.4341%2039%2036.9737V56.0263C39%2057.5659%2040.6667%2058.5281%2042%2057.7583L58.5%2048.232Z'%20fill='var(--fill-0,%20white)'/%3e%3c/g%3e%3c/svg%3e" alt="Play" class="life__play-btn" />
+                  </a>
+                </div>
+    
+                <!-- Slide 9 (Duplicate 4) -->
+                <div class="swiper-slide life__slide">
+                  <a href="#" target="_blank" class="life__story" aria-label="Відкрити Instagram video">
+                    <img src="/arpix_share/assets/life-img2-35ve4ru7.png" alt="" class="life__img" />
+                    <img src="/arpix_share/assets/life-img4-CO64VQvl.png" alt="" class="life__img life__img--secondary" />
+                  </a>
+                </div>
+    
+                <!-- Slide 10 (Duplicate 5) -->
+                <div class="swiper-slide life__slide">
+                  <a href="#" target="_blank" class="life__story" aria-label="Відкрити Instagram video">
+                    <img src="/arpix_share/assets/life-img2-35ve4ru7.png" alt="" class="life__img" />
+                    <img src="/arpix_share/assets/life-img5-B_SwRifo.png" alt="" class="life__img life__img--secondary" />
+                  </a>
+                </div>
               </div>
-              <div class="life__story life__story--2">
-                <img src="/arpix_share/assets/life-img2-35ve4ru7.png" alt="" class="life__img" />
-                <img src="/arpix_share/assets/life-img3-BqWjzMMV.png" alt="" class="life__img life__img--secondary" />
-              </div>
-              <div class="life__story life__story--3">
-                <img src="/arpix_share/assets/life-img6-WhPMX3k4.png" alt="" class="life__img" />
-              </div>
-              <div class="life__story life__story--4">
-                <img src="/arpix_share/assets/life-img2-35ve4ru7.png" alt="" class="life__img" />
-                <img src="/arpix_share/assets/life-img4-CO64VQvl.png" alt="" class="life__img life__img--secondary" />
-              </div>
-              <div class="life__story life__story--5">
-                <img src="/arpix_share/assets/life-img2-35ve4ru7.png" alt="" class="life__img" />
-                <img src="/arpix_share/assets/life-img5-B_SwRifo.png" alt="" class="life__img life__img--secondary" />
-              </div>
+              
+              <!-- Swiper Pagination -->
+              <div class="swiper-pagination"></div>
             </div>
     
             <a href="/life" class="life__link btn-outline-dark">
@@ -343,23 +496,38 @@
                 <img src="/arpix_share/assets/features-product-Cfz4ArJY.png" alt="ARPIKS Product" />
               </div>
               
-              <div class="features__point features__point--1">
-                <span class="features__point-text">Натуральні інгрідієнти</span>
-              </div>
-              <div class="features__point features__point--2">
+              <!-- Left side -->
+              <div class="features__point features__point--1 features__point--left">
                 <span class="features__point-text">Ефективні активні компоненти</span>
+                <div class="features__connector"></div>
+                <div class="features__dot"></div>
               </div>
-              <div class="features__point features__point--3">
+              <div class="features__point features__point--2 features__point--left">
                 <span class="features__point-text">Протестовані товари доведені до ідеалу</span>
+                <div class="features__connector"></div>
+                <div class="features__dot"></div>
               </div>
-              <div class="features__point features__point--4">
+              <div class="features__point features__point--3 features__point--left">
                 <span class="features__point-text">Перевірені досвідом формули</span>
+                <div class="features__connector"></div>
+                <div class="features__dot"></div>
               </div>
-              <div class="features__point features__point--5">
+              
+              <!-- Right side -->
+              <div class="features__point features__point--4 features__point--right">
+                <span class="features__point-text">Натуральні інгрідієнти</span>
+                <div class="features__connector"></div>
+                <div class="features__dot"></div>
+              </div>
+              <div class="features__point features__point--5 features__point--right">
                 <span class="features__point-text">Унікальні склади у кожному засобі</span>
+                <div class="features__connector"></div>
+                <div class="features__dot"></div>
               </div>
-              <div class="features__point features__point--6">
+              <div class="features__point features__point--6 features__point--right">
                 <span class="features__point-text">Відсутність критичної хімії у складі</span>
+                <div class="features__connector"></div>
+                <div class="features__dot"></div>
               </div>
             </div>
           </div>
