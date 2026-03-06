@@ -4,11 +4,10 @@
 
 .features {
   padding-top: 80px;
-  padding-bottom: 80px;
+  padding-bottom: 0px;
 
   &__header {
     text-align: center;
-    margin-bottom: 80px;
   }
 
   &__title {
@@ -18,6 +17,16 @@
     line-height: normal;
     text-transform: uppercase;
     margin-bottom: 36px;
+
+    @media (max-width: $breakpoint-tablet) {
+      font-size: 32px;
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
   }
 
   &__subtitle {
@@ -25,28 +34,60 @@
     font-size: 20px;
     font-weight: $font-weight-regular;
     color: $color-text-secondary;
+
+    @media (max-width: $breakpoint-tablet) {
+      font-size: 18px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 16px;
+    }
   }
 
   &__interactive {
     position: relative;
-    max-width: 1302px;
+    max-width: 1302px; // Back to Figma standard width
     margin: 0 auto;
     height: 620px;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: $breakpoint-tablet) {
+      flex-direction: column;
+      height: auto;
+      gap: 32px; // Increased gap for mobile stacking
+      padding: 0 16px;
+      // Allow relative positioning context for absolute children on mobile
+      align-items: stretch;
+    }
   }
 
   &__center-image {
-    width: 500px;
+    width: 600px; // A bit wider to prevent text overlap if screen shrinks
     height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1;
+    
+    // Visually offset the center image to balance between the left and right point positions
+    transform: translateX(90px); 
+
+    @media (max-width: $breakpoint-tablet) {
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto 32px auto; // Center it above the list
+      transform: none; // Reset on mobile
+      order: -1; // Force image to the top
+    }
 
     img {
-      max-width: 100%;
+      max-width: 452px;
+      max-height: 484px;
+      transform: rotate(-30.374deg);
+      aspect-ratio: 113/121;
+      width: 100%;
       height: auto;
     }
   }
@@ -54,64 +95,172 @@
   &__point {
     position: absolute;
     display: flex;
-    align-items: flex-start;
     flex-direction: column;
-    gap: 16px;
+    z-index: 2;
+
+    @media (max-width: $breakpoint-tablet) {
+      position: relative;
+      top: auto !important;
+      left: auto !important;
+      right: auto !important;
+      width: 100%;
+      gap: 8px;
+    }
 
     &-text {
       font-family: $font-primary;
       font-size: 16px;
       font-weight: $font-weight-semibold;
       color: $color-text;
-      max-width: 280px;
+
+      @media (max-width: $breakpoint-desktop) {
+        max-width: 200px;
+        font-size: 14px;
+      }
+
+      @media (max-width: $breakpoint-tablet) {
+        max-width: none;
+      }
     }
 
-    &::after {
-      content: '';
-      display: block;
+    .features__connector {
+      width: 140px;
+      height: 30px;
+      border-top: 1px solid #577E7B;
+
+      @media (max-width: $breakpoint-tablet) {
+        height: 40px;
+        width: 180px; 
+      }
+    }
+
+    .features__dot {
       width: 19px;
       height: 19px;
+      border-radius: 50%;
+      background-color: rgba(87, 126, 123, 0.4);
       position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+
+      &::after {
+        content: '';
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: #354F4D;
+      }
     }
 
-    // Left side points
+    // --- DESKTOP Layout Constraints --- 
+    // Left side points (1, 2, 3) are aligned right
+    &--left {
+      align-items: flex-end;
+      text-align: right;
+
+      .features__connector {
+        border-right: 1px solid #577E7B;
+        margin-right: 9px;
+      }
+    }
+
+    // Right side points (4, 5, 6) are aligned left
+    &--right {
+      align-items: flex-start;
+      text-align: left;
+
+      .features__connector {
+        border-left: 1px solid #577E7B;
+        margin-left: 9px;
+      }
+    }
+
+    // --- MOBILE Layout Constraints (Strict Alternating Z-Pattern) ---
+    // Override desktop grouping for a clean mobile zig-zag.
+    // 1, 3, 5 flow from Left to Right. 
+    // 2, 4, 6 flow from Right to Left.
+    @media (max-width: $breakpoint-tablet) {
+      &--1, &--3, &--5 {
+        // Point starts left, text left, dot drops right
+        align-items: flex-start !important;
+        text-align: left !important;
+        padding-right: 20px;
+
+        .features__connector {
+          align-self: flex-start;
+          border-right: none !important;
+          border-left: 1px solid #577E7B !important;
+          margin-right: 0 !important;
+          margin-left: 9px !important;
+        }
+
+        .features__dot {
+          align-self: flex-start;
+        }
+      }
+
+      &--2, &--4, &--6 {
+        // Point starts right, text right, dot drops left
+        align-items: flex-end !important;
+        text-align: right !important;
+        padding-left: 20px;
+
+        .features__connector {
+          align-self: flex-end;
+          border-left: none !important;
+          border-right: 1px solid #577E7B !important;
+          margin-left: 0 !important;
+          margin-right: 9px !important;
+          margin-bottom: -15px; // Interlock with point below
+        }
+
+        .features__dot {
+          align-self: flex-end;
+        }
+      }
+
+      // Reset specific paddings that might conflict
+      &--1, &--2, &--3, &--4, &--5, &--6 {
+         & { padding-left: auto; padding-right: auto; }
+      }
+    }
+
+    // Specific Positions (Ёлочка / Staggered outward from center)
+    // The text MUST go progressively outward from top to bottom.
+    // RIGHT side of the image (Left text elements pointing to the right)
     &--1 {
       top: 15%;
-      right: 58%;
-      align-items: flex-end;
-      text-align: right;
+      right: 65%; // Closer to center image
+      .features__connector { width: 120px; }
     }
     &--2 {
-      top: 38%;
-      right: 62%;
-      align-items: flex-end;
-      text-align: right;
+      top: 35%;
+      right: 72%; // Further out
+      .features__connector { width: 140px; } 
     }
     &--3 {
-      top: 58%;
-      right: 68%;
-      align-items: flex-end;
-      text-align: right;
+      top: 55%;
+      right: 75%; // Furthest out
+      .features__connector { width: 160px; }
     }
 
-    // Right side points
+    // LEFT side of the image (Right text elements pointing to the left)
     &--4 {
       top: 15%;
-      left: 58%;
-      align-items: flex-start;
-      text-align: left;
+      left: 65%; // Closer to center image
+      .features__connector { width: 120px; }
     }
     &--5 {
-      top: 38%;
-      left: 62%;
-      align-items: flex-start;
-      text-align: left;
+      top: 35%;
+      left: 72%; // Further out
+      .features__connector { width: 140px; }
     }
     &--6 {
-      top: 58%;
-      left: 68%;
-      align-items: flex-start;
-      text-align: left;
+      top: 55%;
+      left: 75%; // Furthest out
+      .features__connector { width: 160px; }
     }
   }
 }
