@@ -10,40 +10,64 @@
   &__inner {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 72px;
+    padding: 0 ac(72px, 16px);
   }
 
   &__top {
     display: flex;
     gap: 0;
-    margin-bottom: 60px;
+    margin-bottom: ac(60px, 32px);
+
+    @media (max-width: $breakpoint-tablet) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: ac(64px, 48px);
+      column-gap: 20px;
+    }
   }
 
   &__col {
     flex: 1;
     min-width: 0;
 
+    @media (max-width: $breakpoint-tablet) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
     &--contacts {
       flex: 1;
+
+      @media (max-width: $breakpoint-tablet) {
+        grid-column: 1 / -1;
+        align-items: flex-start;
+        text-align: left;
+      }
     }
   }
 
   &__col-title {
     font-family: $font-primary;
-    font-size: 14px;
+    font-size: ac(14px, 12px);
     font-weight: $font-weight-bold;
-    margin-bottom: 20px;
+    margin-bottom: ac(20px, 12px);
     color: $color-text;
   }
 
   &__list {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: ac(16px, 12px);
+
+    @media (max-width: $breakpoint-tablet) {
+      align-items: center;
+    }
 
     li a {
       font-family: $font-primary;
-      font-size: 14px;
+      font-size: ac(14px, 12px);
       color: $color-text;
       font-weight: $font-weight-regular;
       transition: color $transition-fast;
@@ -57,12 +81,12 @@
   &__contact-info {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: ac(16px, 12px);
   }
 
   &__phone {
     font-family: $font-primary;
-    font-size: 20px;
+    font-size: ac(20px, 16px);
     font-weight: $font-weight-semibold;
     display: flex;
     align-items: center;
@@ -106,6 +130,11 @@
     img {
       height: 21px;
       width: auto;
+      transition: transform 0.5s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
 
     span {
@@ -125,26 +154,37 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 49px;
+    height: auto;
+    padding: ac(24px, 16px) 0;
+    gap: ac(24px, 16px);
     border-top: 1px solid rgba($color-white, 0.1);
-    flex-wrap: nowrap;
+    
+    @media (max-width: $breakpoint-tablet) {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      row-gap: 24px;
+    }
   }
 
   &__logo-wrap {
     flex-shrink: 0;
+
+    @media (max-width: $breakpoint-tablet) {
+      order: 1;
+    }
   }
 
   &__logos {
     display: flex;
     gap: 2px;
     img {
-      height: 49px;
+      height: ac(49px, 32px);
       fill: $color-text;
     }
   }
 
   &__logo-full {
-    height: 49px;
+    height: ac(49px, 32px);
     width: auto;
   }
 
@@ -153,32 +193,40 @@
     gap: 32px;
     a {
       font-family: $font-primary;
-      font-size: 12px;
+      font-size: ac(12px, 10px);
       color: #adadad;
 
       &:hover {
         color: $color-text;
       }
     }
+
+    @media (max-width: $breakpoint-tablet) {
+      justify-content: space-between;
+      width: 100%;
+      order: 3;
+    }
   }
 
   &__payments {
     display: flex;
-    gap: 16px;
+    gap: ac(16px, 12px);
     align-items: center;
-    opacity: 0.4;
     img {
-      height: 19px;
+      height: ac(19px, 14px);
       width: auto;
-    }
-  }
+      opacity: 0.4;
+      transition: opacity $transition-fast;
+      cursor: pointer;
 
-  &__payment-label {
-    font-family: $font-primary;
-    font-size: 12px;
-    color: rgba($color-white, 0.5);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      order: 2;
+    }
   }
 
   &__copyright {
@@ -186,5 +234,11 @@
     font-size: 12px;
     color: #adadad;
     white-space: nowrap;
+
+    @media (max-width: $breakpoint-tablet) {
+      order: 4;
+      width: 100%;
+      text-align: left;
+    }
   }
 }
