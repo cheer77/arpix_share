@@ -9,32 +9,43 @@
     display: flex;
     align-items: stretch;
     gap: 0;
+
+    @media (max-width: $breakpoint-tablet) {
+      flex-direction: column;
+    }
   }
 
   // Left panel — dark teal with circle cutout
   &__content {
-    width: 648px;
-    flex-shrink: 0;
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: ac(648px, 424px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: $color-white;
-    // Circular cutout on the right edge with radius 69px (138px / 2)
-    mask-image: radial-gradient(circle at right center, transparent 69px, black 70px);
-    -webkit-mask-image: radial-gradient(circle at right center, transparent 69px, black 70px);
+    // Circular cutout logic
+    // Desktop: 138px / 2 = 69px
+    // Mobile: 81px / 2 = 40.5px
+    mask-image: radial-gradient(circle at right center, transparent ac(69px, 40.5px), black ac(70px, 41.5px));
+    -webkit-mask-image: radial-gradient(circle at right center, transparent ac(69px, 40.5px), black ac(70px, 41.5px));
     color: $color-text;
     position: relative;
-    padding: 90px 22px;
+    padding-top: ac(90px, 60px);
+    padding-bottom: ac(90px, 40px);
+    padding-left: ac(22px, 16px);
+    padding-right: ac(22px, 16px);
     min-height: 742px;
+    z-index: 2;
 
     @media (max-width: $breakpoint-tablet) {
       width: 100%;
+      max-width: 100%;
       min-height: auto;
-      padding: 60px 20px 40px;
       // Change mask to be on top-center for mobile layout
-      mask-image: radial-gradient(circle at top center, transparent 45px, black 46px);
-      -webkit-mask-image: radial-gradient(circle at top center, transparent 45px, black 46px);
+      mask-image: radial-gradient(circle at top center, transparent 40.5px, black 41.5px);
+      -webkit-mask-image: radial-gradient(circle at top center, transparent 40.5px, black 41.5px);
       border-radius: 0 0 $radius-25 $radius-25;
     }
   }
@@ -51,49 +62,41 @@
 
   &__title {
     font-family: $font-heading;
-    font-size: 40px;
+    font-size: ac(40px, 24px);
     font-weight: $font-weight-regular;
     line-height: normal;
     text-transform: uppercase;
-    letter-spacing: -2px;
-    margin-bottom: 24px; // tighter spacing based on screenshot
+    letter-spacing: ac(-2px, -1.2px);
+    margin-bottom: ac(40px, 24px);
     color: $color-text;
-
-    @media (max-width: $breakpoint-tablet) {
-      font-size: 28px;
-      margin-bottom: 24px;
-      letter-spacing: -1px;
-    }
   }
 
   &__subtitle {
     font-family: $font-primary;
-    font-size: 20px;
+    font-size: ac(20px, 16px);
     font-weight: $font-weight-regular;
     color: $color-text;
-    margin-bottom: 32px; // tighter spacing based on screenshot
+    margin-bottom: ac(42px, 36px);
     line-height: normal;
-
-    @media (max-width: $breakpoint-tablet) {
-      font-size: 16px;
-    }
   }
 
   &__list {
     font-family: $font-primary;
-    font-size: 16px;
+    font-size: ac(16px, 14px);
     line-height: 1.8;
     color: $color-text;
-    margin-bottom: 48px; // tighter spacing based on screenshot
-
-    @media (max-width: $breakpoint-tablet) {
-      margin-bottom: 48px;
-      font-size: 14px;
-    }
+    margin-bottom: ac(88px, 60px);
   }
 
   &__cta {
     align-self: center;
+    height: 54px;
+    padding: 6px 32px;
+    border-radius: 80px;
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.64), 0px 0px 0px 1px #2d4748;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: normal;
 
     @media (max-width: $breakpoint-tablet) {
       width: 100%;
@@ -105,14 +108,18 @@
   &__banner {
     flex: 1;
     position: relative;
-    border-radius: $radius-25;
+    border-radius: 0 $radius-25 $radius-25 0;
     overflow: hidden;
     min-height: 742px;
+    margin-left: ac(-69px, 0px); // Pull under the circular mask of the left panel (scales to 0 on mobile)
+    z-index: 1;
 
     @media (max-width: $breakpoint-tablet) {
+      margin-left: 0;
+      margin-bottom: -40.5px; // Overlap for the mobile top-center mask
       order: -1; // Place image on top
-      min-height: 400px;
-      height: 400px;
+      min-height: 352px;
+      height: 352px;
       width: 100%;
       border-radius: $radius-25 $radius-25 0 0;
     }
@@ -124,9 +131,18 @@
   }
 
   &__bg {
+    position: absolute;
+    top: 0;
+    // left: ac(-14.79%, 0%);
     width: 100%;
     height: 100%;
+    max-width: none;
     object-fit: cover;
+    transform: scaleX(-1);
+
+    @media (max-width: $breakpoint-tablet) {
+       // Keep precise coordinates and scale transform so that the flip is not lost
+    }
   }
 
   &__banner-title {
@@ -136,26 +152,14 @@
     transform: translate(-50%, -50%);
     font-family: $font-accent;
     font-style: italic;
-    font-size: 121px;
+    font-size: ac(121.22px, 60px);
+    font-weight: 400;
     color: $color-white;
     line-height: normal;
     text-align: center;
-    width: 397px;
-    letter-spacing: -6px;
-
-    @media (max-width: $breakpoint-desktop) {
-      font-size: 96px;
-      width: 100%;
-    }
-
-    @media (max-width: $breakpoint-tablet) {
-      font-size: 72px;
-      letter-spacing: -4px;
-    }
-
-    @media (max-width: $breakpoint-mobile) {
-      font-size: 56px;
-      letter-spacing: -2px;
-    }
+    width: 100%;
+    max-width: ac(397px, 295px);
+    letter-spacing: ac(-6.06px, -3px);
+    z-index: 3; // Stay above the image
   }
 }
