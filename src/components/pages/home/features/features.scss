@@ -3,8 +3,7 @@
 // ========================================
 
 .features {
-  padding-top: 80px;
-  padding-bottom: 66px;
+  padding-bottom: ac(80px, 40px);
 
   &__header {
     text-align: center;

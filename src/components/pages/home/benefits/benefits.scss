@@ -3,8 +3,7 @@
 // ========================================
 
 .benefits {
-  padding-top: 80px;
-  padding-bottom: 0;
+  padding-bottom: ac(200px, 80px);
 
   &__list {
     display: grid;
