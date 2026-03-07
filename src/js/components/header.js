@@ -47,14 +47,26 @@ export function initHeader() {
     const width = window.innerWidth;
     if (width <= DESKTOP_BP) {
       nav.setAttribute('aria-hidden', !isActive);
+      if (isActive) {
+        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${window.scrollY}px`;
+        document.body.style.width = '100%';
+        document.body.dataset.scrollY = window.scrollY; // Store scroll position
+      } else {
+        const scrollY = document.body.dataset.scrollY || 0;
+        document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        window.scrollTo(0, parseInt(scrollY || '0'));
+      }
     } else {
       nav.removeAttribute('aria-hidden');
-    }
-
-    if (width <= TABLET_BP) {
-      document.body.style.overflow = isActive ? 'hidden' : '';
-    } else {
       document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
     }
   };
 
@@ -163,10 +175,20 @@ export function initHeader() {
       const isActive = toggle.classList.contains('header__mobile-toggle--active');
       nav.setAttribute('aria-hidden', !isActive);
       
-      if (width > TABLET_BP) {
+      if (width > DESKTOP_BP) {
         document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
       } else if (isActive) {
         document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        // Only set top if not already fixed to avoid jumping
+        if (document.body.style.top === '') {
+          document.body.style.top = `-${window.scrollY}px`;
+          document.body.style.width = '100%';
+          document.body.dataset.scrollY = window.scrollY;
+        }
       }
     }
 
