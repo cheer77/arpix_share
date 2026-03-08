@@ -14,36 +14,48 @@ export function initBasket() {
   if (!basket) return;
 
   const handleToggle = (isActive) => {
-    // Ensure basket content starts at the top when opening
+    const html = document.documentElement;
+    const body = document.body;
+    const basketContent = basket.querySelector('.basket__content');
+
     if (isActive) {
-      const basketContent = document.querySelector('.basket__content');
+      const scrollY = window.pageYOffset || html.scrollTop;
+      body.dataset.basketScrollY = scrollY;
+      
+      // Ensure basket content starts at the top
       if (basketContent) {
         basketContent.scrollTop = 0;
       }
-    }
 
-    basket.classList.toggle('is-active', isActive);
-    
-    // Check if it's mobile view to apply specific mobile active class for the slide animation
-    if (window.innerWidth <= DESKTOP_BP) {
-      basket.classList.toggle('is-mobile-active', isActive);
-    }
-
-    // Body lock logic (similar to header.js)
-    if (isActive) {
-      document.body.style.overflow = 'hidden';
-      document.body.style.position = 'fixed';
-      document.body.style.top = `-${window.scrollY}px`;
-      document.body.style.width = '100%';
-      document.body.dataset.basketScrollY = window.scrollY;
+      // Apply body lock
+      body.style.position = 'fixed';
+      body.style.top = `-${scrollY}px`;
+      body.style.width = '100%';
+      body.style.overflow = 'hidden';
+      html.style.overflow = 'hidden';
+      
+      // Add classes for animations
+      basket.classList.add('is-active');
+      if (window.innerWidth <= DESKTOP_BP) {
+        basket.classList.add('is-mobile-active');
+      }
     } else {
-      const scrollY = document.body.dataset.basketScrollY || 0;
-      document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.width = '';
-      if (!document.querySelector('.header__nav.is-active')) { // Don't scroll if mobile menu is still open
-         window.scrollTo(0, parseInt(scrollY || '0'));
+      const scrollPos = body.dataset.basketScrollY || '0';
+      
+      // Remove body lock
+      body.style.position = '';
+      body.style.top = '';
+      body.style.width = '';
+      body.style.overflow = '';
+      html.style.overflow = '';
+      
+      basket.classList.remove('is-active');
+      basket.classList.remove('is-mobile-active');
+
+      // Prevent scrolling back if mobile menu is still open (shared lock state)
+      const isNavActive = document.querySelector('.header__nav.is-active');
+      if (!isNavActive) {
+        window.scrollTo(0, parseInt(scrollPos));
       }
     }
   };
