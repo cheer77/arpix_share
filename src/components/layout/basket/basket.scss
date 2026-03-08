@@ -516,7 +516,7 @@ $basket-bp: 1200px;
 
   &__checkout {
     flex: 1;
-    height: ac(48px, 44px);
+    min-height: ac(48px, 44px);
     font-family: 'Inter', sans-serif;
     font-weight: $font-weight-medium;
     background-color: #143c3d;
@@ -528,7 +528,7 @@ $basket-bp: 1200px;
 
   &__continue {
     flex: 1;
-    height: ac(48px, 44px);
+    min-height: ac(48px, 44px);
     border: 1px solid $color-text;
     background: transparent;
     border-radius: 80px;
