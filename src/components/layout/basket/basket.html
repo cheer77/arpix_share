@@ -1,0 +1,318 @@
+<div class="basket" id="basket" aria-hidden="true">
+  <div class="basket__backdrop" id="basket-backdrop"></div>
+  
+  <div class="basket__drawer">
+    <div class="basket__inner">
+      
+      <!-- HEADER -->
+      <header class="basket__header">
+        <h2 class="basket__title" id="basket-title">Товарів у кошику: 4</h2>
+        <button class="basket__close" id="basket-close" aria-label="Закрити корзину">
+          <i class="ph ph-x"></i>
+        </button>
+      </header>
+
+      <div class="basket__content">
+        <!-- LEFT COLUMN -->
+        <div class="basket__col-left">
+          <div class="basket__items">
+            <!-- ITEM 1 -->
+            <article class="basket-item">
+              <div class="basket-item__image-wrapper">
+                <img src="/src/assets/images/product-1.png" alt="Product" class="basket-item__image">
+              </div>
+              <div class="basket-item__info">
+                <div class="basket-item__header">
+                  <div class="basket-item__meta">
+                    <span class="basket-item__sku">Артикул: AGL124_5</span>
+                    <h3 class="basket-item__name">Акрігель с блисктіками Nailapex Shine № 2, 30г</h3>
+                  </div>
+                  <button class="basket-item__remove" aria-label="Видалити товар">
+                    <i class="ph ph-trash"></i>
+                  </button>
+                </div>
+                
+                <div class="basket-item__actions">
+                  <div class="basket-item__quantity quantity-control">
+                    <button class="quantity-control__btn quantity-control__btn--minus" aria-label="Зменшити">−</button>
+                    <input type="number" class="quantity-control__input" value="1" min="1" readonly>
+                    <button class="quantity-control__btn quantity-control__btn--plus" aria-label="Збільшити">+</button>
+                  </div>
+                  
+                  <div class="basket-item__price-group">
+                    <span class="basket-item__price">310</span>
+                    <span class="basket-item__currency">грн</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+                        <article class="basket-item">
+              <div class="basket-item__image-wrapper">
+                <img src="/src/assets/images/product-1.png" alt="Product" class="basket-item__image">
+              </div>
+              <div class="basket-item__info">
+                <div class="basket-item__header">
+                  <div class="basket-item__meta">
+                    <span class="basket-item__sku">Артикул: AGL124_5</span>
+                    <h3 class="basket-item__name">Акрігель с блисктіками Nailapex Shine № 2, 30г</h3>
+                  </div>
+                  <button class="basket-item__remove" aria-label="Видалити товар">
+                    <i class="ph ph-trash"></i>
+                  </button>
+                </div>
+                
+                <div class="basket-item__actions">
+                  <div class="basket-item__quantity quantity-control">
+                    <button class="quantity-control__btn quantity-control__btn--minus" aria-label="Зменшити">−</button>
+                    <input type="number" class="quantity-control__input" value="1" min="1" readonly>
+                    <button class="quantity-control__btn quantity-control__btn--plus" aria-label="Збільшити">+</button>
+                  </div>
+                  
+                  <div class="basket-item__price-group">
+                    <span class="basket-item__price">310</span>
+                    <span class="basket-item__currency">грн</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- DIVIDER -->
+        <div class="basket__divider"></div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="basket__col-right">
+
+          <!-- PROMO PROGRESS -->
+          <div class="basket__promo">
+            <div class="basket__promo-main-wrap">
+              <div class="basket__promo-info">
+                <div class="basket__promo-icon">
+                  <img src="/src/assets/icons/gift.svg" alt="Gift">
+                </div>
+                <div class="basket__promo-text">
+                  <p class="basket__promo-main">Додайте до замовлення товарів на <span class="basket__promo-accent">65 грн</span></p>
+                  <p class="basket__promo-sub">І отримайте кращій подарунок <i class="ph ph-info"></i></p>
+                </div>
+              </div>
+              <div class="basket__promo-progress">
+                <div class="basket__promo-bar" style="width: 78.4%;"></div>
+              </div>
+            </div>
+            <div class="basket__promo-reward">
+              <span class="basket__promo-reward-title">Ви отримаєте</span>
+              <span class="basket__promo-reward-desc">full-size продукт</span>
+              <div class="basket__promo-reward-badge">
+                <img src="/src/assets/icons/gift-white.svg" alt="Gift">
+                <span>В подарунок</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUMMARY -->
+          <div class="basket__summary">
+            <div class="basket__summary-top">
+              <dl class="basket__calc">
+                <div class="basket__calc-row">
+                  <dt>1 товар(ів) на суму:</dt>
+                  <dd>
+                    <span class="basket__calc-value">310</span>
+                    <span class="basket__calc-currency">грн</span>
+                  </dd>
+                </div>
+                <div class="basket__calc-row">
+                  <dt>Знижка:</dt>
+                  <dd class="basket__calc-discount">
+                    <span class="basket__calc-value">-60</span>
+                    <span class="basket__calc-currency">грн</span>
+                  </dd>
+                </div>
+                <div class="basket__calc-row basket__calc-row--total">
+                  <dt>Разом:</dt>
+                  <dd>
+                    <span class="basket__calc-value">250</span>
+                    <span class="basket__calc-currency">грн</span>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+            
+            <div class="basket__summary-middle">
+              <div class="basket__promo-input-group">
+                <input type="text" class="basket__promo-input" placeholder="Промокод" value="XP23023">
+                <button class="basket__promo-apply" aria-label="Застосувати">
+                  <i class="ph ph-check"></i>
+                </button>
+              </div>
+              
+              <div class="basket__savings">
+                <div class="basket__savings-row">
+                  <span>Ваша економія склала:</span>
+                  <span class="basket__savings-value">60 грн</span>
+                </div>
+                <div class="basket__savings-row">
+                  <span>За це замовлення ви отримаєте: <i class="ph ph-info"></i></span>
+                  <span class="basket__savings-bonus">10 бонусів</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FOOTER ACTIONS -->
+          <div class="basket__footer">
+            <button class="basket__checkout btn-primary">Оформити замовлення</button>
+            <button class="basket__continue btn-outline" id="basket-continue">Продовжити покупки</button>
+          </div>
+
+          <div class="basket__help">
+            <h4 class="basket__help-title">Потрібна допомога з вибором або консультація щодо застосування??</h4>
+            <p class="basket__help-text">Напишіть нам і консультант відповість на всі запитання</p>
+            <button class="basket__help-btn btn-outline-dark">
+              <i class="ph ph-sparkle"></i>
+              Додаткове питання
+            </button>
+          </div>
+        </div>
+
+        <!-- RECOMMENDED -->
+        <div class="basket__recommended swiper-container">
+          <h3 class="basket__recommended-title">Рекомендовані товари</h3>
+          
+          <div class="basket__recommended-swiper swiper">
+            <div class="swiper-wrapper">
+              
+              <div class="swiper-slide">
+                <article class="product-card">
+                  <div class="product-card__image-wrapper">
+                    <span class="product-card__badge product-card__badge--bestseller">BESTSELLER</span>
+                    <img src="/src/assets/images/product-1.png" alt="База LUMOS" class="product-card__image" />
+                  </div>
+                  <div class="product-card__info">
+                    <div class="product-card__text-group">
+                      <h3 class="product-card__title">База LUMOS</h3>
+                      <p class="product-card__desc">LUMOS база світиться у темряві , молочна айворі № 2</p>
+                    </div>
+                    <div class="product-card__dropdown">
+                      <button class="product-card__dropdown-trigger" aria-haspopup="listbox" aria-expanded="false">
+                        <span>60 ml</span>
+                        <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                      </button>
+                      <ul class="product-card__dropdown-list" role="listbox">
+                        <li role="option" aria-selected="true" data-value="60">60 ml</li>
+                        <li role="option" aria-selected="false" data-value="30">30 ml</li>
+                        <li role="option" aria-selected="false" data-value="15">15 ml</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="product-card__price-wrapper">
+                    <button class="product-card__action product-card__action--heart" aria-label="Додати в улюблене">
+                      <i class="ph ph-heart"></i>
+                    </button>
+                    <div class="product-card__price-group">
+                      <span class="product-card__price">310</span>
+                      <span class="product-card__currency">грн</span>
+                    </div>
+                    <button class="product-card__action product-card__action--cart" aria-label="Додати в кошик">
+                      <i class="ph ph-bag"></i>
+                      <span class="product-card__cart-count">+1</span>
+                    </button>
+                  </div>
+                </article>
+              </div>
+
+              <div class="swiper-slide">
+                <article class="product-card">
+                  <div class="product-card__image-wrapper">
+                    <span class="product-card__badge product-card__badge--sale">SALE</span>
+                    <img src="/src/assets/images/product-2.png" alt="База LUMOS" class="product-card__image" />
+                  </div>
+                  <div class="product-card__info">
+                    <div class="product-card__text-group">
+                      <h3 class="product-card__title">База LUMOS</h3>
+                      <p class="product-card__desc">LUMOS база світиться у темряві , блакитна № 2</p>
+                    </div>
+                    <div class="product-card__dropdown">
+                      <button class="product-card__dropdown-trigger" aria-haspopup="listbox" aria-expanded="false">
+                        <span>60 ml</span>
+                        <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                      </button>
+                      <ul class="product-card__dropdown-list" role="listbox">
+                        <li role="option" aria-selected="true" data-value="60">60 ml</li>
+                        <li role="option" aria-selected="false" data-value="30">30 ml</li>
+                        <li role="option" aria-selected="false" data-value="15">15 ml</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="product-card__price-wrapper">
+                    <button class="product-card__action product-card__action--heart" aria-label="Додати в улюблене">
+                      <i class="ph ph-heart"></i>
+                    </button>
+                    <div class="product-card__price-group">
+                      <span class="product-card__price-old">480</span>
+                      <span class="product-card__price">310</span>
+                      <span class="product-card__currency">грн</span>
+                    </div>
+                    <button class="product-card__action product-card__action--cart" aria-label="Додати в кошик">
+                      <i class="ph ph-bag"></i>
+                      <span class="product-card__cart-count">+1</span>
+                    </button>
+                  </div>
+                </article>
+              </div>
+
+              <div class="swiper-slide">
+                <article class="product-card">
+                  <div class="product-card__image-wrapper">
+                    <span class="product-card__badge product-card__badge--bestseller">BESTSELLER</span>
+                    <img src="/src/assets/images/product-3.png" alt="База LUMOS" class="product-card__image" />
+                  </div>
+                  <div class="product-card__info">
+                    <div class="product-card__text-group">
+                      <h3 class="product-card__title">База LUMOS</h3>
+                      <p class="product-card__desc">LUMOS база світиться у темряві , рожева № 2</p>
+                    </div>
+                    <div class="product-card__dropdown">
+                      <button class="product-card__dropdown-trigger" aria-haspopup="listbox" aria-expanded="false">
+                        <span>60 ml</span>
+                        <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                      </button>
+                      <ul class="product-card__dropdown-list" role="listbox">
+                        <li role="option" aria-selected="true" data-value="60">60 ml</li>
+                        <li role="option" aria-selected="false" data-value="30">30 ml</li>
+                        <li role="option" aria-selected="false" data-value="15">15 ml</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="product-card__price-wrapper">
+                    <button class="product-card__action product-card__action--heart" aria-label="Додати в улюблене">
+                      <i class="ph ph-heart"></i>
+                    </button>
+                    <div class="product-card__price-group">
+                      <span class="product-card__price">310</span>
+                      <span class="product-card__currency">грн</span>
+                    </div>
+                    <button class="product-card__action product-card__action--cart" aria-label="Додати в кошик">
+                      <i class="ph ph-bag"></i>
+                      <span class="product-card__cart-count">+1</span>
+                    </button>
+                  </div>
+                </article>
+              </div>
+
+            </div>
+            
+            <div class="swiper-scrollbar basket__recommended-scrollbar"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

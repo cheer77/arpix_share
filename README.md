@@ -57,17 +57,9 @@ arpix_share/
 │   │       └── _mixins.scss     # Міксіни (breakpoints, container, buttons)
 │   │
 │   ├── components/              # Стилі + JS компонентів
-│   │   ├── header/              # header.scss + header.js
-│   │   ├── hero/                # hero.scss
-│   │   ├── benefits/            # benefits.scss
-│   │   ├── about/               # about.scss
-│   │   ├── hits/                # hits.scss
-│   │   ├── life/                # life.scss
-│   │   ├── features/            # features.scss
-│   │   ├── dealers/             # dealers.scss
-│   │   ├── club/                # club.scss
-│   │   ├── offer/               # offer.scss
-│   │   └── footer/              # footer.scss
+│   │   ├── layout/              # header, basket, footer
+│   │   ├── shared/              # hero, products-slider
+│   │   └── pages/               # home (benefits, about, hits, etc.)
 │   │
 │   └── assets/
 │       ├── fonts/               # Кастомні шрифти (поки порожня)
@@ -215,8 +207,8 @@ arpix_share/
 
 ## TODO
 
-- [ ] Завантажити шрифт **Trivia Grotesk X2** (.woff2/.ttf) → `src/assets/fonts/`
-- [ ] Підключити через `@font-face` у `main.scss`
+- [x] Завантажити шрифт **Trivia Grotesk X2** (.woff2/.ttf) → `src/assets/fonts/`
+- [x] Підключити через `@font-face` у `main.scss`
 - [ ] Додати SVG іконки: `visa.svg`, `applepay.svg`, `mastercard.svg`
 - [ ] Додати SVG іконки соціальних мереж (Telegram, WhatsApp, YouTube, Instagram, Facebook)
 - [ ] Оптимізувати зображення (конвертація в WebP, стиснення)

@@ -8,6 +8,7 @@ import '../scss/main.scss';
 
 // --- Component Styles ---
 import '../components/layout/header/header.scss';
+import '../components/layout/basket/basket.scss';
 import '../components/shared/hero/hero.scss';
 import '../components/pages/home/benefits/benefits.scss';
 import '../components/pages/home/about/about.scss';
@@ -28,6 +29,7 @@ import { initHeader } from './components/header.js';
 import { initScrollAnimations } from './animations/scroll-animations.js';
 import { initProductCards } from './components/product-card.js';
 import { initLifeSlider } from './components/life-slider.js';
+import { initBasket } from './components/basket.js';
 
 // --- Init ---
 document.addEventListener('DOMContentLoaded', () => {
@@ -35,4 +37,5 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof initScrollAnimations === 'function') initScrollAnimations();
   if (typeof initProductCards === 'function') initProductCards();
   if (typeof initLifeSlider === 'function') initLifeSlider();
+  if (typeof initBasket === 'function') initBasket();
 });
