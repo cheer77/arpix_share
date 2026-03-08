@@ -794,17 +794,4 @@ $basket-bp: 1200px;
       margin: 0;
     }
   }
-
-  @media (max-width: $basket-bp) {
-    width: 37px;
-    height: 28px;
-    
-    .quantity-control__btn {
-      display: none;
-    }
-
-    .quantity-control__input {
-      width: 100%;
-    }
-  }
 }
