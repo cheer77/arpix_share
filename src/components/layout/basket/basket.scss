@@ -79,7 +79,7 @@ $basket-bp: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: ac(32px, 20px) ac(32px, 20px);
+    padding: ac(32px, 10px) ac(32px, 15px);
     background-color: $color-bg;
     position: relative; // Removed sticky as it's part of a fixed flex-height container
     z-index: 10;
@@ -455,6 +455,7 @@ $basket-bp: 1200px;
     &-row {
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
       align-items: center;
       min-height: 32px;
       padding: 12px 0;
@@ -543,7 +544,7 @@ $basket-bp: 1200px;
   }
 
   &__help {
-    margin-top: 60px;
+    margin-top: ac(60px, 10px);
     background-color: #f5f5f5;
     border: 1px solid #e1ded9;
     border-radius: 4px;
@@ -555,7 +556,6 @@ $basket-bp: 1200px;
     @media (max-width: $basket-bp) {
       align-items: center;
       text-align: center;
-      margin-top: 60px;
     }
 
     &-title {
@@ -607,7 +607,8 @@ $basket-bp: 1200px;
     }
 
     &-swiper {
-      padding-bottom: 30px;
+      padding-bottom: 25px;
+      margin-bottom: 30px;
     }
 
     .swiper-slide {
