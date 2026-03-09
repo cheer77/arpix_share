@@ -166,7 +166,7 @@
     white-space: nowrap;
     opacity: 0;
     pointer-events: none;
-    transition: opacity $transition-base;
+    transition: opacity 0.8s ease 0.4s;
     z-index: 5;
 
     @media (max-width: $breakpoint-tablet) {
@@ -432,7 +432,7 @@
     }
 
     .product-card__tooltip {
-      opacity: 0.85;
+      opacity: 0.6;
     }
   }
 }
