@@ -6,24 +6,12 @@
   padding-bottom: ac(148px, 80px);
 
   &__inner {
+    @include container;
     display: flex;
     align-items: stretch; // Force side images to match center content height
     justify-content: center;
     gap: 10px;
-    max-width: 1440px;
-    margin: 0 auto;
     padding: 0;
-
-    @media (max-width: $breakpoint-desktop) {
-      padding: 0 20px; // Add some breathing room on smaller desktops
-    }
-
-    @media (max-width: $breakpoint-tablet) {
-      flex-direction: column;
-      align-items: center; // Reset stretch for stacked layout
-      gap: 16px;
-      padding: 0 16px;
-    }
   }
 
   &__img-wrap {

@@ -1,11 +1,11 @@
 .breadcrumbs {
-  border-bottom: 1px solid #E1DED9;
+ 
   background-color: $color-white;
   
   &__inner {
-    @include container;
     padding-top: ac(40, 24);
     padding-bottom: ac(32, 20);
+     border-bottom: 1px solid #E1DED9;
   }
 
   &__list {

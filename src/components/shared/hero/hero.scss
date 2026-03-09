@@ -3,11 +3,9 @@
 // ========================================
 
 .hero {
+  @include container;
   padding: 10px 0 ac(80px, 60px);
   position: relative;
-  width: 100%;
-  max-width: 1440px; // Main global container
-  margin: 0 auto;
   display: flex;
   justify-content: center;
 

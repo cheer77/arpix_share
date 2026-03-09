@@ -5,13 +5,6 @@
 .footer {
   background-color: transparent;
   color: $color-text;
-
-  &__inner {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 ac(72px, 16px);
-  }
-
   &__top {
     display: flex;
     gap: 0;
