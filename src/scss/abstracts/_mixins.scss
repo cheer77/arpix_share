@@ -46,22 +46,9 @@
 
 // --- Container ---
 @mixin container {
-  width: 100%;
-  max-width: $container-max;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: $container-padding-mobile;
-  padding-right: $container-padding-mobile;
-
-  @include tablet {
-    padding-left: $container-padding-tablet;
-    padding-right: $container-padding-tablet;
-  }
-
-  @include desktop-lg {
-    padding-left: $container-padding;
-    padding-right: $container-padding;
-  }
+  margin: 0 auto;
+  max-width: 1440px;
+  width: perc(1320);
 }
 
 // --- Typography ---

@@ -23,21 +23,11 @@
   }
 
   &__inner {
+    @include container;
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 72px;
-
-    @media (max-width: 1440px) {
-      padding: 0 40px;
-    }
-
-    @media (max-width: 768px) {
-      padding: 0 16px;
-    }
   }
 
   &__logo {
