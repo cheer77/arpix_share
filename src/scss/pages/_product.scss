@@ -1,0 +1,11 @@
+// ========================================
+// Product Page Layout Styles
+// ========================================
+
+.main--product {
+  padding-top: 82px; // Header height (72px) + top offset (10px)
+
+  @media (max-width: 768px) {
+    padding-top: 82px; // Verify if mobile header height differs
+  }
+}

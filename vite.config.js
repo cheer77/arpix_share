@@ -3,7 +3,7 @@ import { resolve } from 'path';
 import handlebars from 'vite-plugin-handlebars';
 
 export default defineConfig({
-  base: '/arpix_share/',
+  base: './',
   root: './',
   clearScreen: false,
   plugins: [
@@ -33,7 +33,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        product: resolve(__dirname, 'pages/product.html'),
+        product: resolve(__dirname, 'product.html'),
       },
     },
     outDir: 'dist',

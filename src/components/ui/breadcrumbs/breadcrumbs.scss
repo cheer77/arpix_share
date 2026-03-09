@@ -1,8 +1,11 @@
 .breadcrumbs {
   border-bottom: 1px solid #E1DED9;
+  background-color: $color-white;
   
   &__inner {
-    @include adaptive-padding(40, 20, 32, 20); // Top 40, Bottom 32
+    @include container;
+    padding-top: ac(40, 24);
+    padding-bottom: ac(32, 20);
   }
 
   &__list {
@@ -20,7 +23,7 @@
     color: #757575;
     font-size: 13px;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: ac(16, 14);
     letter-spacing: 0.03em;
   }
 
@@ -30,7 +33,7 @@
     transition: color $transition-base;
 
     &:hover {
-      color: $color-text;
+      color: #111822;
     }
   }
 
@@ -41,6 +44,6 @@
   }
 
   &__current {
-    color: $color-text;
+    color: #111822; // Explicitly black as requested
   }
 }

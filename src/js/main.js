@@ -11,6 +11,7 @@ import '../components/layout/header/header.scss';
 import '../components/layout/basket/basket.scss';
 import '../components/ui/breadcrumbs/breadcrumbs.scss';
 import '../components/pages/product/product-hero/product-hero.scss';
+import '../components/pages/product/product-tabs/product-tabs.scss';
 import '../components/shared/hero/hero.scss';
 import '../components/pages/home/benefits/benefits.scss';
 import '../components/pages/home/about/about.scss';

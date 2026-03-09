@@ -1,0 +1,258 @@
+.product-tabs {
+  background-color: $color-white;
+  border-top: 1px solid #E1DED9;
+
+  &__inner {
+    @include container;
+    display: flex;
+    padding-top: 0;
+    padding-bottom: ac(100, 40);
+
+    @include media(1024) {
+      flex-direction: column;
+    }
+  }
+
+  &__sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    border-right: 1px solid #E1DED9;
+    padding-top: ac(64, 32);
+    position: relative;
+
+    @include media(1024) {
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid #E1DED9;
+      padding-bottom: 20px;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include media(1024) {
+      flex-direction: row;
+      overflow-x: auto;
+      padding-bottom: 10px;
+    }
+  }
+
+  &__nav-item {
+    &--active {
+      .product-tabs__nav-link {
+        color: $color-text;
+      }
+    }
+  }
+
+  &__nav-link {
+    font-family: $font-heading;
+    font-size: ac(32, 24);
+    font-weight: 400;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: #cecece; // Deemphasized color from Figma observation
+    transition: color $transition-base;
+
+    &:hover {
+      color: $color-text;
+    }
+  }
+
+  &__collapse-btn {
+    position: absolute;
+    right: -10px;
+    top: 63px;
+    width: 33px;
+    height: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: $color-text;
+
+    @include media(1024) {
+      display: none;
+    }
+  }
+
+  &__content {
+    flex-grow: 1;
+    display: flex;
+    padding-left: ac(40, 0);
+    padding-top: ac(148, 40);
+    gap: ac(40, 20);
+
+    @include media(1280) {
+      flex-direction: column;
+    }
+
+    @include media(1024) {
+      padding-left: 0;
+      padding-top: 32px;
+    }
+  }
+
+  &__main-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: ac(40, 24);
+  }
+
+  &__section {
+    border-bottom: 1px solid #E1DED9;
+    padding-bottom: ac(40, 20);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__section-title {
+    font-family: $font-primary;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: $color-text;
+    margin-bottom: 16px;
+  }
+
+  &__text {
+    font-family: $font-primary;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $color-text;
+    margin-bottom: 16px;
+
+    p {
+      margin-bottom: 1em;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__more-link {
+    display: inline-block;
+    font-size: 16px;
+    color: $color-text;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__info-block {
+    background-color: $color-white;
+    padding: 24px;
+    border-radius: 8px;
+    // Potentially a subtle border or shadow if needed, but Figma says background white on white? 
+    // Wait, the content area has background white usually, but maybe the info block has a background if the main area is #F5.
+    // However, the screenshot shows it looking like plain text with bullets.
+  }
+
+  &__list {
+    list-style: none;
+    padding-left: 20px;
+    
+    li {
+      position: relative;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 8px;
+      padding-left: 4px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: -16px;
+        top: 8px;
+        width: 4px;
+        height: 4px;
+        background-color: $color-text;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &__side-col {
+    width: ac(400, 100%);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__characteristics {
+    border-bottom: 1px solid #E1DED9;
+    padding-bottom: ac(40, 20);
+  }
+
+  &__chars-grid {
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    @include media(576) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__char-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+  }
+
+  &__char-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #757575;
+  }
+
+  &__char-value {
+    font-size: 12px;
+    font-weight: 600;
+    color: $color-text;
+  }
+
+  &__ingredients {
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+  }
+
+  &__plus-btn {
+    width: 22px;
+    height: 22px;
+    color: $color-text;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  &__ingredients-content {
+    font-size: 16px;
+    line-height: 1.5;
+    color: $color-text;
+    max-width: 370px;
+  }
+}
