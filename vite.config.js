@@ -5,6 +5,7 @@ import handlebars from 'vite-plugin-handlebars';
 export default defineConfig({
   base: '/arpix_share/',
   root: './',
+  clearScreen: false,
   plugins: [
     handlebars({
       partialDirectory: resolve(__dirname, 'src/components'),
@@ -29,11 +30,18 @@ export default defineConfig({
     },
   },
   build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        product: resolve(__dirname, 'pages/product.html'),
+      },
+    },
     outDir: 'dist',
     emptyOutDir: true,
   },
   server: {
     port: 3000,
+    strictPort: true,
     open: true,
   },
 });
