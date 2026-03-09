@@ -1,5 +1,5 @@
 .product-hero {
-  padding-top: 50px;
+  padding-top: ac(57px, 20px);
   background-color: #FFFFFF;
   border-bottom: 1px solid #E1DED9;
 
@@ -11,7 +11,7 @@
   &__grid {
     display: flex;
     gap: ac(100px, 20px);
-    align-items: start;
+    align-items: flex-start;
 
     @media (max-width: $breakpoint-desktop) {
       flex-direction: column;
@@ -39,8 +39,9 @@
     max-width: 840px;
     width: 100%;
 
-    @media (max-width: $breakpoint-mobile-lg) {
+    @media (max-width: $breakpoint-desktop) {
       flex-direction: column-reverse;
+      gap: 16px;
     }
 
     &__thumbnails {
@@ -50,18 +51,18 @@
       position: relative;
       margin-left: 0;
 
-      @media (max-width: $breakpoint-mobile-lg) {
-        height: auto;
-        width: 100%;
+      @media (max-width: $breakpoint-desktop) {
+        max-height: none;
+        max-width: 100%;
         padding-right: 0;
-        order: 2;
+        margin-top: 20px;
       }
     }
 
     &__thumb {
       aspect-ratio: 1;
-      width: 120px;
-      height: 120px;
+      width: ac(120px, 80px);
+      height: ac(120px, 80px);
       border: 1px solid #E1DED9;
       border-radius: $radius-md;
       overflow: hidden;
@@ -97,21 +98,34 @@
         width: 100% !important;
       }
 
-      @media (max-width: $breakpoint-mobile-lg) {
-        display: none;
+      @media (max-width: $breakpoint-desktop) {
+        width: 100% !important;
+        height: 4px !important;
+        left: 0 !important;
+        bottom: 0px !important;
+        top: auto !important;
+        right: auto !important;
+        position: relative !important;
+        margin-top: 10px;
+
+        .swiper-scrollbar-drag {
+          height: 100% !important;
+          background: $color-text !important;
+        }
       }
     }
 
     &__main-slider {
       flex: 1;
       max-width: 650px;
-      height: 650px;
+      max-height: ac(650px, 400px) ;
+      height: 100%;
       background: #fff;
       border: 1px solid #E1DED9;
       border-radius: $radius-12;
       overflow: hidden;
 
-      @media (max-width: $breakpoint-mobile-lg) {
+      @media (max-width: $breakpoint-desktop) {
         width: 100%;
         height: auto;
         aspect-ratio: 1;
@@ -185,7 +199,7 @@
 
     &__title {
       font-family: $font-primary;
-      font-size: ac(40px, 32px);
+      font-size: ac(40px, 24px);
       font-weight: $font-weight-bold;
       line-height: 1.05;
       margin-bottom: 24px;
@@ -237,12 +251,12 @@
       }
 
       &__value {
-        font-size: 32px;
+        font-size: ac(32px, 24px);
         font-weight: $font-weight-semibold;
       }
 
       &__currency {
-        font-size: 16px;
+        font-size: ac(16px, 14px);
         font-weight: $font-weight-semibold;
       }
 

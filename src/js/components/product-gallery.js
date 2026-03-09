@@ -20,6 +20,16 @@ export function initProductGallery() {
         hide: false,
       },
       mousewheel: true,
+      breakpoints: {
+        320: {
+          direction: 'horizontal',
+          spaceBetween: 16,
+        },
+        1024: {
+          direction: 'vertical',
+          spaceBetween: 10,
+        }
+      }
     });
   }
 
