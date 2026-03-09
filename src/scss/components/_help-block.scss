@@ -1,0 +1,60 @@
+.help-block {
+  background-color: #f5f5f5;
+  border: 1px solid #e1ded9;
+  border-radius: 4px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__title {
+    font-weight: $font-weight-semibold;
+    font-size: 16px;
+    line-height: ac(20px, 16px);
+    color: #111822;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: ac(21px, 14px);
+    color: #111822;
+  }
+
+  &__btn {
+    width: fit-content;
+    padding: 9px 24px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 110px;
+    border: 1px solid #111822;
+    background: transparent;
+    font-weight: $font-weight-semibold;
+    color: #111822;
+    transition: all $transition-base;
+
+    &:hover {
+      background-color: #111822;
+      color: #fff;
+    }
+
+    i { font-size: 22px; }
+  }
+
+  @media (max-width: 1200px) {
+    align-items: center;
+    text-align: center;
+
+    &__btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}

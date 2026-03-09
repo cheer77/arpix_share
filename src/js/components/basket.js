@@ -1,9 +1,5 @@
-// ========================================
-// Basket — JS Module
-// ========================================
-
-import Swiper from 'swiper';
 import { Scrollbar } from 'swiper/modules';
+import { initQuantityControls } from './quantity-control.js';
 
 export function initBasket() {
   const basket = document.getElementById('basket');
@@ -125,26 +121,12 @@ export function initBasket() {
   };
 
   // --- Quantity Control ---
-  const initQuantityControls = () => {
-    const containers = basket.querySelectorAll('.quantity-control');
-    containers.forEach(container => {
-      const input = container.querySelector('.quantity-control__input');
-      const minusBtn = container.querySelector('.quantity-control__btn--minus');
-      const plusBtn = container.querySelector('.quantity-control__btn--plus');
-
-      if (!input || !minusBtn || !plusBtn) return;
-
-      minusBtn.addEventListener('click', () => {
-        const val = parseInt(input.value);
-        if (val > 1) {
-          input.value = val - 1;
-          updateBasketUI();
-        }
-      });
-
-      plusBtn.addEventListener('click', () => {
-        const val = parseInt(input.value);
-        input.value = val + 1;
+  const setupQuantityControls = () => {
+    initQuantityControls(basket);
+    
+    // Custom logic for basket updates on change
+    basket.querySelectorAll('.quantity-control__input').forEach(input => {
+      input.addEventListener('change', () => {
         updateBasketUI();
       });
     });
@@ -198,7 +180,7 @@ export function initBasket() {
     });
   };
 
-  initQuantityControls();
+  setupQuantityControls();
   initRemoveButtons();
   initRecommendedSlider();
   updateBasketUI();

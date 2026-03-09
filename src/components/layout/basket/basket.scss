@@ -330,7 +330,10 @@ $basket-bp: 1200px;
     }
   }
 
-  // --- Summary ---
+  @import "../../../scss/components/quantity-control";
+  @import "../../../scss/components/help-block";
+
+// --- Pages ---
   &__summary {
     display: flex;
     flex-direction: column;
@@ -545,52 +548,7 @@ $basket-bp: 1200px;
 
   &__help {
     margin-top: ac(60px, 10px);
-    background-color: #f5f5f5;
-    border: 1px solid #e1ded9;
-    border-radius: 4px;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-
-    @media (max-width: $basket-bp) {
-      align-items: center;
-      text-align: center;
-    }
-
-    &-title {
-      font-weight: $font-weight-semibold;
-      font-size: 16px;
-      line-height: ac(20px, 16px);
-      color: #111822;
-    }
-
-    &-text {
-      font-size: 14px;
-      line-height: ac(21px, 14px);
-      color: #111822;
-    }
-
-    &-btn {
-      width: fit-content;
-      padding: 9px 24px;
-      font-size: 12px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      border-radius: 110px;
-      border: 1px solid #111822;
-      background: transparent;
-      font-weight: $font-weight-semibold;
-      color: #111822;
-
-      @media (max-width: $basket-bp) {
-        width: 100%;
-        justify-content: center;
-      }
-
-      i { font-size: 22px; }
-    }
+    @extend .help-block;
   }
 
   &__recommended {
@@ -751,48 +709,5 @@ $basket-bp: 1200px;
   }
 }
 
-// --- Quantity Control ---
-.quantity-control {
-  display: flex;
-  align-items: center;
-  border: 0.667px solid #e1ded9;
-  border-radius: 2.667px;
-  overflow: hidden;
-  width: 85.333px;
-  height: 32px;
-
-  &__btn {
-    @include btn-reset;
-    flex: 1;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    color: #e1ded9;
-    background-color: transparent;
-    transition: background-color $transition-fast;
-
-    &:hover {
-      background-color: #f5f5f5;
-    }
-  }
-
-  &__input {
-    width: 32px;
-    height: 100%;
-    border: none;
-    text-align: center;
-    font-size: 14px;
-    font-weight: $font-weight-medium;
-    background-color: transparent;
-    color: rgba(117,117,117,0.5);
-    appearance: textfield;
-
-    &::-webkit-outer-spin-button,
-    &::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
-  }
-}
+// Inherit from shared component
+// Styles moved to src/scss/components/_quantity-control.scss

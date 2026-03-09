@@ -24,15 +24,18 @@ import '../components/pages/home/offer/offer.scss';
 import '../components/layout/footer/footer.scss';
 
 // --- Global Modules ---
-import Swiper from 'swiper';
-window.Swiper = Swiper; // Make it globally available if needed, though we import it directly below where used. Or better yet, just use standard imports in specific files.
+import Swiper from 'swiper/bundle';
+window.Swiper = Swiper;
 
 // --- Component Modules ---
 import { initHeader } from './components/header.js';
 import { initScrollAnimations } from './animations/scroll-animations.js';
 import { initProductCards } from './components/product-card.js';
 import { initLifeSlider } from './components/life-slider.js';
+import { initProductGallery } from './components/product-gallery.js';
 import { initBasket } from './components/basket.js';
+
+import { initQuantityControls } from './components/quantity-control.js';
 
 // --- Init ---
 document.addEventListener('DOMContentLoaded', () => {
@@ -41,4 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof initProductCards === 'function') initProductCards();
   if (typeof initLifeSlider === 'function') initLifeSlider();
   if (typeof initBasket === 'function') initBasket();
+  if (typeof initProductGallery === 'function') initProductGallery();
+  if (typeof initQuantityControls === 'function') initQuantityControls();
 });

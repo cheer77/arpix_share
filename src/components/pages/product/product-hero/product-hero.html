@@ -3,26 +3,64 @@
     <div class="product-hero__grid">
       <!-- GALLERY -->
       <div class="product-hero__gallery gallery">
-        <div class="gallery__thumbnails">
-          <button class="gallery__thumb gallery__thumb--active">
-            <img src="/src/assets/images/product-4.png" alt="Thumbnail 1" />
-          </button>
-          <button class="gallery__thumb">
-            <img src="/src/assets/images/product-4.png" alt="Thumbnail 2" />
-          </button>
-          <button class="gallery__thumb">
-            <img src="/src/assets/images/product-4.png" alt="Thumbnail 3" />
-          </button>
-          <button class="gallery__thumb">
-            <img src="/src/assets/images/product-4.png" alt="Thumbnail 4" />
-          </button>
-          <button class="gallery__scroll-btn">
-            <i class="ph ph-caret-down"></i>
-          </button>
+        <div class="gallery__thumbnails swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide gallery__thumb">
+              <img src="/src/assets/images/product-4.png" alt="Thumbnail 1" />
+            </div>
+            <div class="swiper-slide gallery__thumb">
+              <img src="/src/assets/images/product-4.png" alt="Thumbnail 2" />
+            </div>
+            <div class="swiper-slide gallery__thumb">
+              <img src="/src/assets/images/product-4.png" alt="Thumbnail 3" />
+            </div>
+            <div class="swiper-slide gallery__thumb">
+              <img src="/src/assets/images/product-4.png" alt="Thumbnail 4" />
+            </div>
+            <div class="swiper-slide gallery__thumb">
+              <img src="/src/assets/images/product-4.png" alt="Thumbnail 5" />
+            </div>
+            <div class="swiper-slide gallery__thumb">
+              <img src="/src/assets/images/product-4.png" alt="Thumbnail 6" />
+            </div>
+            <div class="swiper-slide gallery__thumb">
+              <img src="/src/assets/images/product-4.png" alt="Thumbnail 7" />
+            </div>
+            <div class="swiper-slide gallery__thumb">
+              <img src="/src/assets/images/product-4.png" alt="Thumbnail 8" />
+            </div>
+          </div>
+          <div class="swiper-scrollbar"></div>
         </div>
-        <div class="gallery__main">
-          <span class="gallery__badge">Bestseller</span>
-          <img src="/src/assets/images/product-4.png" alt="Product Main Image" class="gallery__main-img" />
+        
+        <div class="gallery__main-slider swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide gallery__main">
+              <span class="gallery__badge">Bestseller</span>
+              <img src="/src/assets/images/product-4.png" alt="Product Main Image" class="gallery__main-img" />
+            </div>
+            <div class="swiper-slide gallery__main">
+              <img src="/src/assets/images/product-4.png" alt="Product Image 2" class="gallery__main-img" />
+            </div>
+            <div class="swiper-slide gallery__main">
+              <img src="/src/assets/images/product-4.png" alt="Product Image 3" class="gallery__main-img" />
+            </div>
+            <div class="swiper-slide gallery__main">
+              <img src="/src/assets/images/product-4.png" alt="Product Image 4" class="gallery__main-img" />
+            </div>
+            <div class="swiper-slide gallery__main">
+              <img src="/src/assets/images/product-4.png" alt="Product Image 5" class="gallery__main-img" />
+            </div>
+            <div class="swiper-slide gallery__main">
+              <img src="/src/assets/images/product-4.png" alt="Product Image 6" class="gallery__main-img" />
+            </div>
+            <div class="swiper-slide gallery__main">
+              <img src="/src/assets/images/product-4.png" alt="Product Image 7" class="gallery__main-img" />
+            </div>
+            <div class="swiper-slide gallery__main">
+              <img src="/src/assets/images/product-4.png" alt="Product Image 8" class="gallery__main-img" />
+            </div>
+          </div>
         </div>
       </div>
 
@@ -42,11 +80,11 @@
 
         <div class="info__rating">
           <div class="info__stars">
-            <i class="ph-fill ph-star"></i>
-            <i class="ph-fill ph-star"></i>
-            <i class="ph-fill ph-star"></i>
-            <i class="ph-fill ph-star"></i>
-            <i class="ph ph-star-half"></i>
+            <img src="/src/assets/icons/star.svg" alt="Star" width="16" height="16">
+            <img src="/src/assets/icons/star.svg" alt="Star" width="16" height="16">
+            <img src="/src/assets/icons/star.svg" alt="Star" width="16" height="16">
+            <img src="/src/assets/icons/star.svg" alt="Star" width="16" height="16">
+            <img src="/src/assets/icons/star.svg" alt="Star" width="16" height="16">
           </div>
           <span class="info__reviews-count">(3)</span>
         </div>
@@ -89,20 +127,20 @@
         </div>
 
         <div class="info__actions actions">
-          <div class="actions__quantity quantity">
-            <button class="quantity__btn quantity__btn--minus">−</button>
-            <input type="number" class="quantity__input" value="1" min="1" />
-            <button class="quantity__btn quantity__btn--plus">+</button>
+          <div class="actions__quantity quantity-control quantity-control--large">
+            <button class="quantity-control__btn quantity-control__btn--minus">−</button>
+            <input type="number" class="quantity-control__input" value="1" min="1" readonly />
+            <button class="quantity-control__btn quantity-control__btn--plus">+</button>
           </div>
           <button class="actions__buy btn-dark">Купити</button>
         </div>
 
-        <div class="info__support support">
-          <div class="support__content">
-            <h3 class="support__title">Потрібна допомога з вибором або консультація щодо застосування??</h3>
-            <p class="support__text">Напишіть нам і консультант відповість на всі запитання</p>
+        <div class="info__support help-block">
+          <div class="help-block__content">
+            <h3 class="help-block__title">Потрібна допомога з вибором або консультація щодо застосування??</h3>
+            <p class="help-block__text">Напишіть нам і консультант відповість на всі запитання</p>
           </div>
-          <button class="support__btn">
+          <button class="help-block__btn">
             <i class="ph ph-sparkle"></i>
             <span>Додаткове питання</span>
           </button>
@@ -110,14 +148,14 @@
 
         <div class="info__delivery delivery">
           <div class="delivery__item">
-            <i class="ph ph-truck"></i>
+            <img src="/src/assets/icons/delivery.svg" alt="Delivery" width="24" height="24">
             <div class="delivery__content">
               <span>Безкоштовна доставка від 500 грн</span>
               <a href="#">Доставка і оплата</a>
             </div>
           </div>
           <div class="delivery__item">
-            <i class="ph ph-arrows-clockwise"></i>
+            <img src="/src/assets/icons/return.svg" alt="Return" width="24" height="24">
             <div class="delivery__content">
               <span>14 днів на повернення чи обмін</span>
               <a href="#">Правила повернення</a>
@@ -127,18 +165,64 @@
 
         <div class="info__video-reviews video-reviews">
           <h4 class="video-reviews__title">Огляди товару</h4>
-          <div class="video-reviews__list">
-            <div class="video-reviews__item">
-              <img src="/src/assets/images/video-thumb-1.png" alt="Video review 1" />
-            </div>
-            <div class="video-reviews__item">
-              <img src="/src/assets/images/video-thumb-2.png" alt="Video review 2" />
-            </div>
-            <div class="video-reviews__item">
-              <img src="/src/assets/images/video-thumb-3.png" alt="Video review 3" />
-            </div>
-            <div class="video-reviews__item">
-              <img src="/src/assets/images/video-thumb-4.png" alt="Video review 4" />
+          <div class="video-reviews__slider-wrap">
+            <button class="video-reviews__prev">
+              <i class="ph ph-caret-left"></i>
+            </button>
+            <div class="video-reviews__swiper swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide video-reviews__item">
+                  <img src="/src/assets/images/tovar-1.png" alt="Video review 1" />
+                </div>
+                <div class="swiper-slide video-reviews__item">
+                  <img src="/src/assets/images/tovar-2.png" alt="Video review 2" />
+                </div>
+                <div class="swiper-slide video-reviews__item">
+                  <img src="/src/assets/images/tovar-3.png" alt="Video review 3" />
+                </div>
+                <div class="swiper-slide video-reviews__item">
+                  <img src="/src/assets/images/tovar-4.png" alt="Video review 4" />
+                </div>
+                <div class="swiper-slide video-reviews__item">
+                  <img src="/src/assets/images/tovar-5.png" alt="Video review 5" />
+                </div>
+                <div class="swiper-slide video-reviews__item">
+                  <img src="/src/assets/images/tovar-6.png" alt="Video review 6" />
+                </div>
+                <div class="swiper-slide video-reviews__item">
+                  <img src="/src/assets/images/tovar-7.png" alt="Video review 7" />
+                </div>
+                <div class="swiper-slide video-reviews__item">
+                  <img src="/src/assets/images/tovar-8.png" alt="Video review 8" />
+                </div>
+                <div class="swiper-slide video-reviews__item">
+                  <img src="/src/assets/images/tovar-9.png" alt="Video review 9" />
+                </div>
+                <div class="swiper-slide video-reviews__item">
+                  <img src="/src/assets/images/tovar-10.png" alt="Video review 10" />
+                </div>
+                <div class="swiper-slide video-reviews__item">
+                  <img src="/src/assets/images/tovar-11.png" alt="Video review 11" />
+                </div>
+                <div class="swiper-slide video-reviews__item">
+                  <img src="/src/assets/images/tovar-12.png" alt="Video review 12" />
+                </div>
+                <div class="swiper-slide video-reviews__item">
+                  <img src="/src/assets/images/tovar-13.png" alt="Video review 13" />
+                </div>
+                <div class="swiper-slide video-reviews__item">
+                  <img src="/src/assets/images/tovar-14.png" alt="Video review 14" />
+                </div>
+                <div class="swiper-slide video-reviews__item">
+                  <img src="/src/assets/images/tovar-15.png" alt="Video review 15" />
+                </div>
+                <div class="swiper-slide video-reviews__item">
+                  <img src="/src/assets/images/tovar-16.png" alt="Video review 16" />
+                </div>
+                <div class="swiper-slide video-reviews__item">
+                  <img src="/src/assets/images/tovar-17.png" alt="Video review 17" />
+                </div>
+              </div>
             </div>
             <button class="video-reviews__next">
               <i class="ph ph-caret-right"></i>

@@ -6,7 +6,7 @@
     @include container;
     display: flex;
     padding-top: 0;
-    padding-bottom: ac(100, 40);
+    padding-bottom: ac(100px, 40px);
 
     @include media(1024) {
       flex-direction: column;
@@ -17,7 +17,7 @@
     width: 240px;
     flex-shrink: 0;
     border-right: 1px solid #E1DED9;
-    padding-top: ac(64, 32);
+    padding-top: ac(64px, 32px);
     position: relative;
 
     @include media(1024) {
@@ -50,7 +50,7 @@
 
   &__nav-link {
     font-family: $font-heading;
-    font-size: ac(32, 24);
+    font-size: ac(32px, 24px);
     font-weight: 400;
     line-height: 1.1;
     text-transform: uppercase;
@@ -84,9 +84,9 @@
   &__content {
     flex-grow: 1;
     display: flex;
-    padding-left: ac(40, 0);
-    padding-top: ac(148, 40);
-    gap: ac(40, 20);
+    padding-left: ac(40px, 0px);
+    padding-top: ac(148px, 40px);
+    gap: ac(40px, 20px);
 
     @include media(1280) {
       flex-direction: column;
@@ -102,12 +102,12 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: ac(40, 24);
+    gap: ac(40px, 24px);
   }
 
   &__section {
     border-bottom: 1px solid #E1DED9;
-    padding-bottom: ac(40, 20);
+    padding-bottom: ac(40px, 20px);
 
     &:last-child {
       border-bottom: none;
@@ -191,7 +191,7 @@
 
   &__characteristics {
     border-bottom: 1px solid #E1DED9;
-    padding-bottom: ac(40, 20);
+    padding-bottom: ac(40px, 20px);
   }
 
   &__chars-grid {
