@@ -6,7 +6,6 @@
   padding-bottom: ac(148px, 80px);
 
   &__inner {
-    @include container;
     display: flex;
     align-items: stretch; // Force side images to match center content height
     justify-content: center;
