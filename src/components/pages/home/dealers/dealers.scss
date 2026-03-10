@@ -41,44 +41,31 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 40px 55px; // Reduced padding to help content fit inside 545px
+    padding: ac(40px, 20px) ac(55px, 20px);
 background: linear-gradient(180deg, #020605 -42.74%, #143C3D 58.8%, #4D8582 97.22%);
     border-radius: $radius-25;
-    min-height: 545px;
+    min-height: ac(545px, 400px);
 
     @media (max-width: $breakpoint-desktop) {
       max-width: 100%;
-      min-height: 450px;
-      padding: 40px 30px;
     }
 
     @media (max-width: $breakpoint-tablet) {
       width: 100%;
       height: auto;
       border-radius: $radius-15;
-      padding: 40px 20px;
     }
   }
 
   &__title {
     font-family: $font-heading;
-    font-size: 32px;
+    font-size: ac(32px, 24px);
     font-weight: $font-weight-regular;
     text-transform: uppercase;
     line-height: normal;
-    margin-bottom: 36px;
+    margin-bottom: ac(36px, 16px);
     max-width: 421px;
     color: $color-white;
-
-    @media (max-width: $breakpoint-tablet) {
-      font-size: 28px;
-      margin-bottom: 24px;
-    }
-
-    @media (max-width: $breakpoint-mobile) {
-      font-size: 24px;
-      margin-bottom: 16px;
-    }
   }
 
   &__subtitle {
@@ -97,16 +84,15 @@ background: linear-gradient(180deg, #020605 -42.74%, #143C3D 58.8%, #4D8582 97.2
 
   &__tags {
     display: grid;
-    grid-template-columns: repeat(2, 173px);
+    grid-template-columns: repeat(2, ac(173px, 130px));
     gap: 12px;
-    margin-bottom: 48px;
+    margin-bottom: ac(48px, 32px);
     justify-content: center;
 
     @media (max-width: $breakpoint-tablet) {
       grid-template-columns: repeat(2, minmax(130px, 1fr));
       width: 100%;
       max-width: 380px;
-      margin-bottom: 32px;
     }
 
     @media (max-width: $breakpoint-mobile) {
@@ -120,7 +106,7 @@ background: linear-gradient(180deg, #020605 -42.74%, #143C3D 58.8%, #4D8582 97.2
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 77px;
+    min-height: ac(77px, 56px);
     
     // Glassmorphism styling based on user screenshot
     background: rgba(255, 255, 255, 0.05);
@@ -139,17 +125,10 @@ background: linear-gradient(180deg, #020605 -42.74%, #143C3D 58.8%, #4D8582 97.2
     border-radius: $radius-12; // Smoother rounded corners
 
     font-family: $font-primary;
-    font-size: 16px; // Adjust slightly up based on screenshot readability
+    font-size: ac(16px, 14px);
     font-weight: $font-weight-regular;
     text-align: center;
-    padding: 8px 10px;
+    padding: ac(8px, 12px) 10px;
     color: $color-white;
-
-    @media (max-width: $breakpoint-tablet) {
-      height: auto;
-      min-height: 56px;
-      font-size: 14px;
-      padding: 12px;
-    }
   }
 }

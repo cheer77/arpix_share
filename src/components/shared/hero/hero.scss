@@ -3,7 +3,6 @@
 // ========================================
 
 .hero {
-  @include container;
   padding: 10px 0 ac(80px, 60px);
   position: relative;
   display: flex;
@@ -13,17 +12,15 @@
     position: relative;
     width: 100%;
     max-width: 1420px;
-    height: 722px;
+    min-height: ac(722px, 596px);
     border-radius: 20px;
     overflow: hidden;
     background-color: $color-white;
     display: flex;
     align-items: center;
-    padding: 0 72px;
+    padding: 0 ac(72px, 16px);
 
     @include mobile-only {
-      height: 596px;
-      padding: 0 16px;
       align-items: flex-start;
       padding-top: 172px;
     }
@@ -53,65 +50,45 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 60px;
+    gap: ac(60px, 40px);
     max-width: 734px;
     width: 100%;
     height: auto;
-
-    @include mobile-only {
-      gap: 60px;
-    }
   }
 
   &__text-group {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: ac(24px, 20px);
     width: 100%;
-
-    @include mobile-only {
-      gap: 24px;
-    }
   }
 
   &__tagline {
     font-family: $font-heading; // Trivia Grotesk X2 or equivalent
-    font-size: 20px;
+    font-size: ac(20px, 18px);
     font-weight: 500;
     line-height: 24px;
     color: $color-text;
     text-transform: uppercase;
-
-    @include mobile-only {
-      font-size: 18px;
-    }
   }
 
   &__title {
     font-family: $font-heading; // Syne
-    font-size: 48px;
+    font-size: ac(48px, 32px);
     font-weight: 400; // Regular
     line-height: normal;
     letter-spacing: -2px;
     color: $color-text;
     text-transform: uppercase;
     margin: 0;
-
-    @include mobile-only {
-      font-size: 32px;
-    }
   }
 
   &__subtitle {
     font-family: $font-primary; // Manrope
-    font-size: 24px;
+    font-size: ac(24px, 18px);
     font-weight: 500;
-    line-height: 32px; // 133% or 32px
+    line-height: ac(32px, 24px);
     color: $color-text;
-
-    @include mobile-only {
-      font-size: 18px;
-    }
   }
 
   &__cta {

@@ -78,11 +78,12 @@
     gap: 24px; // Spacing on desktop
 
     @media (max-width: $breakpoint-tablet) {
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      justify-items: stretch;
     }
-    
-    @media (max-width: 576px) {
+
+    @media (max-width: $breakpoint-mobile) {
       grid-template-columns: 1fr;
     }
   }
@@ -99,10 +100,16 @@
   border-radius: $radius-12;
   transition: box-shadow $transition-base, transform $transition-base;
   padding-bottom: 24px;
+  z-index: 1;
+
+  // Lift card above neighbors when dropdown is open
+  &:has(.product-card__dropdown.is-open) {
+    z-index: 20;
+  }
 
   @media (max-width: $breakpoint-tablet) {
-    max-width: 280px;
-    padding-bottom: 16px;
+    max-width: 100%;
+    padding-bottom: 0;
   }
 
   &__image-wrapper {
@@ -110,14 +117,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 305px;
-    padding: 24px;
+    height: ac(305px, 200px);
+    padding: ac(24px, 16px);
     overflow: hidden;
     border-radius: $radius-12 $radius-12 0 0;
 
     @media (max-width: $breakpoint-tablet) {
-      height: 200px;
-      padding: 16px;
+      height: auto;
+      aspect-ratio: 1;
     }
   }
 
@@ -183,17 +190,13 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 20px;
+    gap: ac(20px, 12px);
     padding-top: 16px;
-    padding-left: 24px;
-    padding-right: 24px;
-    height: 140px;
+    padding-left: ac(24px, 12px);
+    padding-right: ac(24px, 12px);
+    min-height: ac(140px, 80px);
 
     @media (max-width: $breakpoint-tablet) {
-      padding-left: 12px;
-      padding-right: 12px;
-      gap: 12px;
-      height: auto;
       margin-bottom: 20px;
     }
   }
@@ -212,7 +215,9 @@
     color: $color-text;
     
     @media (max-width: $breakpoint-tablet) {
-      line-height: 1.5;
+      font-size: 13px;
+      line-height: 23.8px;
+      letter-spacing: -0.26px;
     }
   }
 
@@ -222,6 +227,11 @@
     font-weight: $font-weight-regular;
     color: $color-text;
     line-height: normal;
+
+    @media (max-width: $breakpoint-tablet) {
+      font-size: 12px;
+      letter-spacing: -0.12px;
+    }
   }
 
   &__dropdown {
@@ -230,6 +240,11 @@
     flex-direction: column;
     align-items: center;
     z-index: 11;
+
+    // When dropdown is open, lift the whole card above neighbors
+    &.is-open {
+      z-index: 50;
+    }
   }
 
   &__dropdown-trigger {
@@ -247,6 +262,12 @@
     color: $color-text;
     cursor: pointer;
     transition: all $transition-fast;
+
+    @media (max-width: $breakpoint-tablet) {
+      font-size: 11px;
+      line-height: 23.8px;
+      letter-spacing: -0.11px;
+    }
 
     svg {
       transition: transform $transition-fast;
@@ -273,7 +294,14 @@
     opacity: 0;
     pointer-events: none;
     transition: all $transition-fast;
-    z-index: 10;
+    z-index: 50;
+
+    // On mobile: open upward to avoid overlapping the card below
+    @media (max-width: $breakpoint-tablet) {
+      top: auto;
+      bottom: calc(100% + 4px);
+      box-shadow: $shadow-md;
+    }
     
     // Quick visibility toggle handled by JS class or attribute
     .product-card__dropdown.is-open & {
@@ -289,6 +317,11 @@
       cursor: pointer;
       text-align: center;
       transition: background-color $transition-fast;
+
+      @media (max-width: $breakpoint-tablet) {
+        font-size: 12px;
+        padding: 8px 12px;
+      }
 
       &:hover {
         background-color: $color-bg;
@@ -329,6 +362,10 @@
     color: #949494; // fallback grey
     text-decoration: line-through;
     margin-bottom: 2px;
+
+    @media (max-width: $breakpoint-tablet) {
+      font-size: 8px;
+    }
   }
 
   &__price {
@@ -350,6 +387,10 @@
     color: $color-text;
     line-height: normal;
     margin-bottom: 1px;
+
+    @media (max-width: $breakpoint-tablet) {
+      font-size: 10px;
+    }
   }
 
   &__action {
@@ -368,6 +409,15 @@
     
     i, svg {
       font-size: 18px;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      width: 31px;
+      height: 31px;
+
+      i, svg {
+        font-size: 15px;
+      }
     }
     
     position: relative;

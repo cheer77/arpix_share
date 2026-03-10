@@ -14,14 +14,15 @@
   }
 
   &__sidebar {
-    width: 240px;
+    max-width: 240px;
+    width: 100%;
     flex-shrink: 0;
     border-right: 1px solid #E1DED9;
     padding-top: ac(64px, 32px);
     position: relative;
 
     @include media(1024) {
-      width: 100%;
+      max-width: 100%;
       border-right: none;
       border-bottom: 1px solid #E1DED9;
       padding-bottom: 20px;

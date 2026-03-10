@@ -599,15 +599,10 @@ $basket-bp: 1200px;
 
   &__image-wrapper {
     flex-shrink: 0;
-    width: 130px;
-    height: 130px;
+    width: ac(130px, 55px);
+    height: ac(130px, 55px);
     border-radius: 8px;
     overflow: hidden;
-
-    @media (max-width: $basket-bp) {
-      width: 55px;
-      height: 55px;
-    }
 
     img {
       width: 100%;

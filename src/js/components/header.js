@@ -38,6 +38,8 @@ export function initHeader() {
   );
 
   // --- Adaptive menu toggle ---
+  let savedScrollY = 0; // Store in closure for reliable access
+
   const handleToggle = (isActive) => {
     toggle.classList.toggle('header__mobile-toggle--active', isActive);
     nav.classList.toggle('is-active', isActive);
@@ -45,24 +47,38 @@ export function initHeader() {
     toggle.setAttribute('aria-expanded', isActive);
 
     const width = window.innerWidth;
+
     if (width <= DESKTOP_BP) {
       nav.setAttribute('aria-hidden', !isActive);
+    } else {
+      nav.removeAttribute('aria-hidden');
+    }
+
+    // Body scroll lock logic
+    if (width <= TABLET_BP) {
+      // Mobile full-screen drawer: full lock with position:fixed
       if (isActive) {
+        savedScrollY = window.scrollY;
+        document.documentElement.style.overflow = 'hidden';
         document.body.style.overflow = 'hidden';
         document.body.style.position = 'fixed';
-        document.body.style.top = `-${window.scrollY}px`;
+        document.body.style.top = `-${savedScrollY}px`;
         document.body.style.width = '100%';
-        document.body.dataset.scrollY = window.scrollY; // Store scroll position
       } else {
-        const scrollY = document.body.dataset.scrollY || 0;
+        document.documentElement.style.overflow = '';
         document.body.style.overflow = '';
         document.body.style.position = '';
         document.body.style.top = '';
         document.body.style.width = '';
-        window.scrollTo(0, parseInt(scrollY || '0'));
+        window.scrollTo(0, savedScrollY);
       }
+    } else if (width <= DESKTOP_BP) {
+      // Intermediate dropdown: soft lock (just block scroll, no position change)
+      document.documentElement.style.overflow = isActive ? 'hidden' : '';
+      document.body.style.overflow = isActive ? 'hidden' : '';
     } else {
-      nav.removeAttribute('aria-hidden');
+      // Desktop: clear everything
+      document.documentElement.style.overflow = '';
       document.body.style.overflow = '';
       document.body.style.position = '';
       document.body.style.top = '';
@@ -175,19 +191,14 @@ export function initHeader() {
       const isActive = toggle.classList.contains('header__mobile-toggle--active');
       nav.setAttribute('aria-hidden', !isActive);
       
-      if (width > DESKTOP_BP) {
-        document.body.style.overflow = '';
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.width = '';
-      } else if (isActive) {
+      if (isActive) {
         document.body.style.overflow = 'hidden';
         document.body.style.position = 'fixed';
         // Only set top if not already fixed to avoid jumping
         if (document.body.style.top === '') {
-          document.body.style.top = `-${window.scrollY}px`;
+          savedScrollY = window.scrollY;
+          document.body.style.top = `-${savedScrollY}px`;
           document.body.style.width = '100%';
-          document.body.dataset.scrollY = window.scrollY;
         }
       }
     }

@@ -36,7 +36,7 @@
     padding-bottom: ac(90px, 40px);
     padding-left: ac(22px, 16px);
     padding-right: ac(22px, 16px);
-    min-height: 742px;
+    min-height: ac(742px, 500px);
     z-index: 2;
 
     @media (max-width: $breakpoint-tablet) {
@@ -110,7 +110,7 @@
     position: relative;
     border-radius: 0 $radius-25 $radius-25 0;
     overflow: hidden;
-    min-height: 742px;
+    min-height: ac(742px, 320px);
     margin-left: ac(-69px, 0px); // Pull under the circular mask of the left panel (scales to 0 on mobile)
     z-index: 1;
 
@@ -118,15 +118,10 @@
       margin-left: 0;
       margin-bottom: -40.5px; // Overlap for the mobile top-center mask
       order: -1; // Place image on top
-      min-height: 352px;
-      height: 352px;
+      min-height: auto;
+      height: ac(352px, 320px);
       width: 100%;
       border-radius: $radius-25 $radius-25 0 0;
-    }
-
-    @media (max-width: $breakpoint-mobile) {
-      min-height: 320px;
-      height: 320px;
     }
   }
 

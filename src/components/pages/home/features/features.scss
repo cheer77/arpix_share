@@ -11,50 +11,32 @@
 
   &__title {
     font-family: $font-heading;
-    font-size: 40px;
+    font-size: ac(40px, 24px);
     font-weight: $font-weight-regular;
     line-height: normal;
     text-transform: uppercase;
-    margin-bottom: 36px;
-
-    @media (max-width: $breakpoint-tablet) {
-      font-size: 32px;
-      margin-bottom: 24px;
-    }
-
-    @media (max-width: $breakpoint-mobile) {
-      font-size: 24px;
-      margin-bottom: 16px;
-    }
+    margin-bottom: ac(36px, 16px);
   }
 
   &__subtitle {
     font-family: $font-primary;
-    font-size: 20px;
+    font-size: ac(20px, 16px);
     font-weight: $font-weight-regular;
     color: $color-text-secondary;
-
-    @media (max-width: $breakpoint-tablet) {
-      font-size: 18px;
-    }
-
-    @media (max-width: $breakpoint-mobile) {
-      font-size: 16px;
-    }
   }
 
   &__interactive {
     position: relative;
     max-width: 1302px; // Back to Figma standard width
     margin: 0 auto;
-    height: 620px;
+    min-height: ac(620px, 400px);
     display: flex;
     align-items: center;
     justify-content: center;
 
     @media (max-width: $breakpoint-tablet) {
       flex-direction: column;
-      height: auto;
+      min-height: auto;
       gap: 10px; // Increased gap for mobile stacking
       padding: 0 16px;
       // Allow relative positioning context for absolute children on mobile
@@ -63,7 +45,8 @@
   }
 
   &__center-image {
-    width: 600px; // A bit wider to prevent text overlap if screen shrinks
+    max-width: ac(600px, 320px);
+    width: 100%;
     height: auto;
     display: flex;
     align-items: center;
@@ -74,7 +57,6 @@
     transform: translateX(90px); 
 
     @media (max-width: $breakpoint-tablet) {
-      width: 100%;
       max-width: 320px;
       margin: 0 auto 0px auto; // Center it above the list
       transform: none; // Reset on mobile

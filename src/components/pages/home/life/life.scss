@@ -96,21 +96,11 @@
   }
 
   &__slide {
-    width: 322px; // Fixed width for slides
-    height: 572px;
+    width: ac(322px, 200px);
+    height: ac(572px, 355px);
     transition: transform 0.4s ease, opacity 0.4s ease;
     opacity: 0.5; // Dim inactive slides
     transform: scale(0.85); // Shrink inactive slides
-
-    @media (max-width: $breakpoint-tablet) {
-      width: 240px;
-      height: 426px; // Maintain roughly same aspect ratio
-    }
-    
-    @media (max-width: 500px) {
-      width: 200px;
-      height: 355px; 
-    }
 
     // Swiper active slide class
     &.swiper-slide-active {
@@ -161,8 +151,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 93px;
-    height: 93px;
+    width: ac(93px, 60px);
+    height: ac(93px, 60px);
     cursor: pointer;
     z-index: 2;
   }
