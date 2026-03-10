@@ -1,7 +1,6 @@
 .product-hero {
   padding-top: ac(57px, 20px);
   background-color: #FFFFFF;
-  border-bottom: 1px solid #E1DED9;
 
   &__inner {
     padding-top: ac(40px, 20px);
@@ -29,7 +28,7 @@
     flex-shrink: 0;
 
     @media (max-width: $breakpoint-desktop) {
-      width: 100%;
+      max-width: 100%;
     }
   }
 

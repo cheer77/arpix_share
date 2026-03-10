@@ -34,6 +34,7 @@ import { initProductCards } from './components/product-card.js';
 import { initLifeSlider } from './components/life-slider.js';
 import { initProductGallery } from './components/product-gallery.js';
 import { initBasket } from './components/basket.js';
+import initProductTabs from './components/product-tabs.js';
 
 import { initQuantityControls } from './components/quantity-control.js';
 
@@ -46,4 +47,5 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof initBasket === 'function') initBasket();
   if (typeof initProductGallery === 'function') initProductGallery();
   if (typeof initQuantityControls === 'function') initQuantityControls();
+  if (typeof initProductTabs === 'function') initProductTabs();
 });

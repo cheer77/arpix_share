@@ -1,6 +1,5 @@
 .product-tabs {
   background-color: $color-white;
-  border-top: 1px solid #E1DED9;
 
   &__inner {
     @include container;
@@ -8,128 +7,154 @@
     padding-top: 0;
     padding-bottom: ac(100px, 40px);
 
-    @include media(1024) {
+    @media (max-width: $breakpoint-desktop) {
       flex-direction: column;
     }
   }
 
+  // =============================================
+  // Sidebar
+  // =============================================
   &__sidebar {
-    max-width: 240px;
-    width: 100%;
+    width: 240px;
     flex-shrink: 0;
     border-right: 1px solid #E1DED9;
     padding-top: ac(64px, 32px);
+    padding-right: ac(20px, 10px);
     position: relative;
 
-    @include media(1024) {
-      max-width: 100%;
+    @media (max-width: $breakpoint-desktop) {
+      width: 100%;
       border-right: none;
       border-bottom: 1px solid #E1DED9;
       padding-bottom: 20px;
+      padding-right: 0;
     }
   }
 
-  &__nav-list {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-
-    @include media(1024) {
-      flex-direction: row;
-      overflow-x: auto;
-      padding-bottom: 10px;
-    }
-  }
-
-  &__nav-item {
-    &--active {
-      .product-tabs__nav-link {
-        color: $color-text;
-      }
-    }
-  }
-
-  &__nav-link {
-    font-family: $font-heading;
-    font-size: ac(32px, 24px);
+  &__title {
+    font-family: $font-heading; // Trivia Grotesk
+    @include adaptive-value('font-size', 32px, 20px);
     font-weight: 400;
-    line-height: 1.1;
+    line-height: 1.05;
     text-transform: uppercase;
-    color: #cecece; // Deemphasized color from Figma observation
-    transition: color $transition-base;
-
-    &:hover {
-      color: $color-text;
-    }
-  }
-
-  &__collapse-btn {
-    position: absolute;
-    right: -10px;
-    top: 63px;
-    width: 33px;
-    height: 33px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: none;
-    cursor: pointer;
-    font-size: 20px;
     color: $color-text;
-
-    @include media(1024) {
-      display: none;
-    }
+    white-space: nowrap;
   }
 
+  // =============================================
+  // Content area — основной контент + правая колонка
+  // =============================================
   &__content {
-    flex-grow: 1;
+    flex: 1;
+    min-width: 0;
     display: flex;
-    padding-left: ac(40px, 0px);
-    padding-top: ac(148px, 40px);
-    gap: ac(40px, 20px);
+    padding-left: ac(39px, 0px);
+    padding-top: ac(148px, 32px);
+    gap: ac(40px, 24px);
 
-    @include media(1280) {
+    @media (max-width: $breakpoint-desktop-lg) {
       flex-direction: column;
     }
 
-    @include media(1024) {
+    @media (max-width: $breakpoint-desktop) {
       padding-left: 0;
       padding-top: 32px;
     }
   }
 
+  // Левая колонка контента (Про продукт, Кому підходить, Як працювати)
   &__main-col {
     flex: 1;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     gap: ac(40px, 24px);
+    padding-right: ac(40px, 0px);
+
+    @media (max-width: $breakpoint-desktop-lg) {
+      padding-right: 0;
+    }
   }
 
   &__section {
     border-bottom: 1px solid #E1DED9;
-    padding-bottom: ac(40px, 20px);
+    padding-bottom: ac(41px, 24px);
+
+    &:nth-child(n+2) {
+      padding-bottom: ac(32px, 24px);
+    }
 
     &:last-child {
       border-bottom: none;
+    }
+
+    // Accordion Logic for Mobile
+    @media (max-width: $breakpoint-desktop) {
+      .product-tabs__text,
+      .product-tabs__info-block,
+      .product-tabs__more-link {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.4s ease, opacity 0.3s ease;
+        margin-top: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+      &.is-active {
+        padding-bottom: 24px;
+        .product-tabs__text,
+        .product-tabs__info-block,
+        .product-tabs__more-link {
+          max-height: 1000px;
+          opacity: 1;
+          margin-top: 16px;
+        }
+      }
     }
   }
 
   &__section-title {
     font-family: $font-primary;
-    font-size: 16px;
+    font-size: ac(16px, 14px);
     font-weight: 600;
-    line-height: 1.5;
+    line-height: 24px;
     color: $color-text;
-    margin-bottom: 16px;
+    margin-bottom: ac(16px, 12px);
+
+    @media (max-width: $breakpoint-desktop) {
+      cursor: pointer;
+      position: relative;
+      padding-right: 32px;
+      margin-bottom: 0; // Collapsed by default
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__accordion-icon {
+    display: none;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+
+    @media (max-width: $breakpoint-desktop) {
+      display: inline-block;
+    }
+  }
+
+  .is-active .product-tabs__accordion-icon {
+    transform: rotate(180deg);
   }
 
   &__text {
     font-family: $font-primary;
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: ac(16px, 14px);
+    font-weight: 400;
+    line-height: 24px;
     color: $color-text;
-    margin-bottom: 16px;
 
     p {
       margin-bottom: 1em;
@@ -141,9 +166,14 @@
 
   &__more-link {
     display: inline-block;
-    font-size: 16px;
+    font-family: $font-primary;
+    font-size: ac(16px, 14px);
+    font-weight: 400;
+    line-height: 24px;
     color: $color-text;
     text-decoration: underline;
+    margin-top: 16px;
+
     &:hover {
       text-decoration: none;
     }
@@ -151,48 +181,57 @@
 
   &__info-block {
     background-color: $color-white;
-    padding: 24px;
     border-radius: 8px;
-    // Potentially a subtle border or shadow if needed, but Figma says background white on white? 
-    // Wait, the content area has background white usually, but maybe the info block has a background if the main area is #F5.
-    // However, the screenshot shows it looking like plain text with bullets.
   }
 
   &__list {
     list-style: none;
-    padding-left: 20px;
-    
+    padding-left: 17px;
+
     li {
       position: relative;
-      font-size: 14px;
-      line-height: 1.5;
+      font-family: $font-primary;
+      font-size: ac(14px, 13px);
+      font-weight: 400;
+      line-height: 21px;
+      color: $color-text;
       margin-bottom: 8px;
-      padding-left: 4px;
 
       &::before {
         content: '';
         position: absolute;
-        left: -16px;
+        left: -17px;
         top: 8px;
         width: 4px;
         height: 4px;
         background-color: $color-text;
         border-radius: 50%;
       }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 
+  // =============================================
+  // Правая колонка (Характеристики + Інгрідієнти)
+  // =============================================
   &__side-col {
-    width: ac(400, 100%);
+    width: 400px;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: ac(40px, 24px);
+
+    @media (max-width: $breakpoint-desktop-lg) {
+      width: 100%;
+    }
   }
 
   &__characteristics {
     border-bottom: 1px solid #E1DED9;
-    padding-bottom: ac(40px, 20px);
+    padding-bottom: ac(57px, 32px);
   }
 
   &__chars-grid {
@@ -200,12 +239,16 @@
     border-radius: 4px;
     padding: 24px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    gap: 12px;
+    gap: ac(32px, 16px);
 
-    @include media(576) {
-      flex-wrap: wrap;
+    @media (max-width: $breakpoint-mobile) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      padding: 20px;
+      justify-items: center;
     }
   }
 
@@ -218,42 +261,67 @@
   }
 
   &__char-label {
+    font-family: $font-primary;
     font-size: 10px;
+    font-weight: 400;
+    line-height: 15px;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #757575;
+    letter-spacing: 0.8px;
+    color: #cecece;
   }
 
   &__char-value {
+    font-family: $font-primary;
     font-size: 12px;
     font-weight: 600;
+    line-height: 12px;
     color: $color-text;
   }
 
+  // =============================================
+  // Ingredients
+  // =============================================
   &__ingredients {
+    position: relative;
+
     &-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 12px;
+      margin-bottom: ac(9px, 8px);
+    }
+
+    &-content {
+      font-family: $font-primary;
+      font-size: ac(16px, 14px);
+      font-weight: 400;
+      line-height: 24px;
+      color: $color-text;
+      max-width: 370px;
+
+      @media (max-width: $breakpoint-desktop-lg) {
+        max-width: 100%;
+      }
     }
   }
 
   &__plus-btn {
+    @include btn-reset;
     width: 22px;
     height: 22px;
+    border: 1px solid $color-text;
+    border-radius: 50%;
     color: $color-text;
-    font-size: 18px;
+    font-size: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-  }
+    flex-shrink: 0;
+    transition: background-color $transition-base, color $transition-base;
 
-  &__ingredients-content {
-    font-size: 16px;
-    line-height: 1.5;
-    color: $color-text;
-    max-width: 370px;
+    &:hover {
+      background-color: $color-text;
+      color: $color-white;
+    }
   }
 }
