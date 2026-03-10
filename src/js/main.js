@@ -12,6 +12,7 @@ import '../components/layout/basket/basket.scss';
 import '../components/ui/breadcrumbs/breadcrumbs.scss';
 import '../components/pages/product/product-hero/product-hero.scss';
 import '../components/pages/product/product-tabs/product-tabs.scss';
+import '../components/shared/recom-slider/recom-slider.scss';
 import '../components/shared/hero/hero.scss';
 import '../components/pages/home/benefits/benefits.scss';
 import '../components/pages/home/about/about.scss';
@@ -35,6 +36,7 @@ import { initLifeSlider } from './components/life-slider.js';
 import { initProductGallery } from './components/product-gallery.js';
 import { initBasket } from './components/basket.js';
 import initProductTabs from './components/product-tabs.js';
+import { initRecomSlider } from './components/recom-slider.js';
 
 import { initQuantityControls } from './components/quantity-control.js';
 
@@ -48,4 +50,5 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof initProductGallery === 'function') initProductGallery();
   if (typeof initQuantityControls === 'function') initQuantityControls();
   if (typeof initProductTabs === 'function') initProductTabs();
+  if (typeof initRecomSlider === 'function') initRecomSlider();
 });

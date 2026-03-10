@@ -1,0 +1,110 @@
+// ========================================
+// Recommended Slider — Styles
+// ========================================
+
+.recom-slider {
+  padding-top: ac(120px, 60px);
+  padding-bottom: ac(120px, 80px);
+  background-color: $color-bg;
+
+  &__header {
+    margin-bottom: ac(48px, 32px);
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: ac(32px, 24px);
+    font-weight: $font-weight-regular; // Trivia Grotesk Regular
+    text-transform: uppercase;
+    color: $color-text;
+  }
+
+  &__container {
+    overflow: visible; // Allow cards to not be clipped if they have shadows
+  }
+
+  &__slide {
+    height: auto;
+    width: 318px; // Design width for product card
+
+    @media (max-width: $breakpoint-tablet) {
+      width: 280px;
+    }
+    
+    @media (max-width: $breakpoint-mobile) {
+      width: 100%; // Single column on small mobile if desired, or keep as slider
+    }
+  }
+
+  &__controls {
+    margin-top: ac(48px, 32px);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    padding-right: 60px; // Space for the next button if needed
+  }
+
+  &__scrollbar {
+    position: relative !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 1px !important;
+    background: #E1DED9 !important;
+    border-radius: 0 !important;
+
+    .swiper-scrollbar-drag {
+      height: 4px !important;
+      background: $color-text !important;
+      border-radius: 0 !important;
+      top: -1.5px !important; // Center the 4px drag on the 1px line
+    }
+  }
+
+  &__next {
+    position: absolute !important;
+    right: 0 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 48px !important;
+    height: 48px !important;
+    background: $color-white !important;
+    border-radius: 50% !important;
+    box-shadow: $shadow-sm !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all $transition-base !important;
+    cursor: pointer !important;
+
+    &::after {
+      display: none !important; // Hide swiper default icon
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      color: $color-text;
+      transition: transform $transition-base;
+    }
+
+    &:hover {
+      background: $color-accent !important;
+      svg {
+        color: $color-white;
+        transform: translateX(2px);
+      }
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0.3 !important;
+      cursor: not-allowed !important;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      display: none !important; // Usually hidden on mobile in favor of touch
+    }
+  }
+}
