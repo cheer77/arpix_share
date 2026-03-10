@@ -45,7 +45,7 @@
     }
 
     &__thumbnails {
-      max-height: 680px;
+      max-height: 643px;
       max-width: 155px;
       padding-right: 30px;
       position: relative;
@@ -84,41 +84,25 @@
     }
 
     .swiper-scrollbar {
-      background: #E1DED9 !important;
-      width: 2px !important;
-      right: 0 !important;
-      top: 0 !important;
-      bottom: 0 !important;
-      height: 100% !important;
-      z-index: 10;
-      
-      .swiper-scrollbar-drag {
-        background: $color-text !important;
-        border-radius: 4px;
-        width: 100% !important;
-      }
+      background: #adadad ;
+      border-radius: 10px ;
 
       @media (max-width: $breakpoint-desktop) {
-        width: 100% !important;
-        height: 4px !important;
-        left: 0 !important;
-        bottom: 0px !important;
-        top: auto !important;
-        right: auto !important;
-        position: relative !important;
-        margin-top: 10px;
-
-        .swiper-scrollbar-drag {
-          height: 100% !important;
-          background: $color-text !important;
-        }
+        width: 100% ;
+        height: 2px ;
+        left: 0 ;
+        bottom: 0px ;
+        top: auto ;
+        right: auto ;
+        position: relative ;
+        margin: 20px auto 10px;
       }
     }
 
     &__main-slider {
       flex: 1;
-      max-width: 650px;
-      max-height: ac(650px, 400px) ;
+      max-width: 521px;
+      max-height: ac(521px, 400px) ;
       height: 100%;
       background: #fff;
       border: 1px solid #E1DED9;

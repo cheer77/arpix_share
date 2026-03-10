@@ -18,16 +18,21 @@ export function initProductGallery() {
         el: thumbsEl.querySelector('.swiper-scrollbar'),
         draggable: true,
         hide: false,
+        // dragSize: 60,
+        snapOnRelease: false,
       },
       mousewheel: true,
       breakpoints: {
         320: {
           direction: 'horizontal',
-          spaceBetween: 16,
+          spaceBetween: 20,
         },
         1024: {
           direction: 'vertical',
           spaceBetween: 10,
+          scrollbar: {
+            dragSize: 'auto',
+          },
         }
       }
     });
