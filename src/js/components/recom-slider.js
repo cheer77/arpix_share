@@ -3,34 +3,39 @@
 // ========================================
 
 export function initRecomSlider() {
-  const sliderEl = document.querySelector('.recom-slider__container');
-  if (!sliderEl) return;
+  const sliders = document.querySelectorAll('.recom-slider');
+  
+  sliders.forEach(slider => {
+    const container = slider.querySelector('.recom-slider__container');
+    const nextBtn = slider.querySelector('.recom-slider__next');
+    const scrollbar = slider.querySelector('.recom-slider__scrollbar');
 
-  const swiper = new window.Swiper(sliderEl, {
-    slidesPerView: 'auto',
-    spaceBetween: 20,
-    speed: 600,
-    grabCursor: true,
-    navigation: {
-      nextEl: '.recom-slider__next',
-    },
-    scrollbar: {
-      el: '.recom-slider__scrollbar',
-      draggable: true,
-      dragSize: 'auto',
-    },
-    breakpoints: {
-      320: {
-        spaceBetween: 10,
+    if (!container) return;
+
+    new window.Swiper(container, {
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+      speed: 600,
+      grabCursor: true,
+      navigation: {
+        nextEl: nextBtn,
       },
-      768: {
-        spaceBetween: 20,
+      scrollbar: {
+        el: scrollbar,
+        draggable: true,
+        dragSize: 'auto',
       },
-      1440: {
-        spaceBetween: 40,
+      breakpoints: {
+        320: {
+          spaceBetween: 10,
+        },
+        768: {
+          spaceBetween: 20,
+        },
+        1440: {
+          spaceBetween: 40,
+        }
       }
-    }
+    });
   });
-
-  return swiper;
 }
