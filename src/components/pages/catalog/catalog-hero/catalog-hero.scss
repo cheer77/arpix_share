@@ -1,24 +1,25 @@
-@use "/src/scss/abstracts/mixins" as *;
-@use "/src/scss/abstracts/variables" as *;
+@use "../../../../scss/abstracts" as *;
 
 .catalog-hero {
+  @include container;
   position: relative;
   padding-top: ac(11px, 6px);
   padding-bottom: ac(40px, 24px);
 
-  &__bg {
+  &__wrapper {
     position: relative;
     width: 100%;
-    max-width: 1420px;
     height: ac(423px, 260px);
-    margin: 0 auto;
     border-radius: ac(20px, 12px);
     overflow: hidden;
   }
 
-  &__image {
+  &__bg {
     position: absolute;
     inset: 0;
+  }
+
+  &__image {
     width: 100%;
     height: 100%;
     object-fit: cover;

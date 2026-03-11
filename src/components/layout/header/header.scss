@@ -13,28 +13,42 @@
   z-index: 100;
   transition: background-color 0.3s ease, transform 0.3s ease;
 
-  &--scrolled {
+  &.header--scrolled {
     position: fixed;
     top: 0;
-    background-color: $color-bg;
+    background-color: #F7F7F7;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05); // Add subtle shadow when scrolling
   }
 
-  &--hidden {
+  &.header--hidden {
     transform: translateY(-100%);
   }
 
-  &--inner {
-    position: relative;
+  &.header--inner {
     top: 0;
-    background-color: #F7F7F7;
+    background-color: #F7F7F7; // Fixed background for subpages
+
+    &.header--scrolled {
+      background-color: #F7F7F7;
+    }
   }
 
   &__inner {
-    @include container;
+    @include container; // Enforce container mixin directly
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 100%;
+    
+    // Fallback overrides to explicitly enforce constraints if container mixin is missing
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 40px;
+
+    @media (max-width: 768px) {
+      padding: 0 16px;
+    }
   }
 
   &__logo {
@@ -189,6 +203,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 48px;
     }
   }
 
@@ -219,6 +234,9 @@
     display: flex;
     align-items: center;
     gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
     @media (max-width: 1440px) {
       gap: 20px;
@@ -231,9 +249,11 @@
     }
 
     @media (max-width: 768px) {
+      flex-direction: column;
       align-items: center;
+      gap: 32px;
       width: 100%;
-      margin-bottom: 40px;
+      margin-bottom: 0;
     }
   }
 
@@ -322,12 +342,16 @@
     }
   }
 
-  &__lang-dropdown {
+  &__lang {
     position: relative;
     user-select: none;
 
-    @media (max-width: 768px) {
-      display: none;
+    // When inside the mobile footer slot
+    .header__nav-footer & {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   }
 
@@ -343,6 +367,14 @@
     letter-spacing: -0.01em;
     line-height: 1.83;
     transition: color $transition-fast;
+
+    .header__nav-footer & {
+      font-size: 13px;
+      font-weight: $font-weight-regular;
+      letter-spacing: -0.13px;
+      padding: 0;
+      gap: 4px;
+    }
 
     &:hover {
       color: $color-accent;
@@ -384,6 +416,26 @@
       visibility: visible;
       transform: translateY(0);
     }
+
+    .header__nav-footer & {
+      position: relative;
+      top: 0;
+      right: 0;
+      box-shadow: none;
+      background-color: transparent;
+      transform: none;
+      display: none; // Toggle display in mobile instead of opacity for flow
+      opacity: 1;
+      visibility: visible;
+      padding: 12px 0;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+
+      &.is-active {
+        display: flex;
+      }
+    }
   }
 
   &__lang-item {
@@ -411,92 +463,57 @@
     &.active {
       font-weight: $font-weight-bold;
       color: $color-accent;
-    }
-  }
 
-  &__nav-lang {
-    @media (max-width: 768px) {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      position: relative;
-    }
-  }
-
-  &__nav-lang-trigger {
-    @include btn-reset;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-family: $font-primary;
-    font-size: 16px;
-    color: $color-text;
-    font-weight: $font-weight-medium;
-    padding: 12px;
-
-    svg {
-      transition: transform $transition-base;
-    }
-
-    &.is-active {
-      svg {
-        transform: rotate(180deg);
+      .header__nav-footer & {
+        color: $color-text;
       }
     }
-  }
 
-  &__nav-lang-list {
-    display: none;
-    list-style: none;
-    width: 100%;
-    padding: 12px 0;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-
-    &.is-active {
-      display: flex;
-    }
-  }
-
-  &__nav-lang-option {
-    @include btn-reset;
-    font-family: $font-primary;
-    font-size: 16px;
-    color: $color-text-secondary;
-    transition: color $transition-fast;
-
-    &.active {
-      color: $color-text;
-      font-weight: $font-weight-bold;
-    }
-  }
-
-  &__nav-login {
-    display: none;
-
-    @media (max-width: 768px) {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      width: 100%;
-      height: 56px;
-      background-color: #F5F5F7;
-      border: 1px solid rgba(0,0,0,0.05);
-      border-radius: $radius-lg;
-      font-family: $font-primary;
+    .header__nav-footer & {
       font-size: 16px;
-      color: $color-text;
-      font-weight: $font-weight-medium;
-      text-decoration: none;
+      color: $color-text-secondary;
+      padding: 0;
+      text-align: center;
 
-      i {
-        font-size: 20px;
+      &:hover {
+        background-color: transparent;
       }
     }
   }
+
+  // Hide the purely mobile li items on desktop (like Catalog card)
+  &__nav-item {
+    &--mobile-catalog {
+       display: none;
+       
+       @media (max-width: 768px) {
+         display: block; // It's part of the nav list on mobile
+         margin-bottom: 16px; // visual separation: 32px gap + 16px margin = 48px
+         width: 100%;
+       }
+
+       .header__nav-link {
+         background-color: $color-white;
+         border-radius: 8px;
+         height: 56px;
+         padding: 6px 24px 6px 12px;
+         gap: 8px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         flex-shrink: 0;
+         font-size: 14px;
+         font-weight: $font-weight-medium;
+         color: $color-text;
+         box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+         border: 1px solid rgba(0,0,0,0.05);
+         margin-bottom: 0;
+         width: 100%;
+       }
+    }
+  }
+
+  // We removed the huge blocks of duplicate mobile lang/login here
 
   // 2x2 grid icon for "Каталог"
   &__catalog-icon {
@@ -540,15 +557,48 @@
     align-items: center;
     justify-content: center;
 
-    @media (max-width: 768px) {
-        // Cabinet and Search are shifted to the mobile menu, show only cart
-        &:not(:has(.ph-bag)) {
-            display: none;
-        }
-    }
-
     &:hover {
       color: $color-accent;
+    }
+
+    // When SEARCH is moved to the mobile header slot
+    .header__nav-header & {
+      width: 40px;
+      height: 40px;
+      font-size: 24px;
+    }
+
+    // When CABINET is moved to the mobile footer slot
+    .header__nav-footer & {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      width: 100%;
+      height: 56px;
+      background-color: transparent;
+      border: 1px solid #e1ded9;
+      border-radius: 8px;
+      font-family: $font-primary;
+      font-size: 14px;
+      font-weight: 600;
+      color: #143c3d;
+
+      i {
+        font-size: 20px;
+        color: #111822;
+      }
+    }
+  }
+
+  &__action-text {
+    display: none;
+
+    // Show when inside mobile footer
+    .header__nav-footer & {
+      display: inline;
+      text-decoration: underline;
+      text-decoration-skip-ink: auto;
     }
   }
 
@@ -596,8 +646,24 @@
         padding: 6px 16px;
     }
 
-    @media (max-width: 1300px) {
+    @media (max-width: 768px) {
         display: none; // High priority contact button stays only on desktop or in mobile nav
+    }
+
+    // When it is moved into the mobile CTA slot
+    .header__nav-cta-slot & {
+      display: flex;
+      width: 100%;
+      min-height: 42px;
+      background-color: $color-text;
+      color: $color-white;
+      border-radius: 80px;
+      font-size: 14px;
+      font-weight: $font-weight-medium;
+      box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.64), 0px 0px 0px 1px #2d4748;
+      border: 1px solid $color-white;
+      margin-top: 0;
+      margin-bottom: 0;
     }
 
     &:hover {

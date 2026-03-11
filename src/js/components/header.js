@@ -104,64 +104,67 @@ export function initHeader() {
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
       const width = window.innerWidth;
-      const isCatalog = link.classList.contains('header__nav-link--catalog') || link.classList.contains('header__nav-catalog-card');
-      
       if (width <= DESKTOP_BP) {
-        // If it's a catalog link on intermediate screens, we don't necessarily close it here 
-        // unless it's mobile view. Actually, most sites close the menu on link click.
         handleToggle(false);
       }
     });
   });
 
-  // --- Language Switcher ---
-  const desktopLang = document.getElementById('lang-dropdown');
-  if (desktopLang) {
-    const trigger = desktopLang.querySelector('.header__lang-trigger');
-    const list = desktopLang.querySelector('.header__lang-list');
-    const options = desktopLang.querySelectorAll('.header__lang-option');
+  // --- Dynamic DOM Reparenting ---
+  const langDropdown = document.getElementById('lang-dropdown');
+  const searchBtn = document.querySelector('.header__action-btn--search');
+  const cabinetBtn = document.querySelector('.header__action-btn--cabinet');
+  const ctaBtn = document.querySelector('.header__cta');
+
+  const desktopActionsSlot = document.querySelector('.header__actions');
+  const desktopGroupSlot = document.querySelector('.header__group');
+
+  const mobileSearchSlot = document.querySelector('.header__nav-search-slot');
+  const mobileFooterSlot = document.querySelector('.header__nav-footer');
+  const mobileCtaSlot = document.querySelector('.header__nav-cta-slot');
+
+  const moveElementsForMobile = () => {
+    if (searchBtn && mobileSearchSlot) mobileSearchSlot.appendChild(searchBtn);
+    if (langDropdown && mobileFooterSlot) mobileFooterSlot.appendChild(langDropdown);
+    if (cabinetBtn && mobileFooterSlot) mobileFooterSlot.appendChild(cabinetBtn);
+    if (ctaBtn && mobileCtaSlot) mobileCtaSlot.appendChild(ctaBtn);
+  };
+
+  const moveElementsForDesktop = () => {
+    // Desktop order in actions: lang, search, cabinet, cart
+    // Since cart is always there at the end, we can insert before it
+    const cartBtn = desktopActionsSlot.querySelector('.header__cart');
+    
+    if (cartBtn) {
+      if (langDropdown && desktopActionsSlot) desktopActionsSlot.insertBefore(langDropdown, cartBtn);
+      if (searchBtn && desktopActionsSlot) desktopActionsSlot.insertBefore(searchBtn, cartBtn);
+      if (cabinetBtn && desktopActionsSlot) desktopActionsSlot.insertBefore(cabinetBtn, cartBtn);
+    }
+
+    // CTA goes to the end of the group
+    if (ctaBtn && desktopGroupSlot) desktopGroupSlot.appendChild(ctaBtn);
+  };
+
+  const handleReparenting = () => {
+    const width = window.innerWidth;
+    if (width <= TABLET_BP) {
+      moveElementsForMobile();
+    } else {
+      moveElementsForDesktop();
+    }
+  };
+
+  // Initial call
+  handleReparenting();
+
+  // --- Unified Language Switcher ---
+  if (langDropdown) {
+    const trigger = langDropdown.querySelector('.header__lang-trigger');
+    const list = langDropdown.querySelector('.header__lang-list');
+    const options = langDropdown.querySelectorAll('.header__lang-option');
 
     trigger.addEventListener('click', (e) => {
       e.stopPropagation();
-      const isActive = list.classList.toggle('is-active');
-      trigger.classList.toggle('is-active', isActive);
-      trigger.setAttribute('aria-expanded', isActive);
-    });
-
-    options.forEach(option => {
-      option.addEventListener('click', () => {
-        const lang = option.dataset.lang;
-        const text = option.textContent.slice(0, 3); // Short code or first 3 chars
-        
-        // Update UI
-        trigger.querySelector('span').textContent = text;
-        options.forEach(opt => opt.classList.remove('active'));
-        option.classList.add('active');
-        
-        // Close dropdown
-        list.classList.remove('is-active');
-        trigger.classList.remove('is-active');
-        trigger.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    // Close on outside click
-    document.addEventListener('click', (e) => {
-      if (!desktopLang.contains(e.target)) {
-        list.classList.remove('is-active');
-        trigger.classList.remove('is-active');
-        trigger.setAttribute('aria-expanded', 'false');
-      }
-    });
-  }
-
-  const mobileLang = document.getElementById('mobile-lang-dropdown');
-  if (mobileLang) {
-    const trigger = mobileLang.querySelector('.header__nav-lang-trigger');
-    const list = mobileLang.querySelector('.header__nav-lang-list');
-    const options = mobileLang.querySelectorAll('.header__nav-lang-option');
-
-    trigger.addEventListener('click', () => {
       const isActive = list.classList.toggle('is-active');
       trigger.classList.toggle('is-active', isActive);
       trigger.setAttribute('aria-expanded', isActive);
@@ -173,18 +176,27 @@ export function initHeader() {
         trigger.querySelector('span').textContent = text;
         options.forEach(opt => opt.classList.remove('active'));
         option.classList.add('active');
-        
-        // Optionally close on select or keep open for multiple changes? Usually close.
         list.classList.remove('is-active');
         trigger.classList.remove('is-active');
         trigger.setAttribute('aria-expanded', 'false');
       });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!langDropdown.contains(e.target)) {
+        list.classList.remove('is-active');
+        trigger.classList.remove('is-active');
+        trigger.setAttribute('aria-expanded', 'false');
+      }
     });
   }
 
   // Reset accessibility and classes on resize
   window.addEventListener('resize', () => {
     const width = window.innerWidth;
+    
+    handleReparenting();
+
     if (width > DESKTOP_BP) {
       handleToggle(false);
     } else {
@@ -194,7 +206,6 @@ export function initHeader() {
       if (isActive) {
         document.body.style.overflow = 'hidden';
         document.body.style.position = 'fixed';
-        // Only set top if not already fixed to avoid jumping
         if (document.body.style.top === '') {
           savedScrollY = window.scrollY;
           document.body.style.top = `-${savedScrollY}px`;
@@ -203,10 +214,9 @@ export function initHeader() {
       }
     }
 
-    // Reset lang dropdowns on resize for safety
-    if (desktopLang) {
-       desktopLang.querySelector('.header__lang-list').classList.remove('is-active');
-       desktopLang.querySelector('.header__lang-trigger').classList.remove('is-active');
+    if (langDropdown) {
+       langDropdown.querySelector('.header__lang-list').classList.remove('is-active');
+       langDropdown.querySelector('.header__lang-trigger').classList.remove('is-active');
     }
   });
 }
