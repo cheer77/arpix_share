@@ -1,14 +1,13 @@
 // ========================================
-// Blog Component
+// Product Blog Component
 // ========================================
 
-.blog {
+.product-blog {
   position: relative;
   padding-top: ac(120px, 80px);
-  padding-bottom: ac(80px, 60px); // Figma node 2:1573 shows pb-[80px]
+  padding-bottom: ac(80px, 60px);
   background-color: $color-bg;
 
-  // Top Divider matching Figma node 2:1617
   &::before {
     content: '';
     position: absolute;
@@ -17,10 +16,6 @@
     right: ac(80px, 20px);
     height: 1px;
     background-color: #e1ded9;
-  }
-
-  &__inner {
-    // container is handled via class, but adding block-specific layout if needed
   }
 
   &__header {
@@ -72,7 +67,7 @@
       background-color: $color-text;
       color: $color-white;
 
-      .blog__btn-icon {
+      .product-blog__btn-icon {
         transform: translateX(3px);
       }
     }
@@ -95,8 +90,8 @@
   }
 }
 
-// Blog Card Component
-.blog-card {
+// Product Blog Card Component
+.product-blog-card {
   &__link {
     display: block;
     height: 100%;
@@ -105,10 +100,10 @@
     transition: opacity $transition-base;
 
     &:hover {
-        .blog-card__title {
+        .product-blog-card__title {
             color: $color-accent;
         }
-        .blog-card__image {
+        .product-blog-card__image {
             transform: scale(1.05);
         }
     }
@@ -150,11 +145,11 @@
 
   // Modifiers
   &--large {
-    .blog-card__image-box {
+    .product-blog-card__image-box {
         aspect-ratio: 1 / 1;
         border-radius: 12px;
     }
-    .blog-card__title {
+    .product-blog-card__title {
         font-size: ac(24px, 18px);
         font-weight: 700;
     }
@@ -170,7 +165,7 @@
         border-bottom: none;
     }
 
-    .blog-card__link {
+    .product-blog-card__link {
         display: flex;
         align-items: center;
         gap: 20px;
@@ -181,7 +176,7 @@
         }
     }
 
-    .blog-card__image-box {
+    .product-blog-card__image-box {
         width: 167px;
         height: 180px;
         flex-shrink: 0;
@@ -193,12 +188,12 @@
         }
     }
 
-    .blog-card__content {
+    .product-blog-card__content {
         margin-top: 0;
         padding-bottom: 8px;
     }
 
-    .blog-card__title {
+    .product-blog-card__title {
         font-size: 18px;
         font-weight: 600;
     }

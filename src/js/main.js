@@ -24,7 +24,7 @@ import '../components/pages/home/club/club.scss';
 import '../components/pages/home/offer/offer.scss';
 import '../components/layout/footer/footer.scss';
 import '../components/pages/product/faq/faq.scss';
-import '../components/pages/product/blog/blog.scss';
+import '../components/pages/product/product-blog/product-blog.scss';
 
 // --- Global Modules ---
 import Swiper from 'swiper/bundle';
