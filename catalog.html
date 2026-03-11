@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Arpix Share | Продукт</title>
+    <title>Arpix Share | Каталог</title>
+    <meta name="description" content="Каталог тoварів Arpix Share — бази, топи, гелі, гель-лаки, декор та інструменти для нігтів" />
 
     <!-- Google Fonts: Manrope, Bad Script & Syne -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,16 +22,8 @@
     <!-- HEADER -->
     {{> layout/header/header className="header--inner" }}
 
-    <main class="main--product">
-      {{> ui/breadcrumbs/breadcrumbs }}
-      {{> pages/product/product-hero/product-hero }}
-      {{> pages/product/product-tabs/product-tabs }}
-      {{> pages/product/product-reviews/product-reviews }}
-      {{> shared/recom-slider/recom-slider }}
-      {{> pages/product/faq/faq }}
-      {{> pages/product/product-blog/product-blog }}
-      {{> shared/recom-slider/recom-slider title="ВИ ПЕРЕГЛЯДАЛИ" }}
-      {{> pages/product/product-dealers/product-dealers }}
+    <main class="main--catalog">
+      {{> pages/catalog/catalog-hero/catalog-hero }}
     </main>
 
     <!-- FOOTER -->

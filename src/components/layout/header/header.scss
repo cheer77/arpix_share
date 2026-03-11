@@ -23,6 +23,12 @@
     transform: translateY(-100%);
   }
 
+  &--inner {
+    position: relative;
+    top: 0;
+    background-color: #F7F7F7;
+  }
+
   &__inner {
     @include container;
     display: flex;

@@ -1,0 +1,98 @@
+@use "/src/scss/abstracts/mixins" as *;
+@use "/src/scss/abstracts/variables" as *;
+
+.catalog-hero {
+  position: relative;
+  padding-top: ac(11px, 6px);
+  padding-bottom: ac(40px, 24px);
+
+  &__bg {
+    position: relative;
+    width: 100%;
+    max-width: 1420px;
+    height: ac(423px, 260px);
+    margin: 0 auto;
+    border-radius: ac(20px, 12px);
+    overflow: hidden;
+  }
+
+  &__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+  }
+
+  &__inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: ac(28px, 16px);
+    padding-bottom: ac(40px, 24px);
+  }
+
+  &__breadcrumbs {
+    .breadcrumbs__list {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .breadcrumbs__item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .breadcrumbs__link {
+      font-size: 13px;
+      color: #6b6b6b;
+      text-decoration: none;
+      transition: color $transition-fast;
+
+      &:hover {
+        color: $color-text;
+      }
+    }
+
+    .breadcrumbs__sep {
+      font-size: 10px;
+      color: #6b6b6b;
+    }
+
+    .breadcrumbs__current {
+      font-size: 13px;
+      color: $color-text;
+      font-weight: $font-weight-medium;
+    }
+  }
+
+  &__content {
+    max-width: ac(400px, 280px);
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: ac(32px, 26px);
+    font-weight: $font-weight-regular;
+    text-transform: uppercase;
+    color: $color-text;
+    letter-spacing: 0.01em;
+    margin-bottom: ac(16px, 12px);
+  }
+
+  &__description {
+    font-size: ac(20px, 15px);
+    line-height: 1.4;
+    color: $color-text;
+    font-weight: $font-weight-regular;
+    max-width: ac(320px, 240px);
+  }
+}

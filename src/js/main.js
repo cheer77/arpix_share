@@ -26,6 +26,8 @@ import '../components/layout/footer/footer.scss';
 import '../components/pages/product/faq/faq.scss';
 import '../components/pages/product/product-blog/product-blog.scss';
 import '../components/pages/product/product-dealers/product-dealers.scss';
+import '../components/pages/catalog/catalog-hero/catalog-hero.scss';
+import '../components/pages/catalog/catalog-banner/catalog-banner.scss';
 
 // --- Global Modules ---
 import Swiper from 'swiper/bundle';
@@ -57,3 +59,4 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof initRecomSlider === 'function') initRecomSlider();
   if (typeof initFaq === 'function') initFaq();
 });
+
