@@ -23,6 +23,8 @@ import '../components/pages/home/dealers/dealers.scss';
 import '../components/pages/home/club/club.scss';
 import '../components/pages/home/offer/offer.scss';
 import '../components/layout/footer/footer.scss';
+import '../components/pages/product/faq/faq.scss';
+import '../components/pages/product/blog/blog.scss';
 
 // --- Global Modules ---
 import Swiper from 'swiper/bundle';
@@ -37,6 +39,7 @@ import { initProductGallery } from './components/product-gallery.js';
 import { initBasket } from './components/basket.js';
 import initProductTabs from './components/product-tabs.js';
 import { initRecomSlider } from './components/recom-slider.js';
+import { initFaq } from './components/faq.js';
 
 import { initQuantityControls } from './components/quantity-control.js';
 
@@ -51,4 +54,5 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof initQuantityControls === 'function') initQuantityControls();
   if (typeof initProductTabs === 'function') initProductTabs();
   if (typeof initRecomSlider === 'function') initRecomSlider();
+  if (typeof initFaq === 'function') initFaq();
 });

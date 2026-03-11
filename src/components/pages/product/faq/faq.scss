@@ -1,0 +1,113 @@
+// ========================================
+// FAQ Component — Refined Styles
+// ========================================
+
+.faq {
+  padding-top: ac(120, 60);
+  padding-bottom: ac(120, 80);
+  background-color: $color-bg;
+
+  &__header {
+    margin-bottom: ac(48px, 32px); // Refined gap from title to first item (~73px in Figma)
+  }
+
+  &__title {
+    font-family: 'Trivia Grotesk X2', sans-serif;
+    font-size: ac(32px, 24px);
+    font-weight: 400; // Trivia Grotesk Regular
+    text-transform: uppercase;
+    color: $color-text;
+    letter-spacing: normal;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    border-top: 1px solid #e1ded9;
+    
+    &:last-child {
+      border-bottom: 1px solid #e1ded9;
+    }
+
+    &.is-open {
+      .faq__icon {
+        transform: rotate(180deg);
+      }
+      
+      .faq__answer-wrapper {
+        grid-template-rows: 1fr;
+        padding-bottom: 24px;
+      }
+    }
+  }
+
+  &__question-btn {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 25px 0 24px; // Precisely 25px top, 24px bottom
+    text-align: left;
+    transition: color $transition-base;
+
+    &:hover {
+      .faq__question {
+        color: $color-accent;
+      }
+    }
+  }
+
+  &__question {
+    font-family: 'Manrope', sans-serif;
+    font-size: 18px; // Fixed size for desktop, though ac() could be used
+    font-weight: 700; // Manrope Bold
+    line-height: 1.4;
+    color: $color-text;
+    transition: color $transition-base;
+
+    @media (max-width: $breakpoint-tablet) {
+      font-size: 16px;
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    width: 36px; // Adjust box size to match Figma feel
+    height: 15px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform $transition-base;
+    color: $color-text;
+    overflow: visible;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      stroke-width: 1px; // Thinner stroke as per Figma icon properties
+    }
+  }
+
+  &__answer-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows $transition-base, padding $transition-base;
+    overflow: hidden;
+  }
+
+  &__answer {
+    min-height: 0;
+    
+    p {
+      font-family: 'Manrope', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: $color-text-secondary;
+      margin: 0;
+    }
+  }
+}

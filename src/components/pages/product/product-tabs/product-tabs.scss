@@ -6,6 +6,7 @@
     display: flex;
     padding-top: 0;
     padding-bottom: ac(100px, 40px);
+     border-bottom: 1px solid #E1DED9;
 
     @media (max-width: $breakpoint-desktop) {
       flex-direction: column;
