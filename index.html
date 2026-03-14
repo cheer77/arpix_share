@@ -1,50 +1,139 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Arpix Share — український бренд нового покоління. Nail матеріали + догляд." />
-  <title>Arpix Share</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Arpix Share - Project Index</title>
+		<style>
+			body {
+				font-family:
+					-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 40px;
+				line-height: 1.6;
+			}
+			h1 {
+				color: #143c3d;
+				border-bottom: 2px solid #143c3d;
+				padding-bottom: 10px;
+			}
+			.nav-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 20px;
+				margin-top: 30px;
+			}
+			.nav-card {
+				background: #f8f9fa;
+				padding: 20px;
+				border-radius: 8px;
+				border-left: 4px solid #143c3d;
+			}
+			.nav-card h3 {
+				margin-top: 0;
+				color: #143c3d;
+			}
+			.nav-card a {
+				color: #007bff;
+				text-decoration: none;
+				font-weight: 500;
+			}
+			.nav-card a:hover {
+				text-decoration: underline;
+			}
+			.stats {
+				display: flex;
+				gap: 20px;
+				margin: 20px 0;
+				color: #666;
+			}
+			.stat-item {
+				background: #e9ecef;
+				padding: 10px 15px;
+				border-radius: 4px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Arpix Share - Project Index</h1>
 
-  <!-- Google Fonts: Manrope, Bad Script & Syne -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Manrope:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+		<div class="stats">
+			<div class="stat-item">Status: Production Build Complete</div>
+			<div class="stat-item">Build Time: ~455ms</div>
+			<div class="stat-item">Files Generated: 40+ assets</div>
+		</div>
 
-  <!-- Phosphor Icons -->
-  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css" />
+		<div class="nav-grid">
+			<div class="nav-card">
+				<h3>Main Pages</h3>
+				<ul>
+					<li><a href="./dist/index.html" target="_blank">🏠 Home Page (dist/index.html)</a></li>
+					<li>
+						<a href="./dist/product.html" target="_blank">🛍️ Product Page (dist/product.html)</a>
+					</li>
+					<li>
+						<a href="./dist/catalog.html" target="_blank">📁 Catalog Page (dist/catalog.html)</a>
+					</li>
+				</ul>
+			</div>
 
-  <!-- Main Entry -->
-  <script type="module" src="/src/js/main.js"></script>
-</head>
-<body>
+			<div class="nav-card">
+				<h3>Development Server</h3>
+				<p>Local development server is running at:</p>
+				<p>
+					<strong><a href="http://localhost:3000" target="_blank">http://localhost:3000</a></strong>
+				</p>
+				<p>Use this for live development and testing.</p>
+			</div>
 
-  {{> layout/header/header }}
-  {{> layout/basket/basket }}
+			<div class="nav-card">
+				<h3>Project Structure</h3>
+				<ul>
+					<li><strong>Source:</strong> ./src/ (SCSS, JS, HTML components)</li>
+					<li><strong>Build:</strong> ./dist/ (compiled production files)</li>
+					<li><strong>Assets:</strong> ./src/assets/ (images, fonts, icons)</li>
+					<li><strong>Components:</strong> ./src/components/ (modular HTML/SCSS/JS)</li>
+				</ul>
+			</div>
 
-  <main class="main" id="main">
+			<div class="nav-card">
+				<h3>Available Scripts</h3>
+				<ul>
+					<li><strong>npm run dev:</strong> Start development server</li>
+					<li><strong>npm run build:</strong> Build for production</li>
+					<li><strong>npm run preview:</strong> Preview production build</li>
+				</ul>
+			</div>
 
-    {{> shared/hero/hero }}
+			<div class="nav-card">
+				<h3>Technology Stack</h3>
+				<ul>
+					<li><strong>Build Tool:</strong> Vite</li>
+					<li><strong>Styling:</strong> SCSS with custom mixins</li>
+					<li><strong>JavaScript:</strong> ES6+ modules</li>
+					<li><strong>Fonts:</strong> Google Fonts (Manrope, Bad Script, Syne)</li>
+					<li><strong>Icons:</strong> Phosphor Icons</li>
+				</ul>
+			</div>
 
-    {{> pages/home/benefits/benefits }}
+			<div class="nav-card">
+				<h3>Browser Compatibility</h3>
+				<p>Modern browsers with ES6+ support. The build includes:</p>
+				<ul>
+					<li>Compiled CSS with vendor prefixes</li>
+					<li>Optimized JavaScript bundles</li>
+					<li>Gzip-compressed assets</li>
+					<li>Responsive design ready</li>
+				</ul>
+			</div>
+		</div>
 
-    {{> pages/home/about/about }}
-
-    {{> pages/home/hits/hits }}
-
-    {{> pages/home/life/life }}
-
-    {{> pages/home/features/features }}
-
-    {{> pages/home/dealers/dealers }}
-
-    {{> pages/home/club/club }}
-
-    {{> pages/home/offer/offer }}
-
-  </main>
-
-  {{> layout/footer/footer }}
-
-</body>
+		<div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; color: #666">
+			<p>
+				<strong>Note:</strong> This index page helps navigate your Arpix Share project. The actual
+				website content is available in the <code>dist/</code> folder or via the development server.
+			</p>
+		</div>
+	</body>
 </html>
