@@ -1,0 +1,46 @@
+<article class="product-card {{className}}">
+  <div class="product-card__image-wrapper">
+    {{#if badge}}
+    <span class="product-card__badge product-card__badge--{{badgeClass}}">{{badge}}</span>
+    {{/if}}
+    <a href="./product.html" class="product-card__image-link">
+      <img src="{{image}}" alt="{{title}}" class="product-card__image" loading="lazy" />
+    </a>
+    <div class="product-card__tooltip">Натиснути на картинку та перейти до картки товару</div>
+  </div>
+  <div class="product-card__info">
+    <div class="product-card__text-group">
+      <h3 class="product-card__title">{{title}}</h3>
+      <p class="product-card__desc">{{desc}}</p>
+    </div>
+    <div class="product-card__dropdown">
+      <button class="product-card__dropdown-trigger" aria-haspopup="listbox" aria-expanded="false">
+        <span>{{#if volume}}{{volume}}{{else}}60 ml{{/if}}</span>
+        <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+      </button>
+      <ul class="product-card__dropdown-list" role="listbox">
+        <li role="option" aria-selected="true" data-value="60">60 ml</li>
+        <li role="option" aria-selected="false" data-value="30">30 ml</li>
+        <li role="option" aria-selected="false" data-value="15">15 ml</li>
+      </ul>
+    </div>
+  </div>
+  <div class="product-card__price-wrapper">
+    <button class="product-card__action product-card__action--heart" aria-label="Додати в улюблене">
+      <i class="ph ph-heart"></i>
+    </button>
+    <div class="product-card__price-group">
+      {{#if priceOld}}
+      <span class="product-card__price-old">{{priceOld}}</span>
+      {{/if}}
+      <span class="product-card__price">{{price}}</span>
+      <span class="product-card__currency">грн</span>
+    </div>
+    <button class="product-card__action product-card__action--cart" aria-label="Додати в кошик">
+      <i class="ph ph-bag"></i>
+      <span class="product-card__cart-count">+1</span>
+    </button>
+  </div>
+</article>

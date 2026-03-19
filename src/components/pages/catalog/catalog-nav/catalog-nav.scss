@@ -1,0 +1,130 @@
+.catalog-nav {
+  grid-area: nav;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: ac(16px, 16px) 0;
+  border-bottom: 1px solid var(--color-gray-light, #E8E8E8);
+  margin-bottom: ac(20px, 32px);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 0;
+    margin-bottom: 20px;
+    border-bottom: none;
+    
+    &__inner {
+      padding: 0 20px;
+      height: 68px;
+    }
+  }
+
+  &__count {
+    font-family: var(--font-secondary);
+    font-size: ac(14px, 16px, $breakpoint-mobile);
+    color: var(--color-text-dim, #7A7A7A);
+
+    &-num {
+      font-weight: 500;
+      color: var(--color-text, #1A1A1A);
+    }
+  }
+
+  &__sort {
+    position: relative;
+
+    &-trigger {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      padding: 8px 12px;
+      background: none;
+      border: 1px solid var(--color-gray-light, #E8E8E8);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: border-color 0.2s;
+
+      &:hover {
+        border-color: var(--color-primary);
+      }
+    }
+
+    &-label {
+      color: var(--color-text-dim, #7A7A7A);
+    }
+
+    &-current {
+      font-weight: 500;
+      color: var(--color-text, #1A1A1A);
+    }
+
+    &-icon {
+      transition: transform 0.2s;
+    }
+
+    &.is-active &-icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__filter-btn {
+    @media (min-width: 1025px) {
+      display: none;
+    }
+    
+    width: 100%;
+    justify-content: center;
+    gap: 8px;
+  }
+}
+
+// Utility class for the dropdown part (if not global yet)
+.dropdown {
+  &__list {
+    position: absolute;
+    top: calc(100% + 4px);
+    right: 0;
+    z-index: 10;
+    min-width: 100%;
+    background: #fff;
+    border: 1px solid var(--color-gray-light, #E8E8E8);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    list-style: none;
+    padding: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s;
+
+    .is-active & {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+
+  &__item {
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+
+    &:hover {
+      background: var(--color-gray-ultra-light, #F8F8F8);
+    }
+
+    &[aria-selected="true"] {
+      color: var(--color-primary);
+      font-weight: 500;
+    }
+  }
+}

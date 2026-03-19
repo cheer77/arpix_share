@@ -1,0 +1,18 @@
+.catalog-content {
+  padding: ac(40px, 60px) 0;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 293px 1fr;
+    grid-template-areas: 
+      "nav nav"
+      "filter grid";
+    gap: 0 32px;
+
+    @media (max-width: 1024px) {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+}

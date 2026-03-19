@@ -8,7 +8,9 @@
   background-color: $color-bg;
   
   &--bg-white {
-    background-color: $color-white;
+    @media (max-width: $breakpoint-tablet) {
+      background-color: $color-white;
+    }
   }
 
   &__header {

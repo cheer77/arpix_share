@@ -24,7 +24,16 @@
 
     <main class="main--catalog">
       {{> pages/catalog/catalog-hero/catalog-hero }}
-      {{> shared/recom-slider/recom-slider title="ВИГІДНО ЗАРАЗ" className="recom-slider--bg-white" }}
+      {{> shared/recom-slider/recom-slider title="ВИГІДНО ЗАРАЗ" className="recom-slider--bg-white container" }}
+
+      <section class="catalog-content container">
+        <div class="catalog-content__inner container">
+          {{> pages/catalog/catalog-filter/catalog-filter }}
+          {{> pages/catalog/catalog-nav/catalog-nav }}
+          {{> pages/catalog/catalog-grid/catalog-grid }}
+        </div>
+      </section>
+      {{> pages/catalog/catalog-pagination/catalog-pagination }}
     </main>
 
     <!-- FOOTER -->

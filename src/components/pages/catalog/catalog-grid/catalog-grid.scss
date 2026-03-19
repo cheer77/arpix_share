@@ -1,0 +1,42 @@
+.catalog-grid {
+  grid-area: grid;
+  display: grid;
+  grid-template-columns: repeat(3, 318px);
+  gap: 8px;
+  padding-top: 16px;
+
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding-top: 0;
+  }
+
+  &__promo {
+    grid-column: span 2;
+    height: 100%;
+
+    @media (max-width: 1024px) {
+      grid-column: span 2; // Still span 2 (full width) on mobile
+      height: auto;
+      min-height: 270px;
+    }
+  }
+
+  &__banner {
+    grid-column: span 2;
+    height: 100%;
+
+    @media (max-width: 1024px) {
+       grid-column: span 2;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      grid-column: span 2;
+    }
+  }
+
+  // Ensure card takes full height of grid cell
+  .product-card {
+    height: 100%;
+  }
+}

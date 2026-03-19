@@ -1,0 +1,121 @@
+.catalog-pagination {
+  width: 100%;
+  padding: ac(40px, 60px) 0;
+  display: flex;
+  justify-content: center;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 966px;
+  }
+
+  &__show-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 0;
+    width: 100%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: $color-dark;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &-text {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: none;
+    }
+
+    &-icon {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      svg {
+        display: block;
+      }
+    }
+  }
+
+  &__tabs {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 98px; // Fixed width from Figma
+    padding-bottom: 2px; // Space for the line
+  }
+
+  &__tabs-list {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 8px;
+  }
+
+  &__tab {
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: $color-dark;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 0;
+    line-height: 21px;
+  }
+
+  &__arrow {
+    background: transparent;
+    border: none;
+    font-size: 17px;
+    color: $color-dark;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    
+    // Figma shows it rotated or standard
+  }
+
+  &__line-base {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #E1DED9;
+  }
+
+  &__line-active {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 26px; // Fixed width from Figma
+    height: 2px;
+    background-color: $color-dark;
+  }
+}
+
+// Mobile Adjustments
+@media (max-width: $breakpoint-tablet) {
+  .catalog-pagination {
+    padding: 32px 0;
+    
+    &__inner {
+      padding: 0 ac(20px, 16px);
+    }
+  }
+}

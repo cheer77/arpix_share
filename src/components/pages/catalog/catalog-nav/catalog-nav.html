@@ -1,0 +1,29 @@
+<div class="catalog-nav">
+  <div class="catalog-nav__inner container">
+    <div class="catalog-nav__count">
+      <span class="catalog-nav__count-num">29</span>
+      <span class="catalog-nav__count-text">товарів знайдено</span>
+    </div>
+
+    <div class="catalog-nav__sort dropdown">
+      <button class="catalog-nav__sort-trigger dropdown__trigger" aria-haspopup="listbox" aria-expanded="false">
+        <span class="catalog-nav__sort-label">Сортувати:</span>
+        <span class="catalog-nav__sort-current">Спочатку нові</span>
+        <svg class="catalog-nav__sort-icon" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <ul class="catalog-nav__sort-list dropdown__list" role="listbox">
+        <li class="dropdown__item" role="option" aria-selected="true" data-value="new">Спочатку нові</li>
+        <li class="dropdown__item" role="option" aria-selected="false" data-value="cheap">Дешевші</li>
+        <li class="dropdown__item" role="option" aria-selected="false" data-value="expensive">Дорожчі</li>
+        <li class="dropdown__item" role="option" aria-selected="false" data-value="popular">За популярністю</li>
+      </ul>
+    </div>
+
+    <button class="catalog-nav__filter-btn btn-secondary desktop-only" aria-label="Відкрити фільтри">
+      <i class="ph ph-sliders"></i>
+      <span>Фільтри</span>
+    </button>
+  </div>
+</div>

@@ -1,27 +1,25 @@
-@use "/src/scss/abstracts/mixins" as *;
-@use "/src/scss/abstracts/variables" as *;
-
 .catalog-banner {
   position: relative;
   width: 100%;
-  height: ac(527px, 280px);
-  border-radius: ac(20px, 12px);
-  overflow: hidden;
+  height: 527px;
+
+  @media (max-width: $breakpoint-tablet) {
+    height: auto;
+  }
+  background-color: $color-white;
+  border-radius: 12px;
   display: flex;
-  align-items: flex-end;
-  padding: ac(40px, 24px);
+  flex-direction: column;
+  padding: 24px;
+  gap: 17px;
 
-  &__bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-
-    &::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(100deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.1) 60%, transparent 100%);
-    }
+  &__image-wrapper {
+    position: relative;
+    width: 100%;
+    height: ac(326px, 180px);
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
   }
 
   &__image {
@@ -31,38 +29,43 @@
   }
 
   &__content {
-    position: relative;
-    z-index: 1;
     display: flex;
     flex-direction: column;
-    gap: ac(24px, 16px);
-    max-width: ac(400px, 300px);
-    color: $color-white;
+    gap: 17px;
+    color: $color-text;
   }
 
   &__text {
     font-size: ac(24px, 18px);
-    line-height: 1.35;
-    font-weight: $font-weight-medium;
+    line-height: normal;
+    font-weight: $font-weight-bold;
+    color: $color-text;
   }
 
   &__link {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    gap: 8px;
     width: fit-content;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 100px;
-    padding: ac(14px, 10px) ac(28px, 18px);
-    font-size: ac(15px, 14px);
+    height: 48px;
+    border: 1px solid $color-text;
+    border-radius: 80px;
+    padding: 0 32px;
+    font-size: 12px;
     font-weight: $font-weight-medium;
-    color: $color-white;
+    color: $color-text;
     text-decoration: none;
-    transition: background-color $transition-base, border-color $transition-base;
+    transition: background-color $transition-base, color $transition-base;
+
+    @media (max-width: $breakpoint-tablet) {
+      padding: 0 24px;
+      height: 40px;
+    }
 
     &:hover {
-      background-color: rgba(255, 255, 255, 0.15);
-      border-color: rgba(255, 255, 255, 0.8);
+      background-color: $color-text;
+      color: $color-white;
     }
   }
 }

@@ -28,6 +28,11 @@ import '../components/pages/product/product-blog/product-blog.scss';
 import '../components/pages/product/product-dealers/product-dealers.scss';
 import '../components/pages/catalog/catalog-hero/catalog-hero.scss';
 import '../components/pages/catalog/catalog-banner/catalog-banner.scss';
+import '../components/pages/catalog/catalog-nav/catalog-nav.scss';
+import '../components/pages/catalog/catalog-filter/catalog-filter.scss';
+import '../components/pages/catalog/catalog-grid/catalog-grid.scss';
+import '../components/pages/catalog/catalog-pagination/catalog-pagination.scss';
+import '../scss/pages/_catalog-content.scss';
 
 // --- Global Modules ---
 import Swiper from 'swiper/bundle';
@@ -43,6 +48,7 @@ import { initBasket } from './components/basket.js';
 import initProductTabs from './components/product-tabs.js';
 import { initRecomSlider } from './components/recom-slider.js';
 import { initFaq } from './components/faq.js';
+import { initCatalog } from './components/catalog.js';
 
 import { initQuantityControls } from './components/quantity-control.js';
 
@@ -58,5 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof initProductTabs === 'function') initProductTabs();
   if (typeof initRecomSlider === 'function') initRecomSlider();
   if (typeof initFaq === 'function') initFaq();
+  if (typeof initCatalog === 'function') initCatalog();
 });
 
