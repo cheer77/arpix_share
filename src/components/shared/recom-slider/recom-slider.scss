@@ -6,6 +6,10 @@
   padding-top: ac(120px, 60px);
   padding-bottom: ac(120px, 80px);
   background-color: $color-bg;
+  
+  &--bg-white {
+    background-color: $color-white;
+  }
 
   &__header {
     margin-bottom: ac(48px, 32px);

@@ -6,16 +6,16 @@
   max-width: $breakpoint-desktop-xl; // 1440px
   margin: 0 auto;
   position: relative;
-  padding-top: ac(11px, 6px);
-  padding-bottom: ac(40px, 24px);
+  padding-top: ac(11px, 6px, 375);
+  padding-bottom: ac(40px, 24px, 375);
 
   // Фоновый блок: 1420px, отступы 10px по бокам
   &__wrapper {
     position: relative;
     width: calc(100% - 20px);
     margin: 0 auto;
-    height: ac(423px, 260px);
-    border-radius: ac(20px, 12px);
+    height: ac(423px, 375px, 375);
+    border-radius: 20px;
     overflow: hidden;
   }
 
@@ -37,7 +37,7 @@
     inset: 0;
     display: flex;
     flex-direction: column;
-    padding: ac(35px, 20px) ac(72px, 20px) ac(40px, 20px);
+    padding: ac(35px, 35px, 375) ac(72px, 16px, 375) ac(40px, 16px, 375);
   }
 
   &__breadcrumbs {
@@ -86,17 +86,17 @@
   // Контент абсолютно позиционирован: top=170px, left=72px
   &__content {
     position: absolute;
-    top: ac(170px, 100px);
-    left: ac(72px, 20px);
-    max-width: ac(636px, 300px);
+    top: ac(170px, 134px, 375);
+    left: ac(72px, 16px, 375);
+    max-width: ac(636px, 260px, 375);
     display: flex;
     flex-direction: column;
-    gap: ac(16px, 10px);
+    gap: ac(16px, 16px, 375);
   }
 
   &__title {
     font-family: $font-heading;
-    font-size: ac(32px, 22px);
+    font-size: ac(32px, 24px, 375);
     font-weight: $font-weight-regular;
     text-transform: uppercase;
     color: $color-text;
@@ -106,7 +106,7 @@
 
   &__description {
     font-family: $font-primary;
-    font-size: ac(20px, 14px);
+    font-size: ac(20px, 16px, 375);
     font-weight: $font-weight-regular;
     line-height: 1.4;
     color: $color-text;
