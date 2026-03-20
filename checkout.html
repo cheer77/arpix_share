@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Arpix Share | Каталог</title>
-    <meta name="description" content="Каталог тoварів Arpix Share — бази, топи, гелі, гель-лаки, декор та інструменти для нігтів" />
+    <title>Arpix Share | Оформлення замовлення</title>
+    <meta name="description" content="Оформлення замовлення в інтернет-магазині Arpix Share" />
 
     <!-- Google Fonts: Manrope, Bad Script & Syne -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,19 +25,20 @@
     <!-- HEADER -->
     {{> layout/header/header className="header--inner" }}
 
-    <main class="main--catalog">
-      {{> pages/catalog/catalog-hero/catalog-hero }}
-      {{> shared/recom-slider/recom-slider title="ВИГІДНО ЗАРАЗ" className="recom-slider--bg-white container" }}
+    <main class="checkout-page pb-80">
+      <div class="container container--checkout">
+        <!-- BREADCRUMBS -->
+        {{> ui/breadcrumbs/breadcrumbs className="breadcrumbs__nobg pb-32" }}
 
-      <section class="catalog-content container">
-        <div class="catalog-content__inner">
-          {{> pages/catalog/catalog-filter/catalog-filter }}
-          {{> pages/catalog/catalog-nav/catalog-nav }}
-          {{> pages/catalog/catalog-grid/catalog-grid }}
+        <div class="checkout-page__grid">
+          <div class="checkout-page__form-column">
+            {{> pages/checkout/checkout-form/checkout-form }}
+          </div>
+          <aside class="checkout-page__summary-column">
+            {{> pages/checkout/checkout-summary/checkout-summary }}
+          </aside>
         </div>
-      </section>
-      {{> pages/catalog/catalog-pagination/catalog-pagination }}
-      {{> pages/product/product-dealers/product-dealers className="product-dealers--catalog" }}
+      </div>
     </main>
 
     <!-- FOOTER -->

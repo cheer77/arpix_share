@@ -1,0 +1,102 @@
+<div class="checkout-summary">
+  <div class="checkout-summary__header">
+    <h2 class="checkout-summary__title">Ваше замовлення</h2>
+    <a href="/basket" class="checkout-summary__edit-btn" id="checkout-edit-basket">
+       <i class="ph ph-note-pencil"></i>
+    </a>
+  </div>
+
+  <div class="checkout-summary__info">
+     <span class="checkout-summary__count">1 товар(ів) на суму:</span>
+     <div class="checkout-summary__price">
+        <span class="value">310</span>
+        <span class="currency">грн</span>
+     </div>
+  </div>
+
+  <div class="checkout-summary__items">
+     <article class="basket-item">
+        <div class="basket-item__image-wrapper">
+           <img src="/src/assets/images/product-1.png" alt="Product" class="basket-item__image">
+        </div>
+        <div class="basket-item__info">
+           <div class="basket-item__header">
+              <div class="basket-item__meta">
+                 <span class="basket-item__sku">Артикул: AGL124_5</span>
+                 <h3 class="basket-item__name">Акрігель с блисктіками Nailapex Shine № 2, 30г</h3>
+              </div>
+              <button class="basket-item__remove" aria-label="Видалити товар">
+                 <i class="ph ph-trash"></i>
+              </button>
+           </div>
+           <div class="basket-item__actions">
+              <div class="basket-item__quantity quantity-control">
+                 <button class="quantity-control__btn quantity-control__btn--minus" aria-label="Зменшити">−</button>
+                 <input type="number" class="quantity-control__input" value="1" min="1" readonly>
+                 <button class="quantity-control__btn quantity-control__btn--plus" aria-label="Збільшити">+</button>
+              </div>
+              <div class="basket-item__price-group">
+                 <span class="basket-item__price">310</span>
+                 <span class="basket-item__currency">грн</span>
+              </div>
+           </div>
+        </div>
+     </article>
+  </div>
+
+  <div class="checkout-summary__shared-parts">
+    <!-- GIFT PROGRESS (Reusing basket__promo) -->
+    <div class="basket__promo">
+      <div class="basket__promo-main-wrap">
+        <div class="basket__promo-info">
+          <div class="basket__promo-icon">
+            <img src="/src/assets/icons/gift.svg" alt="Gift">
+          </div>
+          <div class="basket__promo-text">
+            <p class="basket__promo-main">Додайте до замовлення товарів на <span class="basket__promo-accent">65 грн</span></p>
+            <p class="basket__promo-sub">І отримайте кращій подарунок <i class="ph ph-info"></i></p>
+          </div>
+        </div>
+        <div class="basket__promo-progress">
+          <div class="basket__promo-bar" style="width: 78.4%;"></div>
+        </div>
+      </div>
+      <div class="basket__promo-reward">
+        <span class="basket__promo-reward-title">Ви отримаєте</span>
+        <span class="basket__promo-reward-desc">full-size продукт</span>
+        <div class="basket__promo-reward-badge">
+          <img src="/src/assets/icons/gift-white.svg" alt="Gift">
+          <span>В подарунок</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROMOCODE -->
+    <div class="checkout-promo">
+       <input type="text" class="checkout-promo__input" placeholder="Введіть промокод">
+    </div>
+
+    <!-- TOTALS -->
+    <div class="checkout-totals">
+       <div class="checkout-total-line">
+          <span class="checkout-total-line__label">Підсумок:</span>
+          <span class="checkout-total-line__value">310 грн</span>
+       </div>
+       <div class="checkout-total-line">
+          <span class="checkout-total-line__label">Доставка:</span>
+          <span class="checkout-total-line__value checkout-total-line__value--small">за тарифами перевізника</span>
+       </div>
+       <div class="checkout-total-line">
+          <span class="checkout-total-line__label">Знижка:</span>
+          <span class="checkout-total-line__value">-60 грн</span>
+       </div>
+       <div class="checkout-total-line checkout-total-line--final">
+          <span class="checkout-total-line__label">РАЗОМ:</span>
+          <div class="checkout-total-line__price">
+             <span class="value">310</span>
+             <span class="currency">грн</span>
+          </div>
+       </div>
+    </div>
+  </div>
+</div>

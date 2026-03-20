@@ -1,0 +1,118 @@
+
+
+.checkout-page {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 416px;
+    gap: 32px;
+    align-items: start;
+
+    @media (max-width: $basket-bp) {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  &__form-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    @media (max-width: $basket-bp) {
+      display: contents;
+    }
+  }
+
+  &__summary-column {
+    position: sticky;
+    top: 100px;
+
+    @media (max-width: $basket-bp) {
+      display: contents;
+      position: static;
+    }
+  }
+}
+
+// On mobile: single white block wrapping everything
+@media (max-width: $basket-bp) {
+  .checkout-page__grid {
+    background-color: $color-white;
+    border-radius: 0 0 12px 12px;
+    padding: 32px 16px 60px;
+    gap: 0;
+  }
+
+  .checkout-form {
+    display: contents;
+  }
+
+  // Summary header/info/items at the top
+  .checkout-summary__header {
+    order: -3;
+    margin-bottom: 12px;
+  }
+
+  .checkout-summary__info {
+    order: -2;
+    margin-bottom: 16px;
+  }
+
+  .checkout-summary__items {
+    order: -1;
+    margin-bottom: 48px;
+  }
+
+  // Form sections
+  .checkout-section {
+    padding-bottom: 32px;
+    border-bottom: 1px solid #e1ded9;
+    margin-top: 48px;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  // Shared parts (gifts, promo, totals) after payment
+  .checkout-summary__shared-parts {
+    margin-top: 30px;
+  }
+
+  // Footer (comment)
+  .checkout-footer-block {
+    margin-top: 30px;
+  }
+
+  // Submit button — always last
+  .checkout-submit-block {
+    order: 100;
+    margin-top: 30px;
+    width: 100%;
+  }
+}
+
+.container--checkout {
+    max-width: 1240px;
+    @media (max-width: $basket-bp) {
+      padding: 0;
+    }
+}
+
+@import "../../components/pages/checkout/checkout-form/checkout-form";
+@import "../../components/pages/checkout/checkout-summary/checkout-summary";

@@ -1,0 +1,177 @@
+<form class="checkout-form">
+  <!-- 1. YOUR DATA -->
+  <section class="checkout-section">
+    <div class="checkout-section__header">
+      <h2 class="checkout-section__title">1. Ваші дані</h2>
+      <a href="#" class="checkout-section__login-link">Увійти в кабінет</a>
+    </div>
+    <div class="checkout-section__content">
+      <div class="checkout-form__grid">
+        <label class="checkout-field">
+          <span class="checkout-field__label">Імʼя *</span>
+          <input type="text" name="first_name" class="checkout-input" required placeholder="Введіть імʼя">
+        </label>
+        <label class="checkout-field">
+          <span class="checkout-field__label">Прізвище *</span>
+          <input type="text" name="last_name" class="checkout-input" required placeholder="Введіть прізвище">
+        </label>
+        <label class="checkout-field">
+          <span class="checkout-field__label">Телефон *</span>
+          <input type="tel" name="phone" class="checkout-input" required placeholder="+38 (0__) ___ __ __">
+        </label>
+        <label class="checkout-field">
+          <span class="checkout-field__label">Email</span>
+          <input type="email" name="email" class="checkout-input" placeholder="example@mail.com">
+        </label>
+        <div class="checkout-field checkout-field--full">
+          <span class="checkout-field__label">Країна *</span>
+          <div class="checkout-select-wrapper">
+             <select name="country" class="checkout-input">
+                <option value="ukraine">Україна</option>
+             </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. DELIVERY -->
+  <section class="checkout-section">
+    <div class="checkout-section__header">
+      <h2 class="checkout-section__title">2. Спосіб доставки</h2>
+    </div>
+    <div class="checkout-section__content">
+      <div class="checkout-delivery-methods">
+        <label class="checkout-method-card is-active">
+          <input type="radio" name="delivery_type" value="post" checked class="sr-only">
+          <div class="checkout-method-card__inner">
+            <div class="checkout-method-card__top">
+              <img src="/src/assets/icons/checkout/location-tick.svg" alt="Post" class="checkout-method-icon">
+              <div class="checkout-radio-circle"></div>
+            </div>
+            <div class="checkout-method-card__bottom">
+              <span class="checkout-method-card__name">Доставка на пошту</span>
+              <span class="checkout-method-card__tag">Тариф пошти</span>
+            </div>
+          </div>
+        </label>
+        <label class="checkout-method-card">
+          <input type="radio" name="delivery_type" value="pickup" class="sr-only">
+          <div class="checkout-method-card__inner">
+            <div class="checkout-method-card__top">
+              <img src="/src/assets/icons/checkout/map.svg" alt="Pickup" class="checkout-method-icon">
+              <div class="checkout-radio-circle"></div>
+            </div>
+            <div class="checkout-method-card__bottom">
+              <span class="checkout-method-card__name">Самовивіз</span>
+              <span class="checkout-method-card__tag checkout-method-card__tag--free">Безкоштовно</span>
+            </div>
+          </div>
+        </label>
+      </div>
+
+      <div class="checkout-delivery-operators mt-24">
+        <h3 class="checkout-subtitle">Оператори доставки</h3>
+        <div class="checkout-operator-list">
+          <label class="checkout-operator-card is-active">
+             <input type="radio" name="delivery_operator" value="nova_poshta" checked class="sr-only">
+             <div class="checkout-operator-card__inner">
+                <div class="checkout-operator-card__top">
+                   <img src="/src/assets/icons/checkout/nova-poshta.svg" alt="Нова Пошта" class="checkout-operator-logo">
+                   <div class="checkout-radio-circle"></div>
+                </div>
+                <span class="checkout-operator-name">Нова пошта</span>
+             </div>
+          </label>
+          <label class="checkout-operator-card">
+             <input type="radio" name="delivery_operator" value="ukrposhta" class="sr-only">
+             <div class="checkout-operator-card__inner">
+                <div class="checkout-operator-card__top">
+                   <img src="/src/assets/icons/checkout/ukrposhta.svg" alt="Укрпошта" class="checkout-operator-logo">
+                   <div class="checkout-radio-circle"></div>
+                </div>
+                <span class="checkout-operator-name">Укрпошта</span>
+             </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="checkout-delivery-suboptions mt-24">
+         <div class="checkout-radio-group">
+            <label class="checkout-radio-label">
+               <input type="radio" name="delivery_suboption" value="warehouse" checked class="sr-only">
+               <div class="checkout-radio-circle"></div>
+               <span>Склад</span>
+            </label>
+            <label class="checkout-radio-label is-disabled">
+               <input type="radio" name="delivery_suboption" value="courier" class="sr-only" disabled>
+               <div class="checkout-radio-circle"></div>
+               <span>Кур’єр</span>
+            </label>
+         </div>
+      </div>
+
+      <div class="checkout-form__grid mt-24">
+         <label class="checkout-field">
+            <span class="checkout-field__label">Місто</span>
+             <div class="checkout-select-wrapper">
+                <select name="city" class="checkout-input">
+                   <option value="">Київ</option>
+                </select>
+             </div>
+         </label>
+         <label class="checkout-field">
+            <span class="checkout-field__label">Відділення або поштомат</span>
+             <div class="checkout-select-wrapper">
+                <select name="office" class="checkout-input">
+                   <option value="">№1, вул. Пирогова, 1</option>
+                </select>
+             </div>
+         </label>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. PAYMENT -->
+  <section class="checkout-section">
+    <div class="checkout-section__header">
+      <h2 class="checkout-section__title">3. Оплата</h2>
+    </div>
+    <div class="checkout-section__content">
+      <div class="checkout-payment-methods">
+          <label class="checkout-payment-option is-active">
+          <input type="radio" name="payment_method" value="card" checked class="sr-only">
+          <div class="checkout-radio-circle"></div>
+          <span class="checkout-payment-option__name">Карткою Visa/MasterCard</span>
+          <div class="checkout-payment-option__logos">
+             <img src="/src/assets/icons/visa-logo.svg" alt="Visa">
+             <img src="/src/assets/icons/Mastercard.svg" alt="Mastercard">
+          </div>
+        </label>
+        <label class="checkout-payment-option">
+          <input type="radio" name="payment_method" value="fop" class="sr-only">
+          <div class="checkout-radio-circle"></div>
+          <span class="checkout-payment-option__name">Платіж за реквізитами ФОП</span>
+        </label>
+        <label class="checkout-payment-option">
+          <input type="radio" name="payment_method" value="cod" class="sr-only">
+          <div class="checkout-radio-circle"></div>
+          <span class="checkout-payment-option__name">Накладний платіж</span>
+        </label>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. COMMENT -->
+  <div class="checkout-footer-block mt-32">
+     <div class="checkout-field">
+        <span class="checkout-field__label">Коментар до замовлення</span>
+        <textarea name="comment" class="checkout-input checkout-input--textarea" placeholder="Ваші побажання..."></textarea>
+     </div>
+  </div>
+
+  <!-- SUBMIT BUTTON -->
+  <div class="checkout-submit-block">
+     <button type="submit" class="checkout-submit-btn btn-dark">Оформити замовлення</button>
+  </div>
+</form>

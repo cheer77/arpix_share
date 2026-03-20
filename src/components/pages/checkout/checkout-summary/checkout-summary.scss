@@ -1,0 +1,150 @@
+@import "../../../../scss/abstracts/variables";
+@import "../../../../scss/components/basket-item";
+@import "../../../../scss/components/basket-promo";
+
+.checkout-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  @media (max-width: $basket-bp) {
+    display: contents;
+  }
+
+  // ─── Header ─────────────────────────────────────────
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: 24px;
+    font-weight: $font-weight-regular;
+    text-transform: uppercase;
+    color: $color-text;
+    margin: 0;
+  }
+
+  &__edit-btn {
+    @include btn-reset;
+    font-size: 24px;
+    color: $color-text;
+    cursor: pointer;
+    &:hover { color: $color-accent; }
+  }
+
+  // ─── Info Row ───────────────────────────────────────
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #e1ded9;
+  }
+
+  &__count {
+    font-size: 14px;
+    color: #111822;
+  }
+
+  &__price {
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+    .value { font-size: 20px; font-weight: $font-weight-semibold; }
+    .currency { font-size: 14px; }
+  }
+
+  // ─── Items List ─────────────────────────────────────
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    @media (max-width: $basket-bp) {
+      width: 100%;
+    }
+  }
+
+  // ─── Shared Parts (gifts, promo, totals) ────────────
+  &__shared-parts {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @media (max-width: $basket-bp) {
+      width: 100%;
+    }
+  }
+}
+
+// ─── Promocode ──────────────────────────────────────
+.checkout-promo {
+  border-bottom: 1px solid #111822;
+  padding: 7px 0 12px;
+
+  &__input {
+    background: transparent;
+    border: none;
+    width: 100%;
+    font-size: 14px;
+    color: $color-text;
+    &::placeholder { color: #979797; }
+    &:focus { outline: none; }
+  }
+}
+
+// ─── Totals ─────────────────────────────────────────
+.checkout-totals {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid #e1ded9;
+  padding-top: 8px;
+}
+
+.checkout-total-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+
+  &__label {
+    font-size: 14px;
+    color: $color-text;
+  }
+
+  &__value {
+    font-size: 14px;
+    font-weight: $font-weight-semibold;
+    color: $color-text;
+
+    &--small {
+      font-size: 8px;
+    }
+  }
+
+  &--final {
+    margin-top: 12px;
+    padding: 12px 0;
+    border-top: 1px solid #e1ded9;
+    border-bottom: 1px solid #e1ded9;
+
+    .checkout-total-line__label {
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+
+    .checkout-total-line__price {
+       display: flex;
+       align-items: baseline;
+       gap: 2px;
+       .value { font-size: 20px; font-weight: $font-weight-semibold; }
+       .currency { font-size: 14px; }
+    }
+  }
+}
+
+.mt-24 { margin-top: 24px; }

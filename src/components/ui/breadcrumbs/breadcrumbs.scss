@@ -1,6 +1,10 @@
 .breadcrumbs {
   background-color: $color-white;
 
+  &__nobg {
+    background-color: transparent;
+  }
+
   &--pt {
     padding-top: 62px;
   }

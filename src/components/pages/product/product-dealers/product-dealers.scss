@@ -25,7 +25,7 @@
     padding: ac(48px, 32px) ac(55px, 20px);
     border-radius: $radius-25;
     max-width: 100%;
-    min-height: ac(420px, 280px);
+    min-height: ac(331px, 270px);
     gap: ac(48px, 32px);
     
     // We reuse .dealers__content class for the gradient background in HTML, 
@@ -60,9 +60,8 @@
     margin: 0;
   }
 
-  &__cta {
-    // btn-primary mixin is already applied via class in HTML,
-    // but we can add specific adjustments here if required.
-    min-width: ac(220px, 180px);
+  &--catalog {
+    padding-top: ac(40px, 24px); // Reduced top padding for catalog
+    padding-bottom: ac(120px, 60px);
   }
 }
