@@ -8,7 +8,7 @@
   background-color: $color-white;
   border-radius: $radius-12;
   transition: box-shadow $transition-base, transform $transition-base;
-  padding-bottom: 32px;
+  padding-bottom: 0px;
   z-index: 1;
 
   // Lift card above neighbors when dropdown is open
@@ -104,6 +104,7 @@
     padding-left: ac(24px, 12px);
     padding-right: ac(24px, 12px);
     min-height: ac(140px, 80px);
+    flex-grow: 1;
 
     @media (max-width: $breakpoint-tablet) {
       margin-bottom: 20px;
@@ -252,6 +253,8 @@
     justify-content: space-between;
     height: 42px;
     padding: 0 16px;
+    padding-bottom: 32px;
+    box-sizing: content-box;
     z-index: 10;
 
     @media (max-width: $breakpoint-tablet) {
