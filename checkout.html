@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Arpix Share | Головна</title>
-    <meta name="description" content="Arpix Share — український бренд нового покоління. Nail матеріали + догляд." />
+    <title>Arpix Share | Оформлення замовлення</title>
+    <meta name="description" content="Оформлення замовлення в інтернет-магазині Arpix Share" />
 
     <!-- Google Fonts: Manrope, Bad Script & Syne -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,7 +32,7 @@
 
     <!-- HEADER -->
       <!-- ==================== HEADER ==================== -->
-      <header class="header " id="header">
+      <header class="header header--inner" id="header">
         <div class="header__inner container">
           <!-- Logo (Left) -->
           <a href="./" class="header__logo" aria-label="Arpix Share — Головна">
@@ -129,462 +129,313 @@
         </div>
       </header>
 
-    <main class="main">
-          <!-- ==================== HERO ==================== -->
-          <section class="hero">
-            <div class="hero__inner container">
-              <div class="hero__background">
-                <img src="./assets/hero-bg-BCLtIsdL.png" alt="ARPIKS Background" class="hero__bg-img" />
-              </div>
-              <div class="hero__content">
-                <div class="hero__text-group">
-                  <p class="hero__tagline">Бренд нового покоління. Nail матеріали + догляд</p>
-                  <h1 class="hero__title">КРАСА ДЛЯ РОЗУМНИХ</h1>
-                  <p class="hero__subtitle">Формули, які работают. Якість, яка не змінюється</p>
+    <main class="checkout-page pb-80">
+      <div class="container container--checkout">
+        <!-- BREADCRUMBS -->
+        <nav class="breadcrumbs breadcrumbs__nobg pb-32" aria-label="Breadcrumb">
+          <div class="breadcrumbs__inner container">
+            <ol class="breadcrumbs__list">
+              <li class="breadcrumbs__item">
+                <a href="./" class="breadcrumbs__link">Бази</a>
+                <i class="ph ph-caret-right breadcrumbs__separator"></i>
+              </li>
+              <li class="breadcrumbs__item">
+                <a href="#" class="breadcrumbs__link">Якась підгруппа</a>
+                <i class="ph ph-caret-right breadcrumbs__separator"></i>
+              </li>
+              <li class="breadcrumbs__item">
+                <span class="breadcrumbs__current" aria-current="page">Назва сторінки</span>
+              </li>
+            </ol>
+          </div>
+        </nav>
+
+        <div class="checkout-page__grid">
+          <div class="checkout-page__form-column">
+            <form class="checkout-form">
+              <!-- 1. YOUR DATA -->
+              <section class="checkout-section">
+                <div class="checkout-section__header">
+                  <h2 class="checkout-section__title">1. Ваші дані</h2>
+                  <a href="#" class="checkout-section__login-link">Увійти в кабінет</a>
                 </div>
-                <a href="#" class="hero__cta btn-primary">Перейти до каталогу</a>
+                <div class="checkout-section__content">
+                  <div class="checkout-form__grid">
+                    <label class="checkout-field">
+                      <span class="checkout-field__label">Імʼя *</span>
+                      <input type="text" name="first_name" class="checkout-input" required placeholder="Введіть імʼя">
+                    </label>
+                    <label class="checkout-field">
+                      <span class="checkout-field__label">Прізвище *</span>
+                      <input type="text" name="last_name" class="checkout-input" required placeholder="Введіть прізвище">
+                    </label>
+                    <label class="checkout-field">
+                      <span class="checkout-field__label">Телефон *</span>
+                      <input type="tel" name="phone" class="checkout-input" required placeholder="+38 (0__) ___ __ __">
+                    </label>
+                    <label class="checkout-field">
+                      <span class="checkout-field__label">Email</span>
+                      <input type="email" name="email" class="checkout-input" placeholder="example@mail.com">
+                    </label>
+                    <div class="checkout-field checkout-field--full">
+                      <span class="checkout-field__label">Країна *</span>
+                      <div class="checkout-select-wrapper">
+                         <select name="country" class="checkout-input">
+                            <option value="ukraine">Україна</option>
+                         </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            
+              <!-- 2. DELIVERY -->
+              <section class="checkout-section">
+                <div class="checkout-section__header">
+                  <h2 class="checkout-section__title">2. Спосіб доставки</h2>
+                </div>
+                <div class="checkout-section__content">
+                  <div class="checkout-delivery-methods">
+                    <label class="checkout-method-card is-active">
+                      <input type="radio" name="delivery_type" value="post" checked class="sr-only">
+                      <div class="checkout-method-card__inner">
+                        <div class="checkout-method-card__top">
+                          <img src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2015.2794%2020.0593'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Location%20Tick'%3e%3cpath%20id='Vector'%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M10.2952%2017.8581C12.5009%2015.0454%2015.2793%2010.959%2015.2793%208.22095C15.2793%203.68066%2011.8589%203.02345e-05%207.63964%203.02345e-05C3.42038%203.02345e-05%200%203.68066%200%208.22095C0%2010.959%202.7784%2015.0454%204.98411%2017.8581C6.13487%2019.3256%206.71024%2020.0593%207.63964%2020.0593C8.56903%2020.0593%209.14441%2019.3256%2010.2952%2017.8581ZM11.0622%207.13409C11.3104%206.82608%2011.2619%206.3752%2010.9539%206.12702C10.6459%205.87883%2010.195%205.92733%209.94681%206.23534L8.01636%208.63112C7.61998%209.12304%207.36988%209.43069%207.16173%209.62508C7.06391%209.71643%207.00143%209.75707%206.96553%209.77504C6.9388%209.78841%206.92924%209.78835%206.92412%209.78832H6.92273C6.9176%209.78835%206.90805%209.78841%206.88132%209.77504C6.84541%209.75707%206.78293%209.71643%206.68512%209.62508C6.47697%209.43069%206.22686%209.12304%205.83048%208.63112L5.33247%208.01306C5.08429%207.70505%204.63341%207.65655%204.3254%207.90474C4.01739%208.15292%203.96889%208.6038%204.21708%208.91181L4.74619%209.56847C5.10193%2010.01%205.41577%2010.3996%205.70743%2010.672C6.02057%2010.9644%206.40991%2011.2208%206.92342%2011.2208C7.43694%2011.2208%207.82627%2010.9644%208.13942%2010.672C8.43108%2010.3996%208.74491%2010.01%209.10064%209.56849L11.0622%207.13409Z'%20fill='var(--fill-0,%20%23143C3D)'/%3e%3c/g%3e%3c/svg%3e" alt="Post" class="checkout-method-icon">
+                          <div class="checkout-radio-circle"></div>
+                        </div>
+                        <div class="checkout-method-card__bottom">
+                          <span class="checkout-method-card__name">Доставка на пошту</span>
+                          <span class="checkout-method-card__tag">Тариф пошти</span>
+                        </div>
+                      </div>
+                    </label>
+                    <label class="checkout-method-card">
+                      <input type="radio" name="delivery_type" value="pickup" class="sr-only">
+                      <div class="checkout-method-card__inner">
+                        <div class="checkout-method-card__top">
+                          <img src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2018.6217%2016.1406'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Map'%3e%3cg%20id='Vector'%3e%3cpath%20d='M5.72978%203.03984e-06C4.81617%200.11996%203.926%200.470443%203.1514%201.05139L1.0505%202.62706C0.389229%203.12302%205.28097e-05%203.90137%205.28097e-05%204.72796V12.9683C5.28097e-05%2015.0816%202.41266%2016.2879%204.10328%2015.0199C4.59557%2014.6507%205.15304%2014.4124%205.72978%2014.3051V3.03984e-06Z'%20fill='var(--fill-0,%20%23ADADAD)'/%3e%3cpath%20d='M7.16222%2014.3051C7.73896%2014.4124%208.29643%2014.6507%208.78872%2015.0199L8.88113%2015.0892C9.65572%2015.6702%2010.5459%2016.0207%2011.4595%2016.1406V1.83555C10.8828%201.72818%2010.3253%201.48991%209.83301%201.1207L9.74059%201.05139C8.966%200.470443%208.07582%200.11996%207.16222%203.0401e-06V14.3051Z'%20fill='var(--fill-0,%20%23ADADAD)'/%3e%3cpath%20d='M12.8919%201.83555V16.1406C13.8056%2016.0207%2014.6957%2015.6702%2015.4703%2015.0892L17.5712%2013.5135C18.2325%2013.0176%2018.6217%2012.2392%2018.6217%2011.4126V3.17231C18.6217%201.05903%2016.2091%20-0.147268%2014.5184%201.1207C14.0262%201.48991%2013.4687%201.72818%2012.8919%201.83555Z'%20fill='var(--fill-0,%20%23ADADAD)'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="Pickup" class="checkout-method-icon">
+                          <div class="checkout-radio-circle"></div>
+                        </div>
+                        <div class="checkout-method-card__bottom">
+                          <span class="checkout-method-card__name">Самовивіз</span>
+                          <span class="checkout-method-card__tag checkout-method-card__tag--free">Безкоштовно</span>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+            
+                  <div class="checkout-delivery-operators mt-24">
+                    <h3 class="checkout-subtitle">Оператори доставки</h3>
+                    <div class="checkout-operator-list">
+                      <label class="checkout-operator-card is-active">
+                         <input type="radio" name="delivery_operator" value="nova_poshta" checked class="sr-only">
+                         <div class="checkout-operator-card__inner">
+                            <div class="checkout-operator-card__top">
+                               <img src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2023.2342%2022.917'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20id='Union'%20d='M13.2143%2013.6758C13.5841%2013.6758%2013.8315%2013.919%2013.8315%2014.2246V17.5674C13.8315%2017.9319%2014.0763%2018.1748%2014.3833%2018.1748H16.0434C16.3503%2018.1748%2016.472%2018.355%2016.228%2018.5391C16.228%2018.5391%2016.2281%2018.5398%2012.0493%2022.7334C11.9236%2022.8547%2011.7719%2022.917%2011.6166%2022.917C11.4652%2022.917%2011.3099%2022.8547%2011.1879%2022.7334C11.1879%2022.7334%2011.1881%2022.7327%207.00923%2018.5391C6.76152%2018.355%206.88313%2018.1749%207.18989%2018.1748H8.97212C9.28276%2018.1748%209.52778%2017.9319%209.52778%2017.5674V14.2246C9.52778%2013.919%209.77553%2013.6758%2010.0825%2013.6758H13.2143ZM4.73091%206.69238C4.80851%206.72917%204.85681%206.83579%204.85688%206.99023V15.8643C4.8568%2016.0187%204.8085%2016.1102%204.73091%2016.1396C4.65695%2016.1689%204.54987%2016.1398%204.42427%2016.0479C4.42087%2016.0444%204.30258%2015.9256%200.183055%2011.792C-0.0610183%2011.6116%20-0.0610183%2011.243%200.183055%2011C0.189381%2010.9937%200.349816%2010.8349%204.42427%206.80664C4.54982%206.68531%204.65696%206.65581%204.73091%206.69238ZM18.6166%206.78711C18.6869%206.76502%2018.7801%206.81014%2018.8725%206.93164C18.8812%206.94008%2019.0673%207.12075%2023.0512%2011.0029C23.2952%2011.2459%2023.2952%2011.6145%2023.0512%2011.7949C23.0512%2011.7949%2023.0512%2011.7951%2018.8725%2015.9297C18.7801%2016.0512%2018.6869%2016.0808%2018.6166%2016.0439C18.5465%2016.007%2018.5024%2015.8996%2018.5024%2015.7451V7.05273C18.5024%206.9019%2018.5465%206.80929%2018.6166%206.78711ZM12.0502%200.118164C12.0581%200.12594%2012.2381%200.303843%2016.351%204.37402C16.5358%204.61697%2016.4724%204.80078%2016.1655%204.80078H14.3833C14.0764%204.8008%2013.8326%205.04412%2013.8325%205.34961C13.8325%205.34961%2013.8325%205.34981%2013.8325%208.50879C13.8325%208.81438%2013.5841%209.05762%2013.2143%209.05762H10.0825C9.77553%209.05762%209.52778%208.81438%209.52778%208.50879V5.34961C9.52768%205.04414%209.28362%204.80084%208.97309%204.80078H7.0688C6.7619%204.80078%206.69844%204.61698%206.88325%204.37402C6.88325%204.37402%206.88361%204.37415%2011.1879%200.118164L11.4692%200H11.7651L12.0502%200.118164Z'%20fill='var(--fill-0,%20%23ED1C24)'/%3e%3c/svg%3e" alt="Нова Пошта" class="checkout-operator-logo">
+                               <div class="checkout-radio-circle"></div>
+                            </div>
+                            <span class="checkout-operator-name">Нова пошта</span>
+                         </div>
+                      </label>
+                      <label class="checkout-operator-card">
+                         <input type="radio" name="delivery_operator" value="ukrposhta" class="sr-only">
+                         <div class="checkout-operator-card__inner">
+                            <div class="checkout-operator-card__top">
+                               <img src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2016.2342%2022.9189'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20id='path14'%20d='M15.5277%209.76171C15.527%209.76186%207.70375%2011.4789%207.70375%2011.4789C5.37191%2011.9908%203.90913%2014.2392%204.43667%2016.501C4.96452%2018.7628%207.28272%2020.1812%209.61456%2019.6696C11.9466%2019.1577%2013.4092%2016.9093%2012.8816%2014.6477C12.6173%2013.5153%2011.9041%2012.5951%2010.9651%2012.0219C10.965%2012.0219%2010.9627%2012.02%2010.9618%2012.0196C10.9342%2012.0004%2010.9163%2011.9691%2010.9163%2011.9339C10.9163%2011.8845%2010.9514%2011.8431%2010.9989%2011.832C10.999%2011.8319%2014.4791%2011.0686%2014.4798%2011.0686C14.5626%2011.0504%2014.6485%2011.0814%2014.6994%2011.1466C14.6997%2011.1472%2014.6996%2011.1467%2014.6996%2011.1467C15.6583%2012.3772%2016.2342%2013.9125%2016.2342%2015.5731C16.2342%2019.4838%2013.084%2022.6798%209.11057%2022.9068C9.07515%2022.9087%208.85982%2022.9169%208.78707%2022.9179C7.02779%2022.9447%205.24404%2022.4554%203.69289%2021.4018C-0.224321%2018.7415%20-1.17605%2013.5053%201.56646%209.70612L8.52687%200.0647599C8.5566%200.0254674%208.60446%200%208.65816%200C8.71232%200%208.76033%200.025904%208.78991%200.0654875C8.78991%200.0654875%2015.6249%209.51944%2015.6255%209.52029C15.6429%209.54533%2015.6533%209.57573%2015.6533%209.60833C15.6533%209.68314%2015.5997%209.74572%2015.5277%209.76171'%20fill='var(--fill-0,%20%23FABC26)'/%3e%3c/svg%3e" alt="Укрпошта" class="checkout-operator-logo">
+                               <div class="checkout-radio-circle"></div>
+                            </div>
+                            <span class="checkout-operator-name">Укрпошта</span>
+                         </div>
+                      </label>
+                    </div>
+                  </div>
+            
+                  <div class="checkout-delivery-suboptions mt-24">
+                     <div class="checkout-radio-group">
+                        <label class="checkout-radio-label">
+                           <input type="radio" name="delivery_suboption" value="warehouse" checked class="sr-only">
+                           <div class="checkout-radio-circle"></div>
+                           <span>Склад</span>
+                        </label>
+                        <label class="checkout-radio-label is-disabled">
+                           <input type="radio" name="delivery_suboption" value="courier" class="sr-only" disabled>
+                           <div class="checkout-radio-circle"></div>
+                           <span>Кур’єр</span>
+                        </label>
+                     </div>
+                  </div>
+            
+                  <div class="checkout-form__grid mt-24">
+                     <label class="checkout-field">
+                        <span class="checkout-field__label">Місто</span>
+                         <div class="checkout-select-wrapper">
+                            <select name="city" class="checkout-input">
+                               <option value="">Київ</option>
+                            </select>
+                         </div>
+                     </label>
+                     <label class="checkout-field">
+                        <span class="checkout-field__label">Відділення або поштомат</span>
+                         <div class="checkout-select-wrapper">
+                            <select name="office" class="checkout-input">
+                               <option value="">№1, вул. Пирогова, 1</option>
+                            </select>
+                         </div>
+                     </label>
+                  </div>
+                </div>
+              </section>
+            
+              <!-- 3. PAYMENT -->
+              <section class="checkout-section">
+                <div class="checkout-section__header">
+                  <h2 class="checkout-section__title">3. Оплата</h2>
+                </div>
+                <div class="checkout-section__content">
+                  <div class="checkout-payment-methods">
+                      <label class="checkout-payment-option is-active">
+                      <input type="radio" name="payment_method" value="card" checked class="sr-only">
+                      <div class="checkout-radio-circle"></div>
+                      <span class="checkout-payment-option__name">Карткою Visa/MasterCard</span>
+                      <div class="checkout-payment-option__logos">
+                         <img src="data:image/svg+xml,%3csvg%20width='38'%20height='13'%20viewBox='0%200%2038%2013'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M9.4696%2012.6081H6.1916L3.7335%202.75054C3.61683%202.29709%203.3691%201.89622%203.0047%201.70728C2.0953%201.23247%201.0932%200.854601%200%200.664021V0.284505H5.2806C6.0094%200.284505%206.556%200.854601%206.6471%201.5167L7.9225%208.62729L11.1989%200.284505H14.3858L9.4696%2012.6081ZM16.2078%2012.6081H13.112L15.6612%200.284505H18.757L16.2078%2012.6081ZM22.7622%203.69823C22.8533%203.03449%2023.3999%202.65497%2024.0376%202.65497C25.0397%202.55968%2026.1313%202.75026%2027.0423%203.22342L27.5889%200.570096C26.6779%200.190579%2025.6758%200%2024.7664%200C21.7617%200%2019.5753%201.707%2019.5753%204.0761C19.5753%205.87839%2021.124%206.82472%2022.2172%207.39481C23.3999%207.96327%2023.8554%208.34278%2023.7643%208.91124C23.7643%209.76392%2022.8533%2010.1434%2021.9439%2010.1434C20.8507%2010.1434%2019.7575%209.8592%2018.757%209.3844L18.2104%2012.0394C19.3036%2012.5125%2020.4863%2012.7031%2021.5795%2012.7031C24.9486%2012.7968%2027.0423%2011.0914%2027.0423%208.53172C27.0423%205.3083%2022.7622%205.11936%2022.7622%203.69823ZM37.8768%2012.6081L35.4187%200.284505H32.7784C32.2318%200.284505%2031.6852%200.664021%2031.503%201.23247L26.9512%2012.6081H30.1381L30.7742%2010.8074H34.6899L35.0543%2012.6081H37.8768ZM33.2339%203.60286L34.1433%208.24742H31.5941L33.2339%203.60286Z'%20fill='%23111822'/%3e%3c/svg%3e" alt="Visa">
+                         <img src="data:image/svg+xml,%3csvg%20width='26'%20height='16'%20viewBox='0%200%2026%2016'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M18.1123%200C22.4665%208.78838e-05%2025.9961%203.56178%2025.9961%207.95508C25.996%2012.3483%2022.4664%2015.9101%2018.1123%2015.9102C16.16%2015.9102%2014.375%2015.1918%2012.998%2014.0059C11.6211%2015.1917%209.83604%2015.9102%207.88379%2015.9102C3.52973%2015.91%200.000116721%2012.3482%200%207.95508C0%203.56183%203.52965%200.000156615%207.88379%200C9.83569%200%2011.6212%200.716869%2012.998%201.90234C14.3749%200.716832%2016.1604%200%2018.1123%200Z'%20fill='%23111822'/%3e%3cpath%20d='M18.1123%200C22.4664%200.000153015%2025.9961%203.56182%2025.9961%207.95508C25.996%2012.3482%2022.4664%2015.91%2018.1123%2015.9102C16.16%2015.9102%2014.375%2015.1917%2012.998%2014.0059C14.6922%2012.5468%2015.7685%2010.3785%2015.7686%207.95508C15.7686%205.53116%2014.6926%203.3614%2012.998%201.90234C14.3749%200.716868%2016.1604%200%2018.1123%200Z'%20fill='%23111822'/%3e%3cpath%20d='M12.9976%201.90234C14.6923%203.36141%2015.7681%205.53102%2015.7681%207.95508C15.768%2010.3787%2014.6919%2012.5468%2012.9976%2014.0059C11.3036%2012.5468%2010.2281%2010.3784%2010.228%207.95508C10.228%205.53132%2011.3031%203.3614%2012.9976%201.90234Z'%20fill='%23111822'/%3e%3c/svg%3e" alt="Mastercard">
+                      </div>
+                    </label>
+                    <label class="checkout-payment-option">
+                      <input type="radio" name="payment_method" value="fop" class="sr-only">
+                      <div class="checkout-radio-circle"></div>
+                      <span class="checkout-payment-option__name">Платіж за реквізитами ФОП</span>
+                    </label>
+                    <label class="checkout-payment-option">
+                      <input type="radio" name="payment_method" value="cod" class="sr-only">
+                      <div class="checkout-radio-circle"></div>
+                      <span class="checkout-payment-option__name">Накладний платіж</span>
+                    </label>
+                  </div>
+                </div>
+              </section>
+            
+              <!-- 4. COMMENT -->
+              <div class="checkout-footer-block mt-32">
+                 <div class="checkout-field">
+                    <span class="checkout-field__label">Коментар до замовлення</span>
+                    <textarea name="comment" class="checkout-input checkout-input--textarea" placeholder="Ваші побажання..."></textarea>
+                 </div>
               </div>
-              <div class="hero__product">
-                <img src="./assets/hero-product-BHodJHKt.png" alt="Hero Product" class="hero__product-img"/>
+            
+              <!-- SUBMIT BUTTON -->
+              <div class="checkout-submit-block">
+                 <button type="submit" class="checkout-submit-btn btn-dark">Оформити замовлення</button>
               </div>
-            </div>
-          </section>
-          <!-- ==================== BENEFITS ==================== -->
-          <section class="benefits">
-            <div class="benefits__inner container">
-              <ul class="benefits__list">
-                <li class="benefits__item">
-                  <div class="benefits__item-img-wrap">
-                    <img class="benefits__item-img" src="./assets/benefit-1-Dat5wTRz.png" alt="Benefit 1" />
-                  </div>
-                  <span class="benefits__item-title">Результати демонструють реальні звичайні люди</span>
-                </li>
-                <li class="benefits__item">
-                  <div class="benefits__item-img-wrap">
-                    <img class="benefits__item-img" src="./assets/benefit-2-BY4fMEFN.png" alt="Benefit 2" />
-                  </div>
-                  <span class="benefits__item-title">Не запускаємо в продаж до ідеального результату</span>
-                </li>
-                <li class="benefits__item">
-                  <div class="benefits__item-img-wrap">
-                    <img class="benefits__item-img" src="./assets/benefit-3-CF10XbMJ.png" alt="Benefit 3" />
-                  </div>
-                  <span class="benefits__item-title">Тестуємо на рідних і друзяx</span>
-                </li>
-                <li class="benefits__item">
-                  <div class="benefits__item-img-wrap">
-                    <img class="benefits__item-img" src="./assets/benefit-4-WktOOP0n.png" alt="Benefit 4" />
-                  </div>
-                  <span class="benefits__item-title">Догляд і nail-матеріали як одна система</span>
-                </li>
-              </ul>
-            </div>
-          </section>
-          <!-- ==================== ABOUT ==================== -->
-          <section class="about">
-            <div class="about__inner container">
-              <div class="about__header">
-                <h2 class="about__title">ARPIKS — УКРАЇНСЬКИЙ БРЕНД НОВОГО ПОКОЛІННЯ</h2>
-                <a href="#" class="about__link btn-outline-dark">
-                  Детальніше про бренд 
-                  <svg width="15" height="8" viewBox="0 0 15 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14.3536 4.35355C14.5488 4.15829 14.5488 3.84171 14.3536 3.64645L11.1716 0.464466C10.9763 0.269204 10.6597 0.269204 10.4645 0.464466C10.2692 0.659728 10.2692 0.976311 10.4645 1.17157L13.2929 4L10.4645 6.82843C10.2692 7.02369 10.2692 7.34027 10.4645 7.53553C10.6597 7.7308 10.9763 7.7308 11.1716 7.53553L14.3536 4.35355ZM0 4.5H14V3.5H0V4.5Z" fill="currentColor"/>
-                  </svg>
+            </form>
+          </div>
+          <aside class="checkout-page__summary-column">
+            <div class="checkout-summary">
+              <div class="checkout-summary__header">
+                <h2 class="checkout-summary__title">Ваше замовлення</h2>
+                <a href="/basket" class="checkout-summary__edit-btn" id="checkout-edit-basket">
+                   <i class="ph ph-note-pencil"></i>
                 </a>
               </div>
-              <div class="about__text-columns">
-                <p class="about__text-left">
-                  Бренд– народжений у непростий час. Звик долати труднощі та допомагати. Ми створюємо, а не копіюємо. Матеріали для нейл-сфери та доглядова косметики професійного рівня.<br/>Ефективні і працюючі склади.
-                </p>
-                <p class="about__text-right">
-                  Наша ціна зараз нижча — це стартова ціна входу на ринок. Ми завжди чесні. Якість – завжди висока. 
-                </p>
+            
+              <div class="checkout-summary__info">
+                 <span class="checkout-summary__count">1 товар(ів) на суму:</span>
+                 <div class="checkout-summary__price">
+                    <span class="value">310</span>
+                    <span class="currency">грн</span>
+                 </div>
               </div>
-              <div class="about__banner-wrapper">
-                <img src="./assets/about-banner-B-Fziw4s.png" alt="ARPIKS About Banner" class="about__banner-img" />
+            
+              <div class="checkout-summary__items">
+                 <article class="basket-item">
+                    <div class="basket-item__image-wrapper">
+                       <img src="./assets/product-1-B3zGjaYv.png" alt="Product" class="basket-item__image">
+                    </div>
+                    <div class="basket-item__info">
+                       <div class="basket-item__header">
+                          <div class="basket-item__meta">
+                             <span class="basket-item__sku">Артикул: AGL124_5</span>
+                             <h3 class="basket-item__name">Акрігель с блисктіками Nailapex Shine № 2, 30г</h3>
+                          </div>
+                          <button class="basket-item__remove" aria-label="Видалити товар">
+                             <i class="ph ph-trash"></i>
+                          </button>
+                       </div>
+                       <div class="basket-item__actions">
+                          <div class="basket-item__quantity quantity-control">
+                             <button class="quantity-control__btn quantity-control__btn--minus" aria-label="Зменшити">−</button>
+                             <input type="number" class="quantity-control__input" value="1" min="1" readonly>
+                             <button class="quantity-control__btn quantity-control__btn--plus" aria-label="Збільшити">+</button>
+                          </div>
+                          <div class="basket-item__price-group">
+                             <span class="basket-item__price">310</span>
+                             <span class="basket-item__currency">грн</span>
+                          </div>
+                       </div>
+                    </div>
+                 </article>
               </div>
-            </div>
-          </section>
-          <!-- ==================== HITS ==================== -->
-          <section class="hits">
-            <div class="hits__inner container">
-              <div class="hits__header">
-                <div class="hits__title-wrapper">
-                  <span class="hits__subtitle">Хіти</span>
-                  <img src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2013%2013'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20id='Ellipse%203'%20cx='6.5'%20cy='6.5'%20r='6.5'%20fill='var(--fill-0,%20%23143C3D)'/%3e%3c/svg%3e" alt="" class="hits__dot" />
-                  <h2 class="hits__title">Те, що обирають</h2>
-                </div>
-                <a href="#" class="hits__cta btn-primary">Перейти до каталогу</a>
-              </div>
-              <div class="hits__grid">
-                <article class="product-card ">
-                  <div class="product-card__image-wrapper">
-                    <span class="product-card__badge product-card__badge--bestseller">BESTSELLER</span>
-                    <a href="./product.html" class="product-card__image-link">
-                      <img src="./assets/product-1-B3zGjaYv.png" alt="База LUMOS" class="product-card__image" loading="lazy" />
-                    </a>
-                    <div class="product-card__tooltip">Натиснути на картинку та перейти до картки товару</div>
-                  </div>
-                  <div class="product-card__info">
-                    <div class="product-card__text-group">
-                      <h3 class="product-card__title">База LUMOS</h3>
-                      <p class="product-card__desc">LUMOS база світиться у темряві , молочна айворі № 2</p>
+            
+              <div class="checkout-summary__shared-parts">
+                <!-- GIFT PROGRESS (Reusing basket__promo) -->
+                <div class="basket__promo">
+                  <div class="basket__promo-main-wrap">
+                    <div class="basket__promo-info">
+                      <div class="basket__promo-icon">
+                        <img src="data:image/svg+xml,%3csvg%20width='23'%20height='26'%20viewBox='0%200%2023%2026'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M15.9615%206.822H20.2151C21.2344%206.822%2022.0781%207.63087%2022.0781%208.685V15.084H11.9531V7.63087C11.601%207.52512%2011.2849%207.3845%2011.0745%207.17412C11.0396%207.17412%2011.0396%207.13925%2011.0036%207.13925C11.0036%207.13925%2011.0036%207.17412%2010.9688%207.17412C10.7224%207.38562%2010.4411%207.52625%2010.125%207.63087V15.084H0V8.685C0%207.62975%200.808875%206.822%201.82812%206.822H6.11775C5.625%206.57562%205.16825%206.22463%204.78125%205.90737C3.09375%204.28963%202.77762%202.03962%204.113%200.774C4.6755%200.28125%205.4135%200%206.22237%200C7.38225%200%208.57812%200.45675%209.59737%201.40625C10.1599%201.93387%2010.6875%202.67188%2011.0036%203.375C11.3558%202.67188%2011.8822%201.93387%2012.4447%201.40625C13.4291%200.45675%2014.6947%200%2015.8197%200C16.6635%200%2017.4015%200.28125%2017.9291%200.774C19.2656%202.03962%2018.9484%204.28963%2017.226%205.90737C16.8739%206.2235%2016.4182%206.57562%2015.9615%206.822ZM9.70312%205.80275C9.84375%205.48662%209.49162%203.86887%208.33175%202.77875C7.73438%202.21625%206.9255%201.90012%206.22237%201.90012C6.01088%201.90012%205.65987%201.935%205.4135%202.1465C5.34262%202.21738%205.13225%202.358%205.13225%202.74387C5.13225%203.20062%205.4135%203.90375%206.08175%204.50225C6.9255%205.31112%208.262%205.87363%209.24638%205.87363C9.5625%205.87363%209.70312%205.80275%209.70312%205.80275ZM12.375%205.80275C12.375%205.80275%2012.5505%205.87363%2012.8317%205.87363C13.8161%205.87363%2015.1526%205.31112%2015.9964%204.50225C16.6646%203.90487%2016.875%203.20175%2016.875%202.74387C16.875%202.35687%2016.6995%202.21625%2016.6635%202.1465C16.4171%201.935%2016.0301%201.90012%2015.8197%201.90012C15.1515%201.90012%2014.3078%202.21625%2013.7104%202.77875C12.5854%203.86887%2012.1984%205.45062%2012.3739%205.83762V5.80275H12.375ZM10.125%2025.209H1.82812C0.808875%2025.209%200%2024.4001%200%2023.3809V16.947H10.125V25.209ZM20.2151%2025.209H11.9531V16.947H22.0781V23.3809C22.0781%2024.4001%2021.2344%2025.209%2020.2151%2025.209Z'%20fill='%23143C3D'/%3e%3c/svg%3e" alt="Gift">
+                      </div>
+                      <div class="basket__promo-text">
+                        <p class="basket__promo-main">Додайте до замовлення товарів на <span class="basket__promo-accent">65 грн</span></p>
+                        <p class="basket__promo-sub">І отримайте кращій подарунок <i class="ph ph-info"></i></p>
+                      </div>
                     </div>
-                    <div class="product-card__dropdown">
-                      <button class="product-card__dropdown-trigger" aria-haspopup="listbox" aria-expanded="false">
-                        <span>60 ml</span>
-                        <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"/>
-                        </svg>
-                      </button>
-                      <ul class="product-card__dropdown-list" role="listbox">
-                        <li role="option" aria-selected="true" data-value="60">60 ml</li>
-                        <li role="option" aria-selected="false" data-value="30">30 ml</li>
-                        <li role="option" aria-selected="false" data-value="15">15 ml</li>
-                      </ul>
+                    <div class="basket__promo-progress">
+                      <div class="basket__promo-bar" style="width: 78.4%;"></div>
                     </div>
                   </div>
-                  <div class="product-card__price-wrapper">
-                    <button class="product-card__action product-card__action--heart" aria-label="Додати в улюблене">
-                      <i class="ph ph-heart"></i>
-                    </button>
-                    <div class="product-card__price-group">
-                      <span class="product-card__price">310</span>
-                      <span class="product-card__currency">грн</span>
+                  <div class="basket__promo-reward">
+                    <span class="basket__promo-reward-title">Ви отримаєте</span>
+                    <span class="basket__promo-reward-desc">full-size продукт</span>
+                    <div class="basket__promo-reward-badge">
+                      <img src="data:image/svg+xml,%3csvg%20width='8'%20height='10'%20viewBox='0%200%208%2010'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M5.76388%202.4635H7.29991C7.66797%202.4635%207.97266%202.75559%207.97266%203.13625V5.447H4.31641V2.75559C4.18925%202.71741%204.07509%202.66662%203.99913%202.59066C3.98653%202.59066%203.98653%202.57806%203.97353%202.57806C3.97353%202.57806%203.97353%202.59066%203.96094%202.59066C3.87197%202.66703%203.77041%202.71781%203.65625%202.75559V5.447H0V3.13625C0%202.75519%200.292094%202.4635%200.660156%202.4635H2.20919C2.03125%202.37453%201.86631%202.24778%201.72656%202.13322C1.11719%201.54903%201.00303%200.736531%201.48525%200.2795C1.68837%200.101562%201.95488%200%202.24697%200C2.66581%200%203.09766%200.164938%203.46572%200.507812C3.66884%200.698344%203.85938%200.964844%203.97353%201.21875C4.10069%200.964844%204.29081%200.698344%204.49394%200.507812C4.84941%200.164938%205.30644%200%205.71269%200C6.01737%200%206.28387%200.101562%206.47441%200.2795C6.95703%200.736531%206.84247%201.54903%206.2205%202.13322C6.09334%202.24738%205.92881%202.37453%205.76388%202.4635ZM3.50391%202.09544C3.55469%201.98128%203.42753%201.39709%203.00869%201.00344C2.79297%200.800312%202.50087%200.686156%202.24697%200.686156C2.17059%200.686156%202.04384%200.69875%201.95487%200.775125C1.92928%200.800719%201.85331%200.8515%201.85331%200.990844C1.85331%201.15578%201.95488%201.40969%202.19619%201.62581C2.50087%201.91791%202.9835%202.12103%203.33897%202.12103C3.45312%202.12103%203.50391%202.09544%203.50391%202.09544ZM4.46875%202.09544C4.46875%202.09544%204.53212%202.12103%204.63369%202.12103C4.98916%202.12103%205.47178%201.91791%205.77647%201.62581C6.01778%201.41009%206.09375%201.15619%206.09375%200.990844C6.09375%200.851094%206.03038%200.800313%206.01737%200.775125C5.92841%200.69875%205.78866%200.686156%205.71269%200.686156C5.47137%200.686156%205.16669%200.800312%204.95097%201.00344C4.54472%201.39709%204.40497%201.96828%204.46834%202.10803V2.09544H4.46875ZM3.65625%209.10325H0.660156C0.292094%209.10325%200%208.81116%200%208.44309V6.11975H3.65625V9.10325ZM7.29991%209.10325H4.31641V6.11975H7.97266V8.44309C7.97266%208.81116%207.66797%209.10325%207.29991%209.10325Z'%20fill='white'/%3e%3c/svg%3e" alt="Gift">
+                      <span>В подарунок</span>
                     </div>
-                    <button class="product-card__action product-card__action--cart" aria-label="Додати в кошик">
-                      <i class="ph ph-bag"></i>
-                      <span class="product-card__cart-count">+1</span>
-                    </button>
-                  </div>
-                </article>
-      
-                <article class="product-card ">
-                  <div class="product-card__image-wrapper">
-                    <span class="product-card__badge product-card__badge--sale">SALE</span>
-                    <a href="./product.html" class="product-card__image-link">
-                      <img src="./assets/product-2-uVNvOWzN.png" alt="База LUMOS" class="product-card__image" loading="lazy" />
-                    </a>
-                    <div class="product-card__tooltip">Натиснути на картинку та перейти до картки товару</div>
-                  </div>
-                  <div class="product-card__info">
-                    <div class="product-card__text-group">
-                      <h3 class="product-card__title">База LUMOS</h3>
-                      <p class="product-card__desc">LUMOS база світиться у темряві , молочна айворі № 2</p>
-                    </div>
-                    <div class="product-card__dropdown">
-                      <button class="product-card__dropdown-trigger" aria-haspopup="listbox" aria-expanded="false">
-                        <span>60 ml</span>
-                        <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"/>
-                        </svg>
-                      </button>
-                      <ul class="product-card__dropdown-list" role="listbox">
-                        <li role="option" aria-selected="true" data-value="60">60 ml</li>
-                        <li role="option" aria-selected="false" data-value="30">30 ml</li>
-                        <li role="option" aria-selected="false" data-value="15">15 ml</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="product-card__price-wrapper">
-                    <button class="product-card__action product-card__action--heart" aria-label="Додати в улюблене">
-                      <i class="ph ph-heart"></i>
-                    </button>
-                    <div class="product-card__price-group">
-                      <span class="product-card__price-old">480</span>
-                      <span class="product-card__price">310</span>
-                      <span class="product-card__currency">грн</span>
-                    </div>
-                    <button class="product-card__action product-card__action--cart" aria-label="Додати в кошик">
-                      <i class="ph ph-bag"></i>
-                      <span class="product-card__cart-count">+1</span>
-                    </button>
-                  </div>
-                </article>
-      
-                <article class="product-card ">
-                  <div class="product-card__image-wrapper">
-                    <span class="product-card__badge product-card__badge--bestseller">BESTSELLER</span>
-                    <a href="./product.html" class="product-card__image-link">
-                      <img src="./assets/product-3-CHR4W9BH.png" alt="База LUMOS" class="product-card__image" loading="lazy" />
-                    </a>
-                    <div class="product-card__tooltip">Натиснути на картинку та перейти до картки товару</div>
-                  </div>
-                  <div class="product-card__info">
-                    <div class="product-card__text-group">
-                      <h3 class="product-card__title">База LUMOS</h3>
-                      <p class="product-card__desc">LUMOS база світиться у темряві , молочна айворі № 2</p>
-                    </div>
-                    <div class="product-card__dropdown">
-                      <button class="product-card__dropdown-trigger" aria-haspopup="listbox" aria-expanded="false">
-                        <span>60 ml</span>
-                        <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"/>
-                        </svg>
-                      </button>
-                      <ul class="product-card__dropdown-list" role="listbox">
-                        <li role="option" aria-selected="true" data-value="60">60 ml</li>
-                        <li role="option" aria-selected="false" data-value="30">30 ml</li>
-                        <li role="option" aria-selected="false" data-value="15">15 ml</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="product-card__price-wrapper">
-                    <button class="product-card__action product-card__action--heart" aria-label="Додати в улюблене">
-                      <i class="ph ph-heart"></i>
-                    </button>
-                    <div class="product-card__price-group">
-                      <span class="product-card__price">310</span>
-                      <span class="product-card__currency">грн</span>
-                    </div>
-                    <button class="product-card__action product-card__action--cart" aria-label="Додати в кошик">
-                      <i class="ph ph-bag"></i>
-                      <span class="product-card__cart-count">+1</span>
-                    </button>
-                  </div>
-                </article>
-      
-                <article class="product-card ">
-                  <div class="product-card__image-wrapper">
-                    <span class="product-card__badge product-card__badge--bestseller">BESTSELLER</span>
-                    <a href="./product.html" class="product-card__image-link">
-                      <img src="./assets/product-4-VchSns43.png" alt="База LUMOS" class="product-card__image" loading="lazy" />
-                    </a>
-                    <div class="product-card__tooltip">Натиснути на картинку та перейти до картки товару</div>
-                  </div>
-                  <div class="product-card__info">
-                    <div class="product-card__text-group">
-                      <h3 class="product-card__title">База LUMOS</h3>
-                      <p class="product-card__desc">LUMOS база світиться у темряві , молочна айворі № 2</p>
-                    </div>
-                    <div class="product-card__dropdown">
-                      <button class="product-card__dropdown-trigger" aria-haspopup="listbox" aria-expanded="false">
-                        <span>60 ml</span>
-                        <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5"/>
-                        </svg>
-                      </button>
-                      <ul class="product-card__dropdown-list" role="listbox">
-                        <li role="option" aria-selected="true" data-value="60">60 ml</li>
-                        <li role="option" aria-selected="false" data-value="30">30 ml</li>
-                        <li role="option" aria-selected="false" data-value="15">15 ml</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="product-card__price-wrapper">
-                    <button class="product-card__action product-card__action--heart" aria-label="Додати в улюблене">
-                      <i class="ph ph-heart"></i>
-                    </button>
-                    <div class="product-card__price-group">
-                      <span class="product-card__price">310</span>
-                      <span class="product-card__currency">грн</span>
-                    </div>
-                    <button class="product-card__action product-card__action--cart" aria-label="Додати в кошик">
-                      <i class="ph ph-bag"></i>
-                      <span class="product-card__cart-count">+1</span>
-                    </button>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </section>
-          <!-- ==================== LIFE ==================== -->
-          <section class="life">
-            <div class="life__inner container">
-              <h2 class="life__title">ЖитТЯ ARPIKS</h2>
-              <p class="life__desc">Тут не про ідеальні кадри.<br/>Тут про реальну роботу.<br/>Ми не ідеальні. Ми відповідальні.</p>
-              
-              <div class="life__slider swiper">
-                <div class="swiper-wrapper">
-                  <!-- Slide 1 -->
-                  <div class="swiper-slide life__slide">
-                    <a href="#" target="_blank" class="life__story" aria-label="Відкрити Instagram video">
-                      <img src="./assets/life-img2-35ve4ru7.png" alt="" class="life__img" />
-                    </a>
-                  </div>
-                  
-                  <!-- Slide 2 -->
-                  <div class="swiper-slide life__slide">
-                    <a href="#" target="_blank" class="life__story" aria-label="Відкрити Instagram video">
-                      <img src="./assets/life-img6-WhPMX3k4.png" alt="" class="life__img" />
-                    </a>
-                  </div>
-      
-                  <!-- Slide 3 (Main with Play) -->
-                  <div class="swiper-slide life__slide">
-                    <a href="#" target="_blank" class="life__story" aria-label="Відкрити Instagram video">
-                      <img src="./assets/life-img1-Cx43h6Qj.png" alt="" class="life__img" />
-                      <img src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2093%2093'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Frame%20427322394'%3e%3crect%20x='0.5'%20y='0.5'%20width='92'%20height='92'%20rx='46'%20fill='var(--fill-0,%20white)'%20fill-opacity='0.4'/%3e%3crect%20x='0.5'%20y='0.5'%20width='92'%20height='92'%20rx='46'%20stroke='var(--stroke-0,%20white)'/%3e%3cpath%20id='Polygon%202'%20d='M58.5%2048.232C59.8333%2047.4622%2059.8333%2045.5377%2058.5%2044.7679L42%2035.2417C40.6667%2034.4719%2039%2035.4341%2039%2036.9737V56.0263C39%2057.5659%2040.6667%2058.5281%2042%2057.7583L58.5%2048.232Z'%20fill='var(--fill-0,%20white)'/%3e%3c/g%3e%3c/svg%3e" alt="Play" class="life__play-btn" />
-                    </a>
-                  </div>
-      
-                  <!-- Slide 4 -->
-                  <div class="swiper-slide life__slide">
-                    <a href="#" target="_blank" class="life__story" aria-label="Відкрити Instagram video">
-                      <img src="./assets/life-img2-35ve4ru7.png" alt="" class="life__img" />
-                      <img src="./assets/life-img4-CO64VQvl.png" alt="" class="life__img life__img--secondary" />
-                    </a>
-                  </div>
-      
-                  <!-- Slide 5 -->
-                  <div class="swiper-slide life__slide">
-                    <a href="#" target="_blank" class="life__story" aria-label="Відкрити Instagram video">
-                      <img src="./assets/life-img2-35ve4ru7.png" alt="" class="life__img" />
-                      <img src="./assets/life-img5-B_SwRifo.png" alt="" class="life__img life__img--secondary" />
-                    </a>
-                  </div>
-      
-                  <!-- Slide 6 (Duplicate 1) -->
-                  <div class="swiper-slide life__slide">
-                    <a href="#" target="_blank" class="life__story" aria-label="Відкрити Instagram video">
-                      <img src="./assets/life-img2-35ve4ru7.png" alt="" class="life__img" />
-                    </a>
-                  </div>
-                  
-                  <!-- Slide 7 (Duplicate 2) -->
-                  <div class="swiper-slide life__slide">
-                    <a href="#" target="_blank" class="life__story" aria-label="Відкрити Instagram video">
-                      <img src="./assets/life-img6-WhPMX3k4.png" alt="" class="life__img" />
-                    </a>
-                  </div>
-      
-                  <!-- Slide 8 (Duplicate 3) -->
-                  <div class="swiper-slide life__slide">
-                    <a href="#" target="_blank" class="life__story" aria-label="Відкрити Instagram video">
-                      <img src="./assets/life-img1-Cx43h6Qj.png" alt="" class="life__img" />
-                      <img src="data:image/svg+xml,%3csvg%20preserveAspectRatio='none'%20width='100%25'%20height='100%25'%20overflow='visible'%20style='display:%20block;'%20viewBox='0%200%2093%2093'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='Frame%20427322394'%3e%3crect%20x='0.5'%20y='0.5'%20width='92'%20height='92'%20rx='46'%20fill='var(--fill-0,%20white)'%20fill-opacity='0.4'/%3e%3crect%20x='0.5'%20y='0.5'%20width='92'%20height='92'%20rx='46'%20stroke='var(--stroke-0,%20white)'/%3e%3cpath%20id='Polygon%202'%20d='M58.5%2048.232C59.8333%2047.4622%2059.8333%2045.5377%2058.5%2044.7679L42%2035.2417C40.6667%2034.4719%2039%2035.4341%2039%2036.9737V56.0263C39%2057.5659%2040.6667%2058.5281%2042%2057.7583L58.5%2048.232Z'%20fill='var(--fill-0,%20white)'/%3e%3c/g%3e%3c/svg%3e" alt="Play" class="life__play-btn" />
-                    </a>
-                  </div>
-      
-                  <!-- Slide 9 (Duplicate 4) -->
-                  <div class="swiper-slide life__slide">
-                    <a href="#" target="_blank" class="life__story" aria-label="Відкрити Instagram video">
-                      <img src="./assets/life-img2-35ve4ru7.png" alt="" class="life__img" />
-                      <img src="./assets/life-img4-CO64VQvl.png" alt="" class="life__img life__img--secondary" />
-                    </a>
-                  </div>
-      
-                  <!-- Slide 10 (Duplicate 5) -->
-                  <div class="swiper-slide life__slide">
-                    <a href="#" target="_blank" class="life__story" aria-label="Відкрити Instagram video">
-                      <img src="./assets/life-img2-35ve4ru7.png" alt="" class="life__img" />
-                      <img src="./assets/life-img5-B_SwRifo.png" alt="" class="life__img life__img--secondary" />
-                    </a>
                   </div>
                 </div>
-                
-                <!-- Swiper Pagination -->
-                <div class="swiper-pagination"></div>
-              </div>
-      
-              <a href="#" class="life__link btn-outline-dark">
-                Детальніше про життя бренду 
-                <svg width="15" height="8" viewBox="0 0 15 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14.3536 4.35355C14.5488 4.15829 14.5488 3.84171 14.3536 3.64645L11.1716 0.464466C10.9763 0.269204 10.6597 0.269204 10.4645 0.464466C10.2692 0.659728 10.2692 0.976311 10.4645 1.17157L13.2929 4L10.4645 6.82843C10.2692 7.02369 10.2692 7.34027 10.4645 7.53553C10.6597 7.7308 10.9763 7.7308 11.1716 7.53553L14.3536 4.35355ZM0 4.5H14V3.5H0V4.5Z" fill="currentColor"/>
-                </svg>
-              </a>
-            </div>
-          </section>
-          <!-- ==================== FEATURES ==================== -->
-          <section class="features">
-            <div class="features__inner container">
-              <div class="features__header">
-                <h2 class="features__title">Ми не женемося за трендами.<br/>Ми їх створюємо.</h2>
-                <p class="features__subtitle">ARPIKS — коли вміст важливіший за упаковку</p>
-              </div>
-              <div class="features__interactive">
-                <div class="features__center-image">
-                  <img src="./assets/features-product-Cfz4ArJY.png" alt="ARPIKS Product" />
+            
+                <!-- PROMOCODE -->
+                <div class="checkout-promo">
+                   <input type="text" class="checkout-promo__input" placeholder="Введіть промокод">
                 </div>
-                
-                <!-- Left side -->
-                <div class="features__point features__point--1 features__point--left">
-                  <span class="features__point-text">Ефективні активні компоненти</span>
-                  <div class="features__connector"></div>
-                  <div class="features__dot"></div>
-                </div>
-                <div class="features__point features__point--2 features__point--left">
-                  <span class="features__point-text">Протестовані товари доведені до ідеалу</span>
-                  <div class="features__connector"></div>
-                  <div class="features__dot"></div>
-                </div>
-                <div class="features__point features__point--3 features__point--left">
-                  <span class="features__point-text">Перевірені досвідом формули</span>
-                  <div class="features__connector"></div>
-                  <div class="features__dot"></div>
-                </div>
-                
-                <!-- Right side -->
-                <div class="features__point features__point--4 features__point--right">
-                  <span class="features__point-text">Натуральні інгрідієнти</span>
-                  <div class="features__connector"></div>
-                  <div class="features__dot"></div>
-                </div>
-                <div class="features__point features__point--5 features__point--right">
-                  <span class="features__point-text">Унікальні склади у кожному засобі</span>
-                  <div class="features__connector"></div>
-                  <div class="features__dot"></div>
-                </div>
-                <div class="features__point features__point--6 features__point--right">
-                  <span class="features__point-text">Відсутність критичної хімії у складі</span>
-                  <div class="features__connector"></div>
-                  <div class="features__dot"></div>
+            
+                <!-- TOTALS -->
+                <div class="checkout-totals">
+                   <div class="checkout-total-line">
+                      <span class="checkout-total-line__label">Підсумок:</span>
+                      <span class="checkout-total-line__value">310 грн</span>
+                   </div>
+                   <div class="checkout-total-line">
+                      <span class="checkout-total-line__label">Доставка:</span>
+                      <span class="checkout-total-line__value checkout-total-line__value--small">за тарифами перевізника</span>
+                   </div>
+                   <div class="checkout-total-line">
+                      <span class="checkout-total-line__label">Знижка:</span>
+                      <span class="checkout-total-line__value">-60 грн</span>
+                   </div>
+                   <div class="checkout-total-line checkout-total-line--final">
+                      <span class="checkout-total-line__label">РАЗОМ:</span>
+                      <div class="checkout-total-line__price">
+                         <span class="value">310</span>
+                         <span class="currency">грн</span>
+                      </div>
+                   </div>
                 </div>
               </div>
             </div>
-          </section>
-          <!-- ==================== DEALERS ==================== -->
-          <section class="dealers">
-            <div class="dealers__inner">
-              <div class="dealers__img-wrap dealers__img-wrap--left">
-                <img src="./assets/dealer-left-DpN_SWmv.png" alt="" class="dealers__img" />
-              </div>
-              <div class="dealers__content">
-                <h2 class="dealers__title">Станьте дилером ARPIKS</h2>
-                <p class="dealers__subtitle">Продукція за якою повертаються</p>
-                <div class="dealers__tags">
-                  <div class="dealers__tag">стартові пакети</div>
-                  <div class="dealers__tag">тестери</div>
-                  <div class="dealers__tag">вища маржа</div>
-                  <div class="dealers__tag">контент і підтримка</div>
-                </div>
-                <a href="#" class="dealers__cta btn-dark">Отримати умови співпраці</a>
-              </div>
-              <div class="dealers__img-wrap dealers__img-wrap--right">
-                <img src="./assets/dealer-right-CmByQDkJ.png" alt="" class="dealers__img" />
-              </div>
-            </div>
-          </section>
-          <!-- ==================== CLUB ==================== -->
-          <section class="club">
-            <div class="club__inner container">
-              <div class="club__content">
-                <div class="club__info">
-                  <h2 class="club__title">Закрита спільнота розумних і гарних</h2>
-                  <p class="club__subtitle">Дозволь собі бути не ідеальною</p>
-                  <p class="club__list">Доступ. Бонуси.<br/>Закриті можливості.<br/>Спілкування.<br/>Зустрічі.<br/>Користь.</p>
-                </div>
-                <a href="#" class="club__cta btn-primary">Вступити до клубу</a>
-              </div>
-              <div class="club__banner">
-                <img src="./assets/club-bg-CHdmZzo4.png" alt="" class="club__bg" />
-                <h2 class="club__banner-title">Клуб “Стерво”</h2>
-              </div>
-            </div>
-          </section>
-          <!-- ==================== OFFER ==================== -->
-          <section class="offer">
-            <div class="offer__inner container">
-              <div class="offer__content">
-                <div class="offer__logos">
-                  <img src="./assets/logo-white-BhMxBMj0.svg" alt="ARPIKS" class="offer__logo-full"/>
-                </div>
-                <h2 class="offer__title">спробуйте - Далі все зрозуміло</h2>
-                <p class="offer__subtitle">Розумна краса, яка працює</p>
-              </div>
-              <a href="#" class="offer__cta btn-dark">Перейти до каталогу</a>
-            </div>
-          </section>
+          </aside>
+        </div>
+      </div>
     </main>
 
     <!-- FOOTER -->
