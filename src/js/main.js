@@ -33,6 +33,7 @@ import '../components/pages/catalog/catalog-filter/catalog-filter.scss';
 import '../components/pages/catalog/catalog-grid/catalog-grid.scss';
 import '../components/pages/catalog/catalog-pagination/catalog-pagination.scss';
 import '../scss/pages/_catalog-content.scss';
+import '../components/shared/preloader/preloader.scss';
 
 // --- Global Modules ---
 import Swiper from 'swiper/bundle';
@@ -49,6 +50,7 @@ import initProductTabs from './components/product-tabs.js';
 import { initRecomSlider } from './components/recom-slider.js';
 import { initFaq } from './components/faq.js';
 import { initCatalog } from './components/catalog.js';
+import { initPreloader } from './components/preloader.js';
 
 import { initQuantityControls } from './components/quantity-control.js';
 
@@ -65,5 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof initRecomSlider === 'function') initRecomSlider();
   if (typeof initFaq === 'function') initFaq();
   if (typeof initCatalog === 'function') initCatalog();
+  if (typeof initPreloader === 'function') initPreloader();
 });
 
