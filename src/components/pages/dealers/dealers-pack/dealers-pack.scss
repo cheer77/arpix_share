@@ -1,27 +1,16 @@
 .d-pack {
-  padding: ac(80px, 48px) 0;
+  padding: ac(60px, 40px) 0 ac(5px, 5px);
 
   &__inner {
     display: flex;
     flex-direction: column;
-    gap: ac(40px, 28px);
+    gap: ac(60px, 32px);
   }
 
-  &__top {
-    display: grid;
-    grid-template-columns: 1fr ac(500px, 260px);
-    gap: ac(40px, 24px);
-    align-items: center;
-
-    @media (max-width: $breakpoint-tablet) {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  &__top-text {
+  &__header {
     display: flex;
     flex-direction: column;
-    gap: ac(16px, 12px);
+    gap: ac(32px, 20px);
   }
 
   &__title {
@@ -30,38 +19,64 @@
     font-weight: $font-weight-regular;
     color: $color-text;
     line-height: $line-height-tight;
+    text-align: center;
   }
 
   &__subtitle {
     font-size: ac(20px, 15px);
-    color: $color-text-secondary;
-    line-height: $line-height-normal;
+    color: $color-text;
+    line-height: 1.35;
+    text-align: center;
   }
 
-  &__top-img {
-    img {
-      width: 100%;
-      height: ac(380px, 240px);
-      object-fit: cover;
-      border-radius: $radius-15;
-      display: block;
-    }
+  &__body {
+    position: relative;
+    width: 100%;
+    min-height: ac(440px, 320px);
 
-    @media (max-width: $breakpoint-tablet) {
-      display: none;
+    @media (max-width: $breakpoint-desktop) {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      min-height: unset;
+    }
+  }
+
+  &__img {
+    display: block;
+    margin: 0 auto;
+    width: ac(616px, 320px);
+    height: ac(440px, 280px);
+    object-fit: contain;
+
+    @media (max-width: $breakpoint-desktop) {
+      width: 100%;
+      height: auto;
+      order: -1;
     }
   }
 
   &__checklist {
+    position: absolute;
+    left: 0;
+    top: ac(20px, 0px);
+    z-index: 2;
+    width: ac(355px, 260px);
     display: flex;
     flex-direction: column;
-    gap: ac(20px, 14px);
+    gap: ac(32px, 20px);
+
+    @media (max-width: $breakpoint-desktop) {
+      position: relative;
+      top: 0;
+      width: 100%;
+    }
   }
 
   &__list {
     display: flex;
     flex-direction: column;
-    gap: ac(12px, 10px);
+    gap: 8px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -70,52 +85,51 @@
   &__item {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: ac(17px, 12px);
     font-size: ac(16px, 14px);
     color: $color-text;
-    line-height: $line-height-normal;
+    line-height: 1.375;
   }
 
   &__check {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
     background: $color-accent;
     flex-shrink: 0;
 
-    &::after {
-      content: '';
-      display: block;
-      width: 10px;
-      height: 6px;
-      border-left: 2px solid $color-white;
-      border-bottom: 2px solid $color-white;
-      transform: rotate(-45deg) translateY(-1px);
+    i {
+      color: $color-white;
+      font-size: 15px;
     }
   }
 
   &__label {
     font-size: ac(20px, 16px);
     font-weight: $font-weight-semibold;
-    color: $color-text;
+    color: $color-accent;
   }
 
   &__promo {
+    position: absolute;
+    right: 0;
+    bottom: ac(56px, 0px);
+    z-index: 2;
+    width: ac(357px, 280px);
     background: $color-white;
-    border: 1px solid $color-border;
-    border-radius: $radius-15;
-    padding: ac(32px, 20px) ac(40px, 20px);
+    border-radius: 8px;
+    padding: ac(24px, 20px) ac(28px, 16px);
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: ac(32px, 16px);
+    flex-direction: column;
+    gap: ac(40px, 24px);
 
-    @media (max-width: $breakpoint-tablet) {
-      flex-direction: column;
-      align-items: flex-start;
+    @media (max-width: $breakpoint-desktop) {
+      position: relative;
+      bottom: 0;
+      width: 100%;
     }
   }
 
@@ -123,11 +137,10 @@
     font-size: ac(20px, 16px);
     font-weight: $font-weight-semibold;
     color: $color-text;
-    line-height: $line-height-tight;
-    max-width: 500px;
+    line-height: 1.35;
   }
 
   &__promo-btn {
-    flex-shrink: 0;
+    align-self: flex-start;
   }
 }
