@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arpix Share | Диллерам</title>
+    <meta name="description" content="Станьте дилером ARPIKS — першим партнерам умови, яких більше не буде." />
+
+    <!-- Google Fonts: Manrope, Bad Script & Syne -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Manrope:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Phosphor Icons -->
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css" />
+
+    <!-- Main Entry -->
+    <script type="module" src="/src/js/main.js"></script>
+  </head>
+  <body>
+    <!-- PRELOADER -->
+    {{> shared/preloader/preloader }}
+
+    <!-- HEADER -->
+    {{> layout/header/header className="header--inner" }}
+
+    <main class="main--dealers">
+      {{> pages/dealers/dealers-hero/dealers-hero }}
+      {{> pages/dealers/dealers-why/dealers-why }}
+      {{> pages/dealers/dealers-pack/dealers-pack }}
+      {{> pages/dealers/dealers-benefits/dealers-benefits }}
+      {{> pages/dealers/dealers-sells/dealers-sells }}
+      {{> pages/dealers/dealers-promo/dealers-promo }}
+      {{> pages/dealers/dealers-conditions/dealers-conditions }}
+      {{> pages/dealers/dealers-cta/dealers-cta }}
+    </main>
+
+    <!-- FOOTER -->
+    {{> layout/footer/footer }}
+
+    <!-- BASKET SIDEBAR -->
+    {{> layout/basket/basket }}
+  </body>
+</html>

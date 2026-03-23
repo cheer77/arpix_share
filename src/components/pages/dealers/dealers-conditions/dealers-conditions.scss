@@ -1,0 +1,90 @@
+.d-conditions {
+  padding: ac(80px, 48px) 0;
+  background: $color-bg;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: ac(48px, 32px);
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: ac(16px, 12px);
+    max-width: 800px;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: ac(40px, 26px);
+    font-weight: $font-weight-regular;
+    color: $color-text;
+    line-height: $line-height-tight;
+  }
+
+  &__subtitle {
+    font-size: ac(20px, 15px);
+    font-weight: $font-weight-semibold;
+    color: $color-text;
+    line-height: $line-height-normal;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: ac(16px, 12px);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @media (max-width: $breakpoint-mobile-lg) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: ac(16px, 12px);
+    background: $color-white;
+    border-radius: $radius-12;
+    padding: ac(20px, 14px) ac(24px, 16px);
+    border: 1px solid $color-border;
+  }
+
+  &__check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: $color-accent;
+    flex-shrink: 0;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 12px;
+      height: 7px;
+      border-left: 2px solid $color-white;
+      border-bottom: 2px solid $color-white;
+      transform: rotate(-45deg) translateY(-1px);
+    }
+  }
+
+  &__item-text {
+    font-size: ac(20px, 15px);
+    color: $color-text;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-normal;
+  }
+
+  &__footer {
+    font-size: ac(16px, 14px);
+    color: $color-text-secondary;
+    line-height: $line-height-normal;
+    font-style: italic;
+  }
+}

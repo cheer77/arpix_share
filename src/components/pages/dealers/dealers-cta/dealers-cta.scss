@@ -1,0 +1,62 @@
+.d-cta {
+  padding: ac(20px, 10px) ac(10px, 0px);
+
+  &__wrapper {
+    width: calc(100% - 20px);
+    max-width: 1420px;
+    margin: 0 auto;
+    border-radius: $radius-25;
+    background: linear-gradient(180deg, #020605 -42.74%, #143C3D 58.8%, #4D8582 97.22%);
+    overflow: hidden;
+    min-height: ac(333px, 260px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: $breakpoint-tablet) {
+      width: 100%;
+      border-radius: 0;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: ac(24px, 16px);
+    padding: ac(60px, 40px) ac(40px, 20px);
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: ac(40px, 26px);
+    font-weight: $font-weight-regular;
+    color: $color-white;
+    line-height: $line-height-tight;
+    max-width: 600px;
+  }
+
+  &__text {
+    font-size: ac(18px, 15px);
+    color: rgba($color-white, 0.75);
+    line-height: $line-height-normal;
+  }
+
+  &__btn {
+    margin-top: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: $color-white;
+    color: $color-accent;
+
+    i {
+      font-size: 18px;
+    }
+
+    &:hover {
+      background: rgba($color-white, 0.9);
+    }
+  }
+}

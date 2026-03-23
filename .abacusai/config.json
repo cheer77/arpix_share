@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat *)",
+      "Bash(Bash(curl *))",
+      "Bash(Bash(python3 *))",
+      "Bash(Bash(rel_pos=({int(rel_x)},{int(rel_y)}) *))",
+      "Bash(Bash(size={int(bb.get(\\\"width\\\",0))}x{int(bb.get(\\\"height\\\",0))} *))",
+      "Bash(Bash(layoutPos={lp} *))",
+      "Bash(Bash(rot={round(rot,2)}') *))"
+    ]
+  }
+}

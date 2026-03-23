@@ -1,0 +1,81 @@
+.d-benefits {
+  padding: ac(80px, 48px) 0;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: ac(48px, 32px);
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: ac(40px, 26px);
+    font-weight: $font-weight-regular;
+    color: $color-text;
+    line-height: $line-height-tight;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: ac(20px, 14px);
+
+    @media (max-width: $breakpoint-desktop) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $breakpoint-mobile-lg) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    background: $color-white;
+    border-radius: $radius-15;
+    padding: ac(28px, 20px);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: ac(20px, 14px);
+    border: 1px solid $color-border;
+    transition: box-shadow $transition-base;
+
+    &:hover {
+      box-shadow: $shadow-md;
+    }
+  }
+
+  &__card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+  }
+
+  &__card-title {
+    font-size: ac(20px, 15px);
+    font-weight: $font-weight-semibold;
+    color: $color-text;
+    line-height: $line-height-tight;
+  }
+
+  &__card-text {
+    font-size: ac(16px, 13px);
+    color: $color-text-secondary;
+    line-height: $line-height-relaxed;
+  }
+
+  &__card-icon {
+    width: ac(48px, 40px);
+    height: ac(48px, 40px);
+    background: $color-white;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-accent;
+    font-size: ac(24px, 20px);
+    flex-shrink: 0;
+  }
+}

@@ -1,0 +1,133 @@
+.d-pack {
+  padding: ac(80px, 48px) 0;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: ac(40px, 28px);
+  }
+
+  &__top {
+    display: grid;
+    grid-template-columns: 1fr ac(500px, 260px);
+    gap: ac(40px, 24px);
+    align-items: center;
+
+    @media (max-width: $breakpoint-tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__top-text {
+    display: flex;
+    flex-direction: column;
+    gap: ac(16px, 12px);
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: ac(40px, 26px);
+    font-weight: $font-weight-regular;
+    color: $color-text;
+    line-height: $line-height-tight;
+  }
+
+  &__subtitle {
+    font-size: ac(20px, 15px);
+    color: $color-text-secondary;
+    line-height: $line-height-normal;
+  }
+
+  &__top-img {
+    img {
+      width: 100%;
+      height: ac(380px, 240px);
+      object-fit: cover;
+      border-radius: $radius-15;
+      display: block;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      display: none;
+    }
+  }
+
+  &__checklist {
+    display: flex;
+    flex-direction: column;
+    gap: ac(20px, 14px);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: ac(12px, 10px);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: ac(16px, 14px);
+    color: $color-text;
+    line-height: $line-height-normal;
+  }
+
+  &__check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: $color-accent;
+    flex-shrink: 0;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 10px;
+      height: 6px;
+      border-left: 2px solid $color-white;
+      border-bottom: 2px solid $color-white;
+      transform: rotate(-45deg) translateY(-1px);
+    }
+  }
+
+  &__label {
+    font-size: ac(20px, 16px);
+    font-weight: $font-weight-semibold;
+    color: $color-text;
+  }
+
+  &__promo {
+    background: $color-white;
+    border: 1px solid $color-border;
+    border-radius: $radius-15;
+    padding: ac(32px, 20px) ac(40px, 20px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: ac(32px, 16px);
+
+    @media (max-width: $breakpoint-tablet) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__promo-text {
+    font-size: ac(20px, 16px);
+    font-weight: $font-weight-semibold;
+    color: $color-text;
+    line-height: $line-height-tight;
+    max-width: 500px;
+  }
+
+  &__promo-btn {
+    flex-shrink: 0;
+  }
+}

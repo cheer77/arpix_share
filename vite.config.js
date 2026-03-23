@@ -36,6 +36,7 @@ export default defineConfig({
         product: resolve(__dirname, 'product.html'),
         catalog: resolve(__dirname, 'catalog.html'),
         checkout: resolve(__dirname, 'checkout.html'),
+        dealers: resolve(__dirname, 'dealers.html'),
       },
     },
     outDir: 'dist',
