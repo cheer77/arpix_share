@@ -1,42 +1,48 @@
 .d-why {
-  position: relative;
-  overflow: hidden;
-  min-height: ac(759px, 500px);
   display: flex;
-  align-items: center;
+  align-items: stretch;
+  padding-left: ac(10px, 0px);
+  padding-right: ac(72px, 20px);
+  gap: ac(60px, 24px);
+  min-height: ac(759px, 500px);
+
+  @media (max-width: $breakpoint-desktop) {
+    flex-direction: column;
+    padding: ac(48px, 32px) ac(20px, 16px);
+    gap: ac(32px, 24px);
+    min-height: unset;
+  }
 
   &__img {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 49.4%;
-    height: 100%;
+    flex: 0 0 ac(712px, 280px);
+    border-radius: 20px;
+    overflow: hidden;
 
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
 
     @media (max-width: $breakpoint-desktop) {
-      width: 40%;
-      opacity: 0.3;
-    }
-
-    @media (max-width: $breakpoint-tablet) {
-      display: none;
+      flex: none;
+      width: 100%;
+      height: ac(400px, 260px);
+      border-radius: 12px;
     }
   }
 
   &__content {
-    position: relative;
-    z-index: 1;
+    flex: 1;
+    align-self: center;
     display: flex;
     flex-direction: column;
-    gap: ac(48px, 32px);
-    padding-top: ac(80px, 48px);
-    padding-bottom: ac(80px, 48px);
-    max-width: 620px;
+    gap: ac(40px, 28px);
+
+    @media (max-width: $breakpoint-desktop) {
+      align-self: auto;
+    }
   }
 
   &__title {
@@ -50,7 +56,7 @@
   &__list {
     display: flex;
     flex-direction: column;
-    gap: ac(32px, 20px);
+    gap: ac(24px, 20px);
     list-style: none;
     margin: 0;
     padding: 0;
@@ -58,36 +64,36 @@
 
   &__item {
     display: flex;
-    gap: ac(20px, 14px);
+    gap: ac(40px, 16px);
     align-items: flex-start;
   }
 
   &__num {
     font-family: $font-heading;
-    font-size: ac(24px, 20px);
+    font-size: ac(24px, 18px);
     font-weight: $font-weight-regular;
     color: $color-accent;
-    line-height: 1.3;
+    line-height: 1.13;
     flex-shrink: 0;
-    min-width: ac(48px, 40px);
+    width: ac(56px, 40px);
   }
 
   &__item-body {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: ac(20px, 10px);
   }
 
   &__item-title {
     font-size: ac(20px, 16px);
     font-weight: $font-weight-semibold;
     color: $color-text;
-    line-height: $line-height-tight;
+    line-height: 1.365;
   }
 
   &__item-text {
     font-size: ac(16px, 14px);
-    color: $color-text-secondary;
-    line-height: $line-height-relaxed;
+    color: $color-text;
+    line-height: 1.5;
   }
 }
